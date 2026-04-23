@@ -22,45 +22,40 @@ book:
           name: Spatial Informatics Group
 
   date: "9/18/2025"
-  cover-image: Images/Book_Cover_delta_6_25.png #images/Book_Cover.png
-  # repo-url: https://servir.github.io/SERVIR-Applied-Deep-Learning-Book/ #https://mayert1.github.io/quarto_book_trial/
+  cover-image: Images/Book_Cover_delta_6_25.png
   repo-url: https://github.com/NASA-EarthRISE/EarthRISE-Applied-Artificial-Intelligence-and-Deep-Learning-Book
   repo-actions: [source, edit, issue]
   downloads: [pdf]
   chapters:
     - index.md
-    - part: "Curriculum"
+    - part: "Semantic Segmentation"
       chapters:
-        - 02-Data-Preparation/index.ipynb
         - 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021.ipynb
-        - 04_Object_Detection/index.ipynb
-        - 05_Time_Series/index.ipynb
-        - 06_Eco_Process_Sim/index.ipynb
-        - 07_Transfer_Learning/index.ipynb
-        - 08_Fusion/index.ipynb
-        - 09_Downscaling/index.ipynb
-        - 10_Future/index.ipynb
-        - 11_Ethics/index.ipynb
-        - 12_Conclusions/index.ipynb
+        - 03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training.ipynb
+    - 02-Data-Preparation/index.ipynb
+    - 04_Object_Detection/index.ipynb
+    - 05_Time_Series/01__Soybean_Yield_Prediction/notebooks/Crop_yield_estimationR4.ipynb
+    - 06_Eco_Process_Sim/index.ipynb
+    - 07_Transfer_Learning/index.ipynb
+    - 08_Fusion/index.ipynb
+    - 09_Downscaling/index.ipynb
+    - 10_Future/01_Evaluating_Foundation_Models_Trained_with_Earth_Observation_Data/Chapter_Practical_EOFM_Evaluation.ipynb
+    - 11_Ethics/index.ipynb
+    - 12_Conclusions/index.ipynb
     - references.qmd
+
 bibliography: references.bib
 
 format:
   html:
-    theme:  # pandoc, default, flatly, darkly, sketchy, sandstone, cyborg, zephyr
+    theme:
       light: flatly
       dark: darkly
-    # code-fold: true
-    # code-summary: "Show code"
-    # output-fold: true
-    # output-summary: "Show output"
     page-tools: ["colab", "github", "source", "edit", "issue"]
     includes:
       before-body: _includes/ga.html
   pdf:
-    documentclass: scrreprt  # book
-    page-tools: [] # Remove page tools for PDF
-    code-fold: false  # Don't fold code in PDF
-    output-fold: false  # Don't fold output in PDF
-  # page-tools: ["colab", "github"]
-
+    documentclass: scrreprt
+    page-tools: []
+    code-fold: false
+    output-fold: false

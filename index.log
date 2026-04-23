@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.14)  22 SEP 2025 13:40
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.14)  13 APR 2026 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3948,95 +3948,108 @@ Overfull \hbox (10.96979pt too wide) in paragraph at lines 3615--3616
 [78]
 chapter 3.
 
-Overfull \hbox (116.61734pt too wide) in paragraph at lines 3630--3630
-[]\TU/lmtt/m/n/10.95 sys.version=[]3.9.0 | packaged by conda-forge | (default, Nov 26 2020, 07:55:15) \n[Clang 11.0.0 ][][] 
- []
-
-
 
 [79
 
 ]
-
-[80]
 chapter 4.
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 3656.
 
 
-[81
+[80
 
 ]
+
+[81]
 
 [82]
-chapter 5.
+Overfull \hbox (18.8886pt too wide) in paragraph at lines 3847--3847
+[]\TU/lmtt/m/n/10.95 <TFRecordDatasetV2 element_spec=TensorSpec(shape=(), dtype=tf.string, name=None)>[] 
+ []
 
 
-[83
 
-]
+[83]
+Overfull \hbox (1594.04578pt too wide) in paragraph at lines 3895--3895
+[]\TU/lmtt/m/n/10.95 <_MapDataset element_spec={[]b1[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b2[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b3[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b4[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []class[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None)}>[] 
+ []
+
+
 
 [84]
-chapter 6.
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3948--3948
+[]       \TU/lmtt/m/n/10.95 [6311., 6226., 6226., ..., 5885., 6055., 6226.]], dtype=float32)>, []b2[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
+ []
 
 
-[85
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3948--3948
+[]       \TU/lmtt/m/n/10.95 [5473., 5442., 5412., ..., 5078., 4986., 4986.]], dtype=float32)>, []b3[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
+ []
 
-]
+
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3948--3948
+[]       \TU/lmtt/m/n/10.95 [2843., 2748., 2772., ..., 2604., 2604., 2604.]], dtype=float32)>, []b4[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
+ []
+
+
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 3948--3948
+[]      \TU/lmtt/m/n/10.95 dtype=float32)>, []class[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
+ []
+
+
+
+[85]
+Overfull \hbox (24.63736pt too wide) in paragraph at lines 4003--4003
+[]  \TU/lmtt/m/n/10.95 [6311. 6226. 6226. ... 5885. 6055. 6226.]]], shape=(3, 128, 128), dtype=float32)[] 
+ []
+
+
 
 [86]
-chapter 7.
+File: 03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training_files/figure-pdf/cell-17-output-1.png Graphic file (type bmp)
+<03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training_files/figure-pdf/cell-17-output-1.png>
+
+Overfull \hbox (10.96266pt too wide) in paragraph at lines 4036--4037
+[][] 
+ []
 
 
-[87
 
-]
+[87]
 
 [88]
-chapter 8.
+
+[89]
+Overfull \hbox (507.53223pt too wide) in paragraph at lines 4191--4191
+[]\TU/lmtt/m/n/10.95 <_RepeatDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
+ []
 
 
-[89
+Overfull \hbox (507.53223pt too wide) in paragraph at lines 4191--4191
+[]\TU/lmtt/m/n/10.95 <_RepeatDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
+ []
 
-]
+
+Overfull \hbox (501.78348pt too wide) in paragraph at lines 4191--4191
+[]\TU/lmtt/m/n/10.95 <_BatchDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
+ []
+
+
 
 [90]
-chapter 9.
-
-
-[91
-
-]
-
-[92]
-chapter 10.
-
-
-[93
-
-]
-
-[94]
-
-[95
-
-]
-
-[96]
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4221 \end{CSLReferences}
-                           
+! Unable to load picture or PDF file 'index_files/mediabag/uc-export=view-id=1W.pdf'.
+<to be read again> 
+                   }
+l.4230 ...files/mediabag/uc-export=view-id=1W.pdf}
+                                                   
 Here is how much of TeX's memory you used:
- 24028 strings out of 475932
- 469763 string characters out of 5775117
+ 24058 strings out of 475932
+ 471293 string characters out of 5775117
  1191099 words of memory out of 5000000
- 46537 multiletter control sequences out of 15000+600000
- 564516 words of font info for 88 fonts, out of 8000000 for 9000
+ 46558 multiletter control sequences out of 15000+600000
+ 564532 words of font info for 90 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  108i,8n,123p,10900b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on index.pdf (96 pages).
+Output written on index.pdf (90 pages).
