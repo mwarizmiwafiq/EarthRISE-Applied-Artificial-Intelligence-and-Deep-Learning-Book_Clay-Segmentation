@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.14)  23 APR 2026 08:56
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.14)  23 APR 2026 09:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -924,48 +924,48 @@ File: index_files/mediabag/colab_logo_32px.png Graphic file (type bmp)
 File: index_files/mediabag/GitHub-Mark-32px.png Graphic file (type bmp)
 <index_files/mediabag/GitHub-Mark-32px.png>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 306.
+(Font)              scaled to size 7.665pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 306.
+(Font)              scaled to size 5.475pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 306.
+(Font)              scaled to size 10.95099pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.66568pt on input line 306.
+(Font)              scaled to size 7.66568pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.4755pt on input line 306.
+(Font)              scaled to size 5.4755pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 306.
+(Font)              scaled to size 10.94882pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 306.
+(Font)              scaled to size 7.66417pt on input line 305.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 306.
+(Font)              scaled to size 5.47441pt on input line 305.
 
-Overfull \hbox (168.35606pt too wide) in paragraph at lines 391--391
+Overfull \hbox (168.35606pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from servir-aces) (1.25.2)[] 
  []
 
 
-Overfull \hbox (237.34105pt too wide) in paragraph at lines 391--391
+Overfull \hbox (237.34105pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: tensorflow>=2.9.3 in /usr/local/lib/python3.10/dist-packages (from servir-aces) (2.15.0)[] 
  []
 
 
-Overfull \hbox (231.5923pt too wide) in paragraph at lines 391--391
+Overfull \hbox (231.5923pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: earthengine-api in /usr/local/lib/python3.10/dist-packages (from servir-aces) (0.1.399)[] 
  []
 
 
-Overfull \hbox (191.35106pt too wide) in paragraph at lines 391--391
+Overfull \hbox (191.35106pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from servir-aces) (3.7.1)[] 
  []
 
 
-Overfull \hbox (323.57228pt too wide) in paragraph at lines 391--391
+Overfull \hbox (323.57228pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: absl-py>=1.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (1.4.0)[] 
  []
 
 
-Overfull \hbox (340.81853pt too wide) in paragraph at lines 391--391
+Overfull \hbox (340.81853pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: astunparse>=1.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (1.6.3)[] 
  []
 
@@ -974,1076 +974,1076 @@ Overfull \hbox (340.81853pt too wide) in paragraph at lines 391--391
 [5
 
 ]
-Overfull \hbox (369.56227pt too wide) in paragraph at lines 391--391
+Overfull \hbox (369.56227pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: flatbuffers>=23.5.26 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (24.3.25)[] 
  []
 
 
-Overfull \hbox (444.296pt too wide) in paragraph at lines 391--391
+Overfull \hbox (444.296pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (0.5.4)[] 
  []
 
 
-Overfull \hbox (352.31602pt too wide) in paragraph at lines 391--391
+Overfull \hbox (352.31602pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-pasta>=0.1.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (0.2.0)[] 
  []
 
 
-Overfull \hbox (306.32603pt too wide) in paragraph at lines 391--391
+Overfull \hbox (306.32603pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: h5py>=2.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (3.9.0)[] 
  []
 
 
-Overfull \hbox (340.81853pt too wide) in paragraph at lines 391--391
+Overfull \hbox (340.81853pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: libclang>=13.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (18.1.1)[] 
  []
 
 
-Overfull \hbox (335.06978pt too wide) in paragraph at lines 391--391
+Overfull \hbox (335.06978pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: ml-dtypes~=0.2.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (0.2.0)[] 
  []
 
 
-Overfull \hbox (340.81853pt too wide) in paragraph at lines 391--391
+Overfull \hbox (340.81853pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: opt-einsum>=2.3.2 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (3.3.0)[] 
  []
 
 
-Overfull \hbox (289.07979pt too wide) in paragraph at lines 391--391
+Overfull \hbox (289.07979pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (24.0)[] 
  []
 
 
-Overfull \hbox (708.73845pt too wide) in paragraph at lines 391--391
+Overfull \hbox (708.73845pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.20.3 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (3.20.3)[] 
  []
 
 
-Overfull \hbox (306.32603pt too wide) in paragraph at lines 391--391
+Overfull \hbox (306.32603pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (67.7.2)[] 
  []
 
 
-Overfull \hbox (312.07478pt too wide) in paragraph at lines 391--391
+Overfull \hbox (312.07478pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: six>=1.12.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (1.16.0)[] 
  []
 
 
-Overfull \hbox (335.06978pt too wide) in paragraph at lines 391--391
+Overfull \hbox (335.06978pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (2.4.0)[] 
  []
 
 
-Overfull \hbox (386.80852pt too wide) in paragraph at lines 391--391
+Overfull \hbox (386.80852pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: typing-extensions>=3.6.6 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (4.11.0)[] 
  []
 
 
-Overfull \hbox (358.06477pt too wide) in paragraph at lines 391--391
+Overfull \hbox (358.06477pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: wrapt<1.15,>=1.11.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (1.14.1)[] 
  []
 
 
-Overfull \hbox (455.7935pt too wide) in paragraph at lines 391--391
+Overfull \hbox (455.7935pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: tensorflow-io-gcs-filesystem>=0.23.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (0.36.0)[] 
  []
 
 
-Overfull \hbox (358.06477pt too wide) in paragraph at lines 391--391
+Overfull \hbox (358.06477pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: grpcio<2.0,>=1.24.3 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (1.62.2)[] 
  []
 
 
-Overfull \hbox (381.05977pt too wide) in paragraph at lines 391--391
+Overfull \hbox (381.05977pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: tensorboard<2.16,>=2.15 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (2.15.2)[] 
  []
 
 
-Overfull \hbox (444.296pt too wide) in paragraph at lines 391--391
+Overfull \hbox (444.296pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: tensorflow-estimator<2.16,>=2.15.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (2.15.0)[] 
  []
 
 
-Overfull \hbox (358.06477pt too wide) in paragraph at lines 391--391
+Overfull \hbox (358.06477pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: keras<2.16,>=2.15.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow>=2.9.3->servir-aces) (2.15.0)[] 
  []
 
 
-Overfull \hbox (346.56728pt too wide) in paragraph at lines 391--391
+Overfull \hbox (346.56728pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-cloud-storage in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (2.8.0)[] 
  []
 
 
-Overfull \hbox (421.30101pt too wide) in paragraph at lines 391--391
+Overfull \hbox (421.30101pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-api-python-client>=1.12.1 in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (2.84.0)[] 
  []
 
 
-Overfull \hbox (340.81853pt too wide) in paragraph at lines 391--391
+Overfull \hbox (340.81853pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-auth>=1.4.1 in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (2.27.0)[] 
  []
 
 
-Overfull \hbox (386.80852pt too wide) in paragraph at lines 391--391
+Overfull \hbox (386.80852pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-auth-httplib2>=0.0.3 in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (0.1.1)[] 
  []
 
 
-Overfull \hbox (358.06477pt too wide) in paragraph at lines 391--391
+Overfull \hbox (358.06477pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: httplib2<1dev,>=0.9.2 in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (0.22.0)[] 
  []
 
 
-Overfull \hbox (283.33104pt too wide) in paragraph at lines 391--391
+Overfull \hbox (283.33104pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from earthengine-api->servir-aces) (2.31.0)[] 
  []
 
 
-Overfull \hbox (294.82854pt too wide) in paragraph at lines 391--391
+Overfull \hbox (294.82854pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (1.2.1)[] 
  []
 
 
-Overfull \hbox (277.58229pt too wide) in paragraph at lines 391--391
+Overfull \hbox (277.58229pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (0.12.1)[] 
  []
 
 
-Overfull \hbox (306.32603pt too wide) in paragraph at lines 391--391
+Overfull \hbox (306.32603pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (4.51.0)[] 
  []
 
 
-Overfull \hbox (300.57729pt too wide) in paragraph at lines 391--391
+Overfull \hbox (300.57729pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (1.4.5)[] 
  []
 
 
-Overfull \hbox (277.58229pt too wide) in paragraph at lines 391--391
+Overfull \hbox (277.58229pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (9.4.0)[] 
  []
 
 
-Overfull \hbox (294.82854pt too wide) in paragraph at lines 391--391
+Overfull \hbox (294.82854pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (3.1.2)[] 
  []
 
 
-Overfull \hbox (317.82353pt too wide) in paragraph at lines 391--391
+Overfull \hbox (317.82353pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->servir-aces) (2.8.2)[] 
  []
 
 
-Overfull \hbox (461.54225pt too wide) in paragraph at lines 391--391
+Overfull \hbox (461.54225pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: wheel<1.0,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from astunparse>=1.6.0->tensorflow>=2.9.3->servir-aces) (0.43.0)[] 
  []
 
 
-Overfull \hbox (806.46718pt too wide) in paragraph at lines 391--391
+Overfull \hbox (806.46718pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5 in /usr/local/lib/python3.10/dist-packages (from google-api-python-client>=1.12.1->earthengine-api->servir-aces) (2.11.1)[] 
  []
 
 
-Overfull \hbox (547.77348pt too wide) in paragraph at lines 391--391
+Overfull \hbox (547.77348pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: uritemplate<5,>=3.0.1 in /usr/local/lib/python3.10/dist-packages (from google-api-python-client>=1.12.1->earthengine-api->servir-aces) (4.1.1)[] 
  []
 
 
-Overfull \hbox (473.03975pt too wide) in paragraph at lines 391--391
+Overfull \hbox (473.03975pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: cachetools<6.0,>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from google-auth>=1.4.1->earthengine-api->servir-aces) (5.3.3)[] 
  []
 
 
-Overfull \hbox (467.291pt too wide) in paragraph at lines 391--391
+Overfull \hbox (467.291pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: pyasn1-modules>=0.2.1 in /usr/local/lib/python3.10/dist-packages (from google-auth>=1.4.1->earthengine-api->servir-aces) (0.4.0)[] 
  []
 
 
-Overfull \hbox (409.80351pt too wide) in paragraph at lines 391--391
+Overfull \hbox (409.80351pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: rsa<5,>=3.1.4 in /usr/local/lib/python3.10/dist-packages (from google-auth>=1.4.1->earthengine-api->servir-aces) (4.9)[] 
  []
 
 
-Overfull \hbox (547.77348pt too wide) in paragraph at lines 391--391
+Overfull \hbox (547.77348pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-auth-oauthlib<2,>=0.5 in /usr/local/lib/python3.10/dist-packages (from tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (1.2.0)[] 
  []
 
 
-Overfull \hbox (461.54225pt too wide) in paragraph at lines 391--391
+Overfull \hbox (461.54225pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: markdown>=2.6.8 in /usr/local/lib/python3.10/dist-packages (from tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (3.6)[] 
  []
 
 
-Overfull \hbox (599.51222pt too wide) in paragraph at lines 391--391
+Overfull \hbox (599.51222pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: tensorboard-data-server<0.8.0,>=0.7.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (0.7.2)[] 
  []
 
 
-Overfull \hbox (473.03975pt too wide) in paragraph at lines 391--391
+Overfull \hbox (473.03975pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: werkzeug>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (3.0.2)[] 
  []
 
 
 
 [6]
-Overfull \hbox (427.04976pt too wide) in paragraph at lines 391--391
+Overfull \hbox (427.04976pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->earthengine-api->servir-aces) (3.3.2)[] 
  []
 
 
-Overfull \hbox (346.56728pt too wide) in paragraph at lines 391--391
+Overfull \hbox (346.56728pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests->earthengine-api->servir-aces) (3.7)[] 
  []
 
 
-Overfull \hbox (392.55727pt too wide) in paragraph at lines 391--391
+Overfull \hbox (392.55727pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->earthengine-api->servir-aces) (2.0.7)[] 
  []
 
 
-Overfull \hbox (409.80351pt too wide) in paragraph at lines 391--391
+Overfull \hbox (409.80351pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->earthengine-api->servir-aces) (2024.2.2)[] 
  []
 
 
-Overfull \hbox (542.02473pt too wide) in paragraph at lines 391--391
+Overfull \hbox (542.02473pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-cloud-core<3.0dev,>=2.3.0 in /usr/local/lib/python3.10/dist-packages (from google-cloud-storage->earthengine-api->servir-aces) (2.3.3)[] 
  []
 
 
-Overfull \hbox (524.77849pt too wide) in paragraph at lines 391--391
+Overfull \hbox (524.77849pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-resumable-media>=2.3.2 in /usr/local/lib/python3.10/dist-packages (from google-cloud-storage->earthengine-api->servir-aces) (2.7.0)[] 
  []
 
 
-Overfull \hbox (1059.41212pt too wide) in paragraph at lines 391--391
+Overfull \hbox (1059.41212pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: googleapis-common-protos<2.0.dev0,>=1.56.2 in /usr/local/lib/python3.10/dist-packages (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5->google-api-python-client>=1.12.1->earthengine-api->servir-aces) (1.63.0)[] 
  []
 
 
-Overfull \hbox (697.24095pt too wide) in paragraph at lines 391--391
+Overfull \hbox (697.24095pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: requests-oauthlib>=0.7.0 in /usr/local/lib/python3.10/dist-packages (from google-auth-oauthlib<2,>=0.5->tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (1.3.1)[] 
  []
 
 
-Overfull \hbox (685.74345pt too wide) in paragraph at lines 391--391
+Overfull \hbox (685.74345pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: google-crc32c<2.0dev,>=1.0 in /usr/local/lib/python3.10/dist-packages (from google-resumable-media>=2.3.2->google-cloud-storage->earthengine-api->servir-aces) (1.5.0)[] 
  []
 
 
-Overfull \hbox (593.76347pt too wide) in paragraph at lines 391--391
+Overfull \hbox (593.76347pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: pyasn1<0.7.0,>=0.4.6 in /usr/local/lib/python3.10/dist-packages (from pyasn1-modules>=0.2.1->google-auth>=1.4.1->earthengine-api->servir-aces) (0.6.0)[] 
  []
 
 
-Overfull \hbox (582.26598pt too wide) in paragraph at lines 391--391
+Overfull \hbox (582.26598pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: MarkupSafe>=2.1.1 in /usr/local/lib/python3.10/dist-packages (from werkzeug>=1.0.1->tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (2.1.5)[] 
  []
 
 
-Overfull \hbox (794.96968pt too wide) in paragraph at lines 391--391
+Overfull \hbox (794.96968pt too wide) in paragraph at lines 390--390
 []\TU/lmtt/m/n/10.95 Requirement already satisfied: oauthlib>=3.0.0 in /usr/local/lib/python3.10/dist-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<2,>=0.5->tensorboard<2.16,>=2.15->tensorflow>=2.9.3->servir-aces) (3.2.2)[] 
  []
 
 
-Overfull \hbox (1559.55327pt too wide) in paragraph at lines 631--631
+Overfull \hbox (1559.55327pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: []-o "GSUtil:parallel_process_count=1"[]. Note that multithreading is still available even if you disable multiprocessing.[] 
  []
 
 
 
 [7]
-Overfull \hbox (30.38608pt too wide) in paragraph at lines 631--631
+Overfull \hbox (30.38608pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/dnn_planet_wo_indices/testing/testing.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (41.88358pt too wide) in paragraph at lines 631--631
+Overfull \hbox (41.88358pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/dnn_planet_wo_indices/training/training.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (64.87857pt too wide) in paragraph at lines 631--631
+Overfull \hbox (64.87857pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/dnn_planet_wo_indices/validation/validation.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (82.12485pt too wide) in paragraph at lines 631--631
+Overfull \hbox (82.12485pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/aces/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 631--631
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/aces/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (191.35104pt too wide) in paragraph at lines 631--631
+Overfull \hbox (191.35104pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/logs/train/events.out.tfevents.1713307528.b5c4c6e407b9.190.2.v2...[] 
  []
 
 
-Overfull \hbox (220.09476pt too wide) in paragraph at lines 631--631
+Overfull \hbox (220.09476pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/logs/validation/events.out.tfevents.1713307537.b5c4c6e407b9.190.3.v2...[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 631--631
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/modelCheckpoint/fingerprint.pb...[] 
  []
 
 
-Overfull \hbox (145.36105pt too wide) in paragraph at lines 631--631
+Overfull \hbox (145.36105pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/modelCheckpoint/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (18.88858pt too wide) in paragraph at lines 631--631
+Overfull \hbox (18.88858pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/modelCheckpoint/keras_metadata.pb...[] 
  []
 
 
-Overfull \hbox (64.87857pt too wide) in paragraph at lines 631--631
+Overfull \hbox (64.87857pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/modelCheckpoint/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (41.88358pt too wide) in paragraph at lines 631--631
+Overfull \hbox (41.88358pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/prediction/prediction_dnn_v1.TFRecord...[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 631--631
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/modelCheckpoint/saved_model.pb...[] 
  []
 
 
-Overfull \hbox (7.3911pt too wide) in paragraph at lines 631--631
+Overfull \hbox (7.3911pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/trained-model/keras_metadata.pb...[] 
  []
 
 
 
 [8]
-Overfull \hbox (53.38109pt too wide) in paragraph at lines 631--631
+Overfull \hbox (53.38109pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/trained-model/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (133.86357pt too wide) in paragraph at lines 631--631
+Overfull \hbox (133.86357pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/dnn_v1/trained-model/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 631--631
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/aces/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (197.0998pt too wide) in paragraph at lines 631--631
+Overfull \hbox (197.0998pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/logs/train/events.out.tfevents.1713299324.b5c4c6e407b9.190.0.v2...[] 
  []
 
 
-Overfull \hbox (225.8435pt too wide) in paragraph at lines 631--631
+Overfull \hbox (225.8435pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/logs/validation/events.out.tfevents.1713299558.b5c4c6e407b9.190.1.v2...[] 
  []
 
 
-Overfull \hbox (7.39108pt too wide) in paragraph at lines 631--631
+Overfull \hbox (7.39108pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/aces/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (7.39108pt too wide) in paragraph at lines 631--631
+Overfull \hbox (7.39108pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/modelCheckpoint/fingerprint.pb...[] 
  []
 
 
-Overfull \hbox (24.63733pt too wide) in paragraph at lines 631--631
+Overfull \hbox (24.63733pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/modelCheckpoint/keras_metadata.pb...[] 
  []
 
 
-Overfull \hbox (7.39108pt too wide) in paragraph at lines 631--631
+Overfull \hbox (7.39108pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/modelCheckpoint/saved_model.pb...[] 
  []
 
 
-Overfull \hbox (151.1098pt too wide) in paragraph at lines 631--631
+Overfull \hbox (151.1098pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/modelCheckpoint/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (70.62732pt too wide) in paragraph at lines 631--631
+Overfull \hbox (70.62732pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/modelCheckpoint/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (53.38107pt too wide) in paragraph at lines 631--631
+Overfull \hbox (53.38107pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/prediction/prediction_unet_v1.TFRecord...[] 
  []
 
 
-Overfull \hbox (13.13983pt too wide) in paragraph at lines 631--631
+Overfull \hbox (13.13983pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/trained-model/keras_metadata.pb...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/trained-model/variables/variables.data-00000-of-00001...[] 
  []
 
 
-Overfull \hbox (59.12982pt too wide) in paragraph at lines 631--631
+Overfull \hbox (59.12982pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/models/unet_v1/trained-model/variables/variables.index...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00000-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00001-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00003-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00002-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00004-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00005-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00006-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (139.6123pt too wide) in paragraph at lines 631--631
+Overfull \hbox (139.6123pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/training_data/testing_10/testing__256x256-00007-of-00008.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00000-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00001-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00002-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00003-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00004-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00005-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00006-of-00038.tfrecord.gz...[] 
  []
 
 
 
 [9]
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00007-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00008-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00009-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00010-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00011-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00012-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00013-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00014-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00015-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00016-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00017-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00018-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00019-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00020-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00021-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00022-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00023-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00024-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00025-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00026-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00027-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00028-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00029-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00030-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00031-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00032-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00033-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00034-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00035-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00036-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (168.35605pt too wide) in paragraph at lines 631--631
+Overfull \hbox (168.35605pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/testing/testing-00037-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00000-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00001-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00002-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00003-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00004-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00005-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00006-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00007-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00008-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00009-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00010-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00011-of-00038.tfrecord.gz...[] 
  []
 
 
 
 [10]
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00012-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00013-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00014-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00015-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00016-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00017-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00018-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00019-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00020-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00021-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00022-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00023-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00024-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00025-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00026-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00027-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00028-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00029-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00030-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00031-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00032-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00033-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00034-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00035-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00036-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (179.85355pt too wide) in paragraph at lines 631--631
+Overfull \hbox (179.85355pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/training/training-00037-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00000-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00001-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00002-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00003-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00004-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00005-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00006-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00007-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00008-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00009-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00010-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00011-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00012-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00013-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00014-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00015-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00016-of-00038.tfrecord.gz...[] 
  []
 
 
 
 [11]
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00017-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00018-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00019-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00020-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00021-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00022-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00023-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00024-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00025-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00026-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00027-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00028-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00029-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00030-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00031-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00032-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00033-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00034-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00035-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00036-of-00038.tfrecord.gz...[] 
  []
 
 
-Overfull \hbox (202.84854pt too wide) in paragraph at lines 631--631
+Overfull \hbox (202.84854pt too wide) in paragraph at lines 630--630
 []\TU/lmtt/m/n/10.95 Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validation-00037-of-00038.tfrecord.gz...[] 
  []
 
 
 
 [12]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 662--662
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 661--661
 []\TU/lmtt/m/n/10.95 OUTPUT_DIR = "/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output"[] 
  []
 
 
-Overfull \hbox (60.8929pt too wide) in paragraph at lines 664--669
+Overfull \hbox (60.8929pt too wide) in paragraph at lines 663--668
 []\TU/lmr/m/n/10.95 We will start by training a [][]U-Net[][] model using the \TU/lmtt/m/n/10.95 dl-book/chapter-1/unet_256x256_planet_wo_indices
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 695--695
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 694--694
 []\TU/lmtt/m/n/10.95 # For model training, USE_ELEVATION extends FEATURES with "elevation" & "slope"[] 
  []
 
 
-Overfull \hbox (116.61734pt too wide) in paragraph at lines 695--695
+Overfull \hbox (116.61734pt too wide) in paragraph at lines 694--694
 []\TU/lmtt/m/n/10.95 # USE_S1 extends FEATURES with "vv_asc_before", "vh_asc_before", "vv_asc_during", "vh_asc_during",[] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 695--695
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 694--694
 []\TU/lmtt/m/n/10.95 # In case these are not useful and you have other bands in your training data, you can do set[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 695--695
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 694--694
 []\TU/lmtt/m/n/10.95 # USE_ELEVATION and USE_S1 to False and update FEATURES to include needed bands[] 
  []
 
@@ -2051,44 +2051,44 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 695--695
 
 [13]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 767.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 766.
 
-Overfull \vbox (0.68242pt too high) detected at line 773
+Overfull \vbox (0.68242pt too high) detected at line 772
  []
 
 
 
 [14]
-Overfull \hbox (323.5723pt too wide) in paragraph at lines 799--799
+Overfull \hbox (323.5723pt too wide) in paragraph at lines 798--798
 []\TU/lmtt/m/n/10.95 using features: [[]red_before[], []green_before[], []blue_before[], []nir_before[], []red_during[], []green_during[], []blue_during[], []nir_during[]][] 
  []
 
 
-Overfull \hbox (1.64235pt too wide) in paragraph at lines 815--815
+Overfull \hbox (1.64235pt too wide) in paragraph at lines 814--814
 [] \TU/lmtt/m/n/10.95 PosixPath([]/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output[]),[] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 818.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 817.
 
 
 [15]
-Overfull \hbox (24.63734pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (24.63734pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 ****************************** Configure memory growth... ************************[] 
  []
 
 
-Overfull \hbox (13.13983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (13.13983pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Loading dataset from /content/datasets/unet_256x256_planet_wo_indices/training/*[] 
  []
 
 
-Overfull \hbox (24.63733pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (24.63733pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Loading dataset from /content/datasets/unet_256x256_planet_wo_indices/validation/*[] 
  []
 
 
-Overfull \hbox (7.39108pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (7.39108pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Loading dataset from /content/datasets/unet_256x256_planet_wo_indices/testing/*[] 
  []
 
@@ -2107,7 +2107,7 @@ Overfull \hbox (7.39108pt too wide) in paragraph at lines 2052--2052
 [21]
 
 [22]
-Overfull \hbox (162.60733pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (162.60733pt too wide) in paragraph at lines 2051--2051
 []   \TU/lmtt/m/n/10.95 [0.093025 0.07815  0.0585   ... 0.06915  0.0448   0.32745 ]]]], shape=(32, 256, 256, 8), dtype=float32)[] 
  []
 
@@ -2130,7 +2130,7 @@ Overfull \hbox (162.60733pt too wide) in paragraph at lines 2052--2052
 [30]
 
 [31]
-Overfull \hbox (156.85858pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (156.85858pt too wide) in paragraph at lines 2051--2051
 []   \TU/lmtt/m/n/10.95 [0.0861   0.068475 0.049775 ... 0.063225 0.039625 0.3163  ]]]], shape=(1, 256, 256, 8), dtype=float32)[] 
  []
 
@@ -2139,862 +2139,862 @@ Overfull \hbox (156.85858pt too wide) in paragraph at lines 2052--2052
 [32]
 
 [33]
-Overfull \hbox (156.85858pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (156.85858pt too wide) in paragraph at lines 2051--2051
 []   \TU/lmtt/m/n/10.95 [0.09685  0.0912   0.07425  ... 0.049975 0.023375 0.290425]]]], shape=(1, 256, 256, 8), dtype=float32)[] 
  []
 
 
 
 [34]
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 __________________________________________________________________________________________________[] 
  []
 
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 Layer (type)                Output Shape                 Param #   Connected to[] 
  []
 
 
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 ==================================================================================================[] 
  []
 
 
-Overfull \hbox (41.8836pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (41.8836pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d (Conv2D)             (None, None, None, 32)       2336      [[]input_1[0][0][]][] 
  []
 
 
 
 [35]
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization (Batch  (None, None, None, 32)       128       [[]conv2d[0][0][]][] 
  []
 
 
-Overfull \hbox (110.86858pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (110.86858pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation (Activation)     (None, None, None, 32)       0         [[]batch_normalization[0][0][]][] 
  []
 
 
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_1 (Activation)   (None, None, None, 32)       0         [[]activation[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d (Separabl  (None, None, None, 64)       2400      [[]activation_1[0][0][]][] 
  []
 
 
-Overfull \hbox (93.62233pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (93.62233pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_1 (Bat  (None, None, None, 64)       256       [[]separable_conv2d[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_2 (Activation)   (None, None, None, 64)       0         [[]batch_normalization_1[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d_1 (Separa  (None, None, None, 64)       4736      [[]activation_2[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_2 (Bat  (None, None, None, 64)       256       [[]separable_conv2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 max_pooling2d (MaxPooling2  (None, None, None, 64)       0         [[]batch_normalization_2[0][0][][] 
  []
 
 
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_1 (Conv2D)           (None, None, None, 64)       2112      [[]activation[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add (Add)                   (None, None, None, 64)       0         [[]max_pooling2d[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_3 (Activation)   (None, None, None, 64)       0         [[]add[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d_2 (Separa  (None, None, None, 128)      8896      [[]activation_3[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_3 (Bat  (None, None, None, 128)      512       [[]separable_conv2d_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_4 (Activation)   (None, None, None, 128)      0         [[]batch_normalization_3[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d_3 (Separa  (None, None, None, 128)      17664     [[]activation_4[0][0][]][] 
  []
 
 
 
 [36]
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_4 (Bat  (None, None, None, 128)      512       [[]separable_conv2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 max_pooling2d_1 (MaxPoolin  (None, None, None, 128)      0         [[]batch_normalization_4[0][0][][] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_2 (Conv2D)           (None, None, None, 128)      8320      [[]add[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_1 (Add)                 (None, None, None, 128)      0         [[]max_pooling2d_1[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_2[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_5 (Activation)   (None, None, None, 128)      0         [[]add_1[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d_4 (Separa  (None, None, None, 256)      34176     [[]activation_5[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_5 (Bat  (None, None, None, 256)      1024      [[]separable_conv2d_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_6 (Activation)   (None, None, None, 256)      0         [[]batch_normalization_5[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 separable_conv2d_5 (Separa  (None, None, None, 256)      68096     [[]activation_6[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_6 (Bat  (None, None, None, 256)      1024      [[]separable_conv2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 max_pooling2d_2 (MaxPoolin  (None, None, None, 256)      0         [[]batch_normalization_6[0][0][][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_3 (Conv2D)           (None, None, None, 256)      33024     [[]add_1[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_2 (Add)                 (None, None, None, 256)      0         [[]max_pooling2d_2[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_7 (Activation)   (None, None, None, 256)      0         [[]add_2[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose (Conv2DTr  (None, None, None, 256)      590080    [[]activation_7[0][0][]][] 
  []
 
 
-Overfull \hbox (93.62233pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (93.62233pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_7 (Bat  (None, None, None, 256)      1024      [[]conv2d_transpose[0][0][]][] 
  []
 
 
 
 [37]
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_8 (Activation)   (None, None, None, 256)      0         [[]batch_normalization_7[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_1 (Conv2D  (None, None, None, 256)      590080    [[]activation_8[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_8 (Bat  (None, None, None, 256)      1024      [[]conv2d_transpose_1[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_1 (UpSamplin  (None, None, None, 256)      0         [[]add_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d (UpSampling2  (None, None, None, 256)      0         [[]batch_normalization_8[0][0][][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_4 (Conv2D)           (None, None, None, 256)      65792     [[]up_sampling2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_3 (Add)                 (None, None, None, 256)      0         [[]up_sampling2d[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_4[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_9 (Activation)   (None, None, None, 256)      0         [[]add_3[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_2 (Conv2D  (None, None, None, 128)      295040    [[]activation_9[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_9 (Bat  (None, None, None, 128)      512       [[]conv2d_transpose_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_10 (Activation)  (None, None, None, 128)      0         [[]batch_normalization_9[0][0][][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_3 (Conv2D  (None, None, None, 128)      147584    [[]activation_10[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_10 (Ba  (None, None, None, 128)      512       [[]conv2d_transpose_3[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_3 (UpSamplin  (None, None, None, 256)      0         [[]add_3[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_2 (UpSamplin  (None, None, None, 128)      0         [[]batch_normalization_10[0][0][] 
  []
 
 
 
 [38]
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_5 (Conv2D)           (None, None, None, 128)      32896     [[]up_sampling2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_4 (Add)                 (None, None, None, 128)      0         [[]up_sampling2d_2[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_11 (Activation)  (None, None, None, 128)      0         [[]add_4[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_4 (Conv2D  (None, None, None, 64)       73792     [[]activation_11[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_11 (Ba  (None, None, None, 64)       256       [[]conv2d_transpose_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_12 (Activation)  (None, None, None, 64)       0         [[]batch_normalization_11[0][0][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_5 (Conv2D  (None, None, None, 64)       36928     [[]activation_12[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_12 (Ba  (None, None, None, 64)       256       [[]conv2d_transpose_5[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_5 (UpSamplin  (None, None, None, 128)      0         [[]add_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_4 (UpSamplin  (None, None, None, 64)       0         [[]batch_normalization_12[0][0][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_6 (Conv2D)           (None, None, None, 64)       8256      [[]up_sampling2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_5 (Add)                 (None, None, None, 64)       0         [[]up_sampling2d_4[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_6[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_13 (Activation)  (None, None, None, 64)       0         [[]add_5[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_6 (Conv2D  (None, None, None, 32)       18464     [[]activation_13[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_13 (Ba  (None, None, None, 32)       128       [[]conv2d_transpose_6[0][0][]][] 
  []
 
 
 
 [39]
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 activation_14 (Activation)  (None, None, None, 32)       0         [[]batch_normalization_13[0][0][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_7 (Conv2D  (None, None, None, 32)       9248      [[]activation_14[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 batch_normalization_14 (Ba  (None, None, None, 32)       128       [[]conv2d_transpose_7[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_7 (UpSamplin  (None, None, None, 64)       0         [[]add_5[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 up_sampling2d_6 (UpSamplin  (None, None, None, 32)       0         [[]batch_normalization_14[0][0][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 conv2d_7 (Conv2D)           (None, None, None, 32)       2080      [[]up_sampling2d_7[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 add_6 (Add)                 (None, None, None, 32)       0         [[]up_sampling2d_6[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2051--2051
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_7[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2051--2051
 [] \TU/lmtt/m/n/10.95 final_conv (Conv2D)         (None, None, None, 5)        1445      [[]add_6[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 ==================================================================================================[] 
  []
 
 
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 __________________________________________________________________________________________________[] 
  []
 
 
-Overfull \hbox (156.85854pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (156.85854pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 > Saving models and results at /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1...[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.9676 - precision: 0.7271 - recall: 0.5957 - categorical_accuracy: 0.6706 - one_hot_io_u: 0.4242[] 
  []
 
 
-Overfull \hbox (421.30098pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (421.30098pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 1: val_loss improved from inf to 2.63403, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 299s 971ms/step - loss: 0.9676 - precision: 0.7271 - recall: 0.5957 - categorical_accuracy: 0.6706 - one_hot_io_u: 0.4242 - val_loss: 2.6340 - val_precision: 0.3634 - val_recall: 0.3629 - val_categorical_accuracy: 0.3636 - val_one_hot_io_u: 0.0727[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6959 - precision: 0.8066 - recall: 0.6767 - categorical_accuracy: 0.7436 - one_hot_io_u: 0.5043[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 2: val_loss improved from 2.63403 to 1.23879, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 263s 958ms/step - loss: 0.6959 - precision: 0.8066 - recall: 0.6767 - categorical_accuracy: 0.7436 - one_hot_io_u: 0.5043 - val_loss: 1.2388 - val_precision: 0.5670 - val_recall: 0.4644 - val_categorical_accuracy: 0.5205 - val_one_hot_io_u: 0.2377[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6352 - precision: 0.8285 - recall: 0.7046 - categorical_accuracy: 0.7664 - one_hot_io_u: 0.5343[] 
  []
 
 
 
 [40]
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 3: val_loss improved from 1.23879 to 0.62282, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 256s 966ms/step - loss: 0.6352 - precision: 0.8285 - recall: 0.7046 - categorical_accuracy: 0.7664 - one_hot_io_u: 0.5343 - val_loss: 0.6228 - val_precision: 0.8355 - val_recall: 0.7063 - val_categorical_accuracy: 0.7714 - val_one_hot_io_u: 0.5354[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5988 - precision: 0.8402 - recall: 0.7216 - categorical_accuracy: 0.7797 - one_hot_io_u: 0.5531[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 4: val_loss improved from 0.62282 to 0.60250, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 252s 949ms/step - loss: 0.5988 - precision: 0.8402 - recall: 0.7216 - categorical_accuracy: 0.7797 - one_hot_io_u: 0.5531 - val_loss: 0.6025 - val_precision: 0.8380 - val_recall: 0.7265 - val_categorical_accuracy: 0.7809 - val_one_hot_io_u: 0.5544[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5687 - precision: 0.8498 - recall: 0.7352 - categorical_accuracy: 0.7904 - one_hot_io_u: 0.5689[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 5: val_loss improved from 0.60250 to 0.55160, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 285s 1s/step - loss: 0.5687 - precision: 0.8498 - recall: 0.7352 - categorical_accuracy: 0.7904 - one_hot_io_u: 0.5689 - val_loss: 0.5516 - val_precision: 0.8510 - val_recall: 0.7493 - val_categorical_accuracy: 0.7973 - val_one_hot_io_u: 0.5788[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5453 - precision: 0.8571 - recall: 0.7454 - categorical_accuracy: 0.7985 - one_hot_io_u: 0.5813[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 6: val_loss improved from 0.55160 to 0.52872, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 284s 1s/step - loss: 0.5453 - precision: 0.8571 - recall: 0.7454 - categorical_accuracy: 0.7985 - one_hot_io_u: 0.5813 - val_loss: 0.5287 - val_precision: 0.8590 - val_recall: 0.7552 - val_categorical_accuracy: 0.8039 - val_one_hot_io_u: 0.5882[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5278 - precision: 0.8624 - recall: 0.7530 - categorical_accuracy: 0.8045 - one_hot_io_u: 0.5905[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 7: val_loss improved from 0.52872 to 0.50506, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 262s 988ms/step - loss: 0.5278 - precision: 0.8624 - recall: 0.7530 - categorical_accuracy: 0.8045 - one_hot_io_u: 0.5905 - val_loss: 0.5051 - val_precision: 0.8651 - val_recall: 0.7671 - val_categorical_accuracy: 0.8122 - val_one_hot_io_u: 0.5986[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5123 - precision: 0.8671 - recall: 0.7595 - categorical_accuracy: 0.8098 - one_hot_io_u: 0.5988[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 8: val_loss improved from 0.50506 to 0.49242, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 264s 995ms/step - loss: 0.5123 - precision: 0.8671 - recall: 0.7595 - categorical_accuracy: 0.8098 - one_hot_io_u: 0.5988 - val_loss: 0.4924 - val_precision: 0.8745 - val_recall: 0.7668 - val_categorical_accuracy: 0.8169 - val_one_hot_io_u: 0.6102[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.5018 - precision: 0.8700 - recall: 0.7641 - categorical_accuracy: 0.8133 - one_hot_io_u: 0.6049[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 276s 1s/step - loss: 0.5018 - precision: 0.8700 - recall: 0.7641 - categorical_accuracy: 0.8133 - one_hot_io_u: 0.6049 - val_loss: 0.5025 - val_precision: 0.8643 - val_recall: 0.7700 - val_categorical_accuracy: 0.8133 - val_one_hot_io_u: 0.6085[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4895 - precision: 0.8736 - recall: 0.7693 - categorical_accuracy: 0.8175 - one_hot_io_u: 0.6118[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 10: val_loss improved from 0.49242 to 0.47591, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 268s 1s/step - loss: 0.4895 - precision: 0.8736 - recall: 0.7693 - categorical_accuracy: 0.8175 - one_hot_io_u: 0.6118 - val_loss: 0.4759 - val_precision: 0.8705 - val_recall: 0.7823 - val_categorical_accuracy: 0.8220 - val_one_hot_io_u: 0.6160[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4791 - precision: 0.8766 - recall: 0.7737 - categorical_accuracy: 0.8210 - one_hot_io_u: 0.6176[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 11: val_loss improved from 0.47591 to 0.46856, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 263s 992ms/step - loss: 0.4791 - precision: 0.8766 - recall: 0.7737 - categorical_accuracy: 0.8210 - one_hot_io_u: 0.6176 - val_loss: 0.4686 - val_precision: 0.8763 - val_recall: 0.7808 - val_categorical_accuracy: 0.8242 - val_one_hot_io_u: 0.6214[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4726 - precision: 0.8783 - recall: 0.7765 - categorical_accuracy: 0.8231 - one_hot_io_u: 0.6215[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 255s 960ms/step - loss: 0.4726 - precision: 0.8783 - recall: 0.7765 - categorical_accuracy: 0.8231 - one_hot_io_u: 0.6215 - val_loss: 0.4780 - val_precision: 0.8752 - val_recall: 0.7766 - val_categorical_accuracy: 0.8217 - val_one_hot_io_u: 0.6226[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4617 - precision: 0.8814 - recall: 0.7812 - categorical_accuracy: 0.8269 - one_hot_io_u: 0.6277[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 13: val_loss improved from 0.46856 to 0.45125, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 266s 1s/step - loss: 0.4617 - precision: 0.8814 - recall: 0.7812 - categorical_accuracy: 0.8269 - one_hot_io_u: 0.6277 - val_loss: 0.4513 - val_precision: 0.8810 - val_recall: 0.7881 - val_categorical_accuracy: 0.8299 - val_one_hot_io_u: 0.6327[] 
  []
 
 
 
 [41]
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4553 - precision: 0.8830 - recall: 0.7839 - categorical_accuracy: 0.8290 - one_hot_io_u: 0.6312[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 14: val_loss improved from 0.45125 to 0.44229, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 263s 992ms/step - loss: 0.4553 - precision: 0.8830 - recall: 0.7839 - categorical_accuracy: 0.8290 - one_hot_io_u: 0.6312 - val_loss: 0.4423 - val_precision: 0.8813 - val_recall: 0.7953 - val_categorical_accuracy: 0.8335 - val_one_hot_io_u: 0.6370[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4488 - precision: 0.8847 - recall: 0.7867 - categorical_accuracy: 0.8312 - one_hot_io_u: 0.6348[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 258s 973ms/step - loss: 0.4488 - precision: 0.8847 - recall: 0.7867 - categorical_accuracy: 0.8312 - one_hot_io_u: 0.6348 - val_loss: 0.4579 - val_precision: 0.8785 - val_recall: 0.7875 - val_categorical_accuracy: 0.8283 - val_one_hot_io_u: 0.6359[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4440 - precision: 0.8859 - recall: 0.7889 - categorical_accuracy: 0.8328 - one_hot_io_u: 0.6378[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 265s 998ms/step - loss: 0.4440 - precision: 0.8859 - recall: 0.7889 - categorical_accuracy: 0.8328 - one_hot_io_u: 0.6378 - val_loss: 0.4840 - val_precision: 0.8707 - val_recall: 0.7798 - val_categorical_accuracy: 0.8210 - val_one_hot_io_u: 0.6273[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4378 - precision: 0.8875 - recall: 0.7916 - categorical_accuracy: 0.8349 - one_hot_io_u: 0.6414[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 285s 1s/step - loss: 0.4378 - precision: 0.8875 - recall: 0.7916 - categorical_accuracy: 0.8349 - one_hot_io_u: 0.6414 - val_loss: 0.4461 - val_precision: 0.8819 - val_recall: 0.7904 - val_categorical_accuracy: 0.8314 - val_one_hot_io_u: 0.6374[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4336 - precision: 0.8884 - recall: 0.7935 - categorical_accuracy: 0.8363 - one_hot_io_u: 0.6438[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 18: val_loss improved from 0.44229 to 0.42199, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 278s 1s/step - loss: 0.4336 - precision: 0.8884 - recall: 0.7935 - categorical_accuracy: 0.8363 - one_hot_io_u: 0.6438 - val_loss: 0.4220 - val_precision: 0.8887 - val_recall: 0.8013 - val_categorical_accuracy: 0.8401 - val_one_hot_io_u: 0.6492[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4294 - precision: 0.8894 - recall: 0.7953 - categorical_accuracy: 0.8376 - one_hot_io_u: 0.6465[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 19: val_loss improved from 0.42199 to 0.41151, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 282s 1s/step - loss: 0.4294 - precision: 0.8894 - recall: 0.7953 - categorical_accuracy: 0.8376 - one_hot_io_u: 0.6465 - val_loss: 0.4115 - val_precision: 0.8920 - val_recall: 0.8044 - val_categorical_accuracy: 0.8432 - val_one_hot_io_u: 0.6546[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4241 - precision: 0.8907 - recall: 0.7977 - categorical_accuracy: 0.8394 - one_hot_io_u: 0.6488[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 258s 970ms/step - loss: 0.4241 - precision: 0.8907 - recall: 0.7977 - categorical_accuracy: 0.8394 - one_hot_io_u: 0.6488 - val_loss: 0.4151 - val_precision: 0.8930 - val_recall: 0.8001 - val_categorical_accuracy: 0.8419 - val_one_hot_io_u: 0.6524[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4196 - precision: 0.8919 - recall: 0.7998 - categorical_accuracy: 0.8410 - one_hot_io_u: 0.6520[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 259s 977ms/step - loss: 0.4196 - precision: 0.8919 - recall: 0.7998 - categorical_accuracy: 0.8410 - one_hot_io_u: 0.6520 - val_loss: 0.4322 - val_precision: 0.8861 - val_recall: 0.7996 - val_categorical_accuracy: 0.8377 - val_one_hot_io_u: 0.6480[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4171 - precision: 0.8923 - recall: 0.8010 - categorical_accuracy: 0.8418 - one_hot_io_u: 0.6533[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 260s 982ms/step - loss: 0.4171 - precision: 0.8923 - recall: 0.8010 - categorical_accuracy: 0.8418 - one_hot_io_u: 0.6533 - val_loss: 0.4217 - val_precision: 0.8869 - val_recall: 0.8027 - val_categorical_accuracy: 0.8398 - val_one_hot_io_u: 0.6500[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4134 - precision: 0.8931 - recall: 0.8027 - categorical_accuracy: 0.8430 - one_hot_io_u: 0.6551[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 23: val_loss improved from 0.41151 to 0.40218, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 272s 1s/step - loss: 0.4134 - precision: 0.8931 - recall: 0.8027 - categorical_accuracy: 0.8430 - one_hot_io_u: 0.6551 - val_loss: 0.4022 - val_precision: 0.8928 - val_recall: 0.8101 - val_categorical_accuracy: 0.8464 - val_one_hot_io_u: 0.6619[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4117 - precision: 0.8936 - recall: 0.8035 - categorical_accuracy: 0.8436 - one_hot_io_u: 0.6563[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 260s 981ms/step - loss: 0.4117 - precision: 0.8936 - recall: 0.8035 - categorical_accuracy: 0.8436 - one_hot_io_u: 0.6563 - val_loss: 0.4047 - val_precision: 0.8892 - val_recall: 0.8128 - val_categorical_accuracy: 0.8460 - val_one_hot_io_u: 0.6579[] 
  []
 
 
 
 [42]
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4064 - precision: 0.8948 - recall: 0.8058 - categorical_accuracy: 0.8454 - one_hot_io_u: 0.6594[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 25: val_loss improved from 0.40218 to 0.39190, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 298s 1s/step - loss: 0.4064 - precision: 0.8948 - recall: 0.8058 - categorical_accuracy: 0.8454 - one_hot_io_u: 0.6594 - val_loss: 0.3919 - val_precision: 0.8960 - val_recall: 0.8134 - val_categorical_accuracy: 0.8497 - val_one_hot_io_u: 0.6662[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4038 - precision: 0.8954 - recall: 0.8070 - categorical_accuracy: 0.8462 - one_hot_io_u: 0.6605[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 26: val_loss improved from 0.39190 to 0.38542, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 280s 1s/step - loss: 0.4038 - precision: 0.8954 - recall: 0.8070 - categorical_accuracy: 0.8462 - one_hot_io_u: 0.6605 - val_loss: 0.3854 - val_precision: 0.8982 - val_recall: 0.8159 - val_categorical_accuracy: 0.8520 - val_one_hot_io_u: 0.6693[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.4007 - precision: 0.8961 - recall: 0.8085 - categorical_accuracy: 0.8473 - one_hot_io_u: 0.6627[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 27: val_loss improved from 0.38542 to 0.38379, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1203.13083pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 283s 1s/step - loss: 0.4007 - precision: 0.8961 - recall: 0.8085 - categorical_accuracy: 0.8473 - one_hot_io_u: 0.6627 - val_loss: 0.3838 - val_precision: 0.8978 - val_recall: 0.8175 - val_categorical_accuracy: 0.8527 - val_one_hot_io_u: 0.6711[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.3972 - precision: 0.8969 - recall: 0.8101 - categorical_accuracy: 0.8485 - one_hot_io_u: 0.6647[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 28: val_loss improved from 0.38379 to 0.37968, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 264s 996ms/step - loss: 0.3972 - precision: 0.8969 - recall: 0.8101 - categorical_accuracy: 0.8485 - one_hot_io_u: 0.6647 - val_loss: 0.3797 - val_precision: 0.8977 - val_recall: 0.8211 - val_categorical_accuracy: 0.8543 - val_one_hot_io_u: 0.6748[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.3962 - precision: 0.8970 - recall: 0.8105 - categorical_accuracy: 0.8488 - one_hot_io_u: 0.6653[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 29: val_loss improved from 0.37968 to 0.37328, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 263s 989ms/step - loss: 0.3962 - precision: 0.8970 - recall: 0.8105 - categorical_accuracy: 0.8488 - one_hot_io_u: 0.6653 - val_loss: 0.3733 - val_precision: 0.8989 - val_recall: 0.8249 - val_categorical_accuracy: 0.8568 - val_one_hot_io_u: 0.6785[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.3934 - precision: 0.8977 - recall: 0.8119 - categorical_accuracy: 0.8498 - one_hot_io_u: 0.6666[] 
  []
 
 
-Overfull \hbox (450.04472pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (450.04472pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Epoch 30: val_loss improved from 0.37328 to 0.37270, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (1220.37708pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 265s 998ms/step - loss: 0.3934 - precision: 0.8977 - recall: 0.8119 - categorical_accuracy: 0.8498 - one_hot_io_u: 0.6666 - val_loss: 0.3727 - val_precision: 0.9007 - val_recall: 0.8224 - val_categorical_accuracy: 0.8565 - val_one_hot_io_u: 0.6781[] 
  []
 
 
-Overfull \hbox (496.03474pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (496.03474pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 1222/1222 [==============================] - 36s 22ms/step - loss: 0.3723 - precision: 0.9009 - recall: 0.8225 - categorical_accuracy: 0.8566 - one_hot_io_u: 0.6781[] 
  []
 
 
 
 [43]
-Overfull \hbox (208.59727pt too wide) in paragraph at lines 2052--2052
+Overfull \hbox (208.59727pt too wide) in paragraph at lines 2051--2051
 []\TU/lmtt/m/n/10.95 Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1...[] 
  []
 
@@ -3005,463 +3005,463 @@ File: 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_20
 [44]
 
 [45]
-Overfull \hbox (271.83351pt too wide) in paragraph at lines 2078--2078
+Overfull \hbox (271.83351pt too wide) in paragraph at lines 2077--2077
 []\TU/lmtt/m/n/10.95 File copied from servir-aces/config.env to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/config.env[] 
  []
 
 
-Overfull \hbox (1.64235pt too wide) in paragraph at lines 2105--2105
+Overfull \hbox (1.64235pt too wide) in paragraph at lines 2104--2104
 [][]\TU/lmtt/m/n/10.95 /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/logs[][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2114--2114
 []\TU/lmtt/m/n/10.95 Reusing TensorBoard on port 6007 (pid 5630), started 0:02:00 ago. (Use []!kill 5630[] to kill it.)[] 
  []
 
 
 
 [46]
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2352--2352
 []\TU/lmtt/m/n/10.95 __________________________________________________________________________________________________[] 
  []
 
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 Layer (type)                Output Shape                 Param #   Connected to[] 
  []
 
 
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2352--2352
 []\TU/lmtt/m/n/10.95 ==================================================================================================[] 
  []
 
 
-Overfull \hbox (41.8836pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (41.8836pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d (Conv2D)             (None, None, None, 32)       2336      [[]input_1[0][0][]][] 
  []
 
 
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization (Batch  (None, None, None, 32)       128       [[]conv2d[0][0][]][] 
  []
 
 
-Overfull \hbox (110.86858pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (110.86858pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation (Activation)     (None, None, None, 32)       0         [[]batch_normalization[0][0][]][] 
  []
 
 
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_1 (Activation)   (None, None, None, 32)       0         [[]activation[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d (Separabl  (None, None, None, 64)       2400      [[]activation_1[0][0][]][] 
  []
 
 
-Overfull \hbox (93.62233pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (93.62233pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_1 (Bat  (None, None, None, 64)       256       [[]separable_conv2d[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_2 (Activation)   (None, None, None, 64)       0         [[]batch_normalization_1[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d_1 (Separa  (None, None, None, 64)       4736      [[]activation_2[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_2 (Bat  (None, None, None, 64)       256       [[]separable_conv2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 max_pooling2d (MaxPooling2  (None, None, None, 64)       0         [[]batch_normalization_2[0][0][][] 
  []
 
 
 
 [47]
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_1 (Conv2D)           (None, None, None, 64)       2112      [[]activation[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add (Add)                   (None, None, None, 64)       0         [[]max_pooling2d[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_3 (Activation)   (None, None, None, 64)       0         [[]add[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d_2 (Separa  (None, None, None, 128)      8896      [[]activation_3[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_3 (Bat  (None, None, None, 128)      512       [[]separable_conv2d_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_4 (Activation)   (None, None, None, 128)      0         [[]batch_normalization_3[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d_3 (Separa  (None, None, None, 128)      17664     [[]activation_4[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_4 (Bat  (None, None, None, 128)      512       [[]separable_conv2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 max_pooling2d_1 (MaxPoolin  (None, None, None, 128)      0         [[]batch_normalization_4[0][0][][] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_2 (Conv2D)           (None, None, None, 128)      8320      [[]add[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_1 (Add)                 (None, None, None, 128)      0         [[]max_pooling2d_1[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_2[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_5 (Activation)   (None, None, None, 128)      0         [[]add_1[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d_4 (Separa  (None, None, None, 256)      34176     [[]activation_5[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_5 (Bat  (None, None, None, 256)      1024      [[]separable_conv2d_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_6 (Activation)   (None, None, None, 256)      0         [[]batch_normalization_5[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 separable_conv2d_5 (Separa  (None, None, None, 256)      68096     [[]activation_6[0][0][]][] 
  []
 
 
 
 [48]
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_6 (Bat  (None, None, None, 256)      1024      [[]separable_conv2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 max_pooling2d_2 (MaxPoolin  (None, None, None, 256)      0         [[]batch_normalization_6[0][0][][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_3 (Conv2D)           (None, None, None, 256)      33024     [[]add_1[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_2 (Add)                 (None, None, None, 256)      0         [[]max_pooling2d_2[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_7 (Activation)   (None, None, None, 256)      0         [[]add_2[0][0][]][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose (Conv2DTr  (None, None, None, 256)      590080    [[]activation_7[0][0][]][] 
  []
 
 
-Overfull \hbox (93.62233pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (93.62233pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_7 (Bat  (None, None, None, 256)      1024      [[]conv2d_transpose[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_8 (Activation)   (None, None, None, 256)      0         [[]batch_normalization_7[0][0][][] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_1 (Conv2D  (None, None, None, 256)      590080    [[]activation_8[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_8 (Bat  (None, None, None, 256)      1024      [[]conv2d_transpose_1[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_1 (UpSamplin  (None, None, None, 256)      0         [[]add_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d (UpSampling2  (None, None, None, 256)      0         [[]batch_normalization_8[0][0][][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_4 (Conv2D)           (None, None, None, 256)      65792     [[]up_sampling2d_1[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_3 (Add)                 (None, None, None, 256)      0         [[]up_sampling2d[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_4[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_9 (Activation)   (None, None, None, 256)      0         [[]add_3[0][0][]][] 
  []
 
 
 
 [49]
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_2 (Conv2D  (None, None, None, 128)      295040    [[]activation_9[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_9 (Bat  (None, None, None, 128)      512       [[]conv2d_transpose_2[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_10 (Activation)  (None, None, None, 128)      0         [[]batch_normalization_9[0][0][][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_3 (Conv2D  (None, None, None, 128)      147584    [[]activation_10[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_10 (Ba  (None, None, None, 128)      512       [[]conv2d_transpose_3[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_3 (UpSamplin  (None, None, None, 256)      0         [[]add_3[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_2 (UpSamplin  (None, None, None, 128)      0         [[]batch_normalization_10[0][0][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_5 (Conv2D)           (None, None, None, 128)      32896     [[]up_sampling2d_3[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_4 (Add)                 (None, None, None, 128)      0         [[]up_sampling2d_2[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_11 (Activation)  (None, None, None, 128)      0         [[]add_4[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_4 (Conv2D  (None, None, None, 64)       73792     [[]activation_11[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_11 (Ba  (None, None, None, 64)       256       [[]conv2d_transpose_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_12 (Activation)  (None, None, None, 64)       0         [[]batch_normalization_11[0][0][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_5 (Conv2D  (None, None, None, 64)       36928     [[]activation_12[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_12 (Ba  (None, None, None, 64)       256       [[]conv2d_transpose_5[0][0][]][] 
  []
 
 
 
 [50]
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_5 (UpSamplin  (None, None, None, 128)      0         [[]add_4[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_4 (UpSamplin  (None, None, None, 64)       0         [[]batch_normalization_12[0][0][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_6 (Conv2D)           (None, None, None, 64)       8256      [[]up_sampling2d_5[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_5 (Add)                 (None, None, None, 64)       0         [[]up_sampling2d_4[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_6[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_13 (Activation)  (None, None, None, 64)       0         [[]add_5[0][0][]][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_6 (Conv2D  (None, None, None, 32)       18464     [[]activation_13[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_13 (Ba  (None, None, None, 32)       128       [[]conv2d_transpose_6[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 activation_14 (Activation)  (None, None, None, 32)       0         [[]batch_normalization_13[0][0][] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_transpose_7 (Conv2D  (None, None, None, 32)       9248      [[]activation_14[0][0][]][] 
  []
 
 
-Overfull \hbox (105.11983pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (105.11983pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 batch_normalization_14 (Ba  (None, None, None, 32)       128       [[]conv2d_transpose_7[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_7 (UpSamplin  (None, None, None, 64)       0         [[]add_5[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61732pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61732pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 up_sampling2d_6 (UpSamplin  (None, None, None, 32)       0         [[]batch_normalization_14[0][0][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 conv2d_7 (Conv2D)           (None, None, None, 32)       2080      [[]up_sampling2d_7[0][0][]][] 
  []
 
 
-Overfull \hbox (87.8736pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (87.8736pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 add_6 (Add)                 (None, None, None, 32)       0         [[]up_sampling2d_6[0][0][],[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 2352--2352
 []                                                                     []\TU/lmtt/m/n/10.95 conv2d_7[0][0][]][] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 2352--2352
 [] \TU/lmtt/m/n/10.95 final_conv (Conv2D)         (None, None, None, 5)        1445      [[]add_6[0][0][]][] 
  []
 
 
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2352--2352
 []\TU/lmtt/m/n/10.95 ==================================================================================================[] 
  []
 
 
 
 [51]
-Overfull \hbox (116.61728pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (116.61728pt too wide) in paragraph at lines 2352--2352
 []\TU/lmtt/m/n/10.95 __________________________________________________________________________________________________[] 
  []
 
 
 
 [52]
-Overfull \hbox (323.5723pt too wide) in paragraph at lines 2444--2444
+Overfull \hbox (323.5723pt too wide) in paragraph at lines 2443--2443
 []\TU/lmtt/m/n/10.95 using features: [[]red_before[], []green_before[], []blue_before[], []nir_before[], []red_during[], []green_during[], []blue_during[], []nir_during[]][] 
  []
 
 
-Overfull \hbox (1.64235pt too wide) in paragraph at lines 2460--2460
+Overfull \hbox (1.64235pt too wide) in paragraph at lines 2459--2459
 [] \TU/lmtt/m/n/10.95 PosixPath([]/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output[]),[] 
  []
 
 
 
 [53]
-Overfull \hbox (24.63734pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (24.63734pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 ****************************** Configure memory growth... ************************[] 
  []
 
@@ -3476,373 +3476,373 @@ Overfull \hbox (24.63734pt too wide) in paragraph at lines 2857--2857
 [57]
 
 [58]
-Overfull \hbox (151.10979pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (151.10979pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 > Saving models and results at /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1...[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 1.2595 - precision: 0.6700 - recall: 0.2397 - categorical_accuracy: 0.4964 - one_hot_io_u: 0.2151[] 
  []
 
 
-Overfull \hbox (415.55223pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (415.55223pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 1: val_loss improved from inf to 1.15955, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 31s 99ms/step - loss: 1.2623 - precision: 0.6685 - recall: 0.2401 - categorical_accuracy: 0.4960 - one_hot_io_u: 0.2148 - val_loss: 1.1595 - val_precision: 0.6827 - val_recall: 0.4064 - val_categorical_accuracy: 0.5807 - val_one_hot_io_u: 0.2866[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.9196 - precision: 0.7593 - recall: 0.5601 - categorical_accuracy: 0.6874 - one_hot_io_u: 0.4127[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 2: val_loss improved from 1.15955 to 0.87784, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 60ms/step - loss: 0.9206 - precision: 0.7592 - recall: 0.5596 - categorical_accuracy: 0.6871 - one_hot_io_u: 0.4125 - val_loss: 0.8778 - val_precision: 0.7574 - val_recall: 0.6090 - val_categorical_accuracy: 0.6968 - val_one_hot_io_u: 0.4428[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.8111 - precision: 0.7857 - recall: 0.6387 - categorical_accuracy: 0.7218 - one_hot_io_u: 0.4734[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 23s 89ms/step - loss: 0.8111 - precision: 0.7857 - recall: 0.6387 - categorical_accuracy: 0.7218 - one_hot_io_u: 0.4734 - val_loss: 0.8998 - val_precision: 0.8096 - val_recall: 0.4193 - val_categorical_accuracy: 0.7288 - val_one_hot_io_u: 0.4815[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 261/266 [============================>.] - ETA: 0s - loss: 0.7535 - precision: 0.8003 - recall: 0.6697 - categorical_accuracy: 0.7462 - one_hot_io_u: 0.5193[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 4: val_loss improved from 0.87784 to 0.82494, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 61ms/step - loss: 0.7584 - precision: 0.7999 - recall: 0.6640 - categorical_accuracy: 0.7440 - one_hot_io_u: 0.5169 - val_loss: 0.8249 - val_precision: 0.8067 - val_recall: 0.5383 - val_categorical_accuracy: 0.7317 - val_one_hot_io_u: 0.4902[] 
  []
 
 
 
 [59]
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.7328 - precision: 0.8096 - recall: 0.6695 - categorical_accuracy: 0.7466 - one_hot_io_u: 0.5352[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 5: val_loss improved from 0.82494 to 0.74722, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 18s 66ms/step - loss: 0.7328 - precision: 0.8096 - recall: 0.6694 - categorical_accuracy: 0.7467 - one_hot_io_u: 0.5352 - val_loss: 0.7472 - val_precision: 0.8216 - val_recall: 0.6514 - val_categorical_accuracy: 0.7579 - val_one_hot_io_u: 0.5588[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.7254 - precision: 0.8092 - recall: 0.6757 - categorical_accuracy: 0.7493 - one_hot_io_u: 0.5396[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 6: val_loss improved from 0.74722 to 0.69727, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 61ms/step - loss: 0.7268 - precision: 0.8086 - recall: 0.6749 - categorical_accuracy: 0.7487 - one_hot_io_u: 0.5391 - val_loss: 0.6973 - val_precision: 0.8324 - val_recall: 0.6755 - val_categorical_accuracy: 0.7696 - val_one_hot_io_u: 0.5790[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.7175 - precision: 0.8121 - recall: 0.6877 - categorical_accuracy: 0.7531 - one_hot_io_u: 0.5439[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 7: val_loss improved from 0.69727 to 0.69563, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 61ms/step - loss: 0.7175 - precision: 0.8121 - recall: 0.6878 - categorical_accuracy: 0.7532 - one_hot_io_u: 0.5440 - val_loss: 0.6956 - val_precision: 0.8141 - val_recall: 0.6905 - val_categorical_accuracy: 0.7562 - val_one_hot_io_u: 0.5521[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.7065 - precision: 0.8111 - recall: 0.6887 - categorical_accuracy: 0.7545 - one_hot_io_u: 0.5516[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 8: val_loss improved from 0.69563 to 0.67199, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 92ms/step - loss: 0.7066 - precision: 0.8109 - recall: 0.6885 - categorical_accuracy: 0.7542 - one_hot_io_u: 0.5513 - val_loss: 0.6720 - val_precision: 0.8114 - val_recall: 0.7196 - val_categorical_accuracy: 0.7716 - val_one_hot_io_u: 0.5806[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6927 - precision: 0.8161 - recall: 0.6925 - categorical_accuracy: 0.7579 - one_hot_io_u: 0.5574[] 
  []
 
 
-Overfull \hbox (438.54723pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (438.54723pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 9: val_loss improved from 0.67199 to 0.66129, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 92ms/step - loss: 0.6927 - precision: 0.8161 - recall: 0.6925 - categorical_accuracy: 0.7579 - one_hot_io_u: 0.5574 - val_loss: 0.6613 - val_precision: 0.8124 - val_recall: 0.7205 - val_categorical_accuracy: 0.7704 - val_one_hot_io_u: 0.5848[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6922 - precision: 0.8143 - recall: 0.6990 - categorical_accuracy: 0.7613 - one_hot_io_u: 0.5631[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 23s 87ms/step - loss: 0.6936 - precision: 0.8139 - recall: 0.6985 - categorical_accuracy: 0.7607 - one_hot_io_u: 0.5626 - val_loss: 0.6650 - val_precision: 0.8180 - val_recall: 0.7234 - val_categorical_accuracy: 0.7720 - val_one_hot_io_u: 0.5882[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 263/266 [============================>.] - ETA: 0s - loss: 0.6978 - precision: 0.8120 - recall: 0.6963 - categorical_accuracy: 0.7553 - one_hot_io_u: 0.5598[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 23s 87ms/step - loss: 0.6984 - precision: 0.8117 - recall: 0.6962 - categorical_accuracy: 0.7553 - one_hot_io_u: 0.5595 - val_loss: 0.6796 - val_precision: 0.8190 - val_recall: 0.7076 - val_categorical_accuracy: 0.7633 - val_one_hot_io_u: 0.5847[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 263/266 [============================>.] - ETA: 0s - loss: 0.6804 - precision: 0.8173 - recall: 0.7035 - categorical_accuracy: 0.7622 - one_hot_io_u: 0.5677[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 12: val_loss improved from 0.66129 to 0.65464, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 17s 63ms/step - loss: 0.6806 - precision: 0.8177 - recall: 0.7042 - categorical_accuracy: 0.7626 - one_hot_io_u: 0.5679 - val_loss: 0.6546 - val_precision: 0.8114 - val_recall: 0.7230 - val_categorical_accuracy: 0.7745 - val_one_hot_io_u: 0.5955[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 261/266 [============================>.] - ETA: 0s - loss: 0.6858 - precision: 0.8154 - recall: 0.6991 - categorical_accuracy: 0.7605 - one_hot_io_u: 0.5657[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 15s 56ms/step - loss: 0.6863 - precision: 0.8152 - recall: 0.6998 - categorical_accuracy: 0.7609 - one_hot_io_u: 0.5665 - val_loss: 0.6637 - val_precision: 0.8033 - val_recall: 0.7338 - val_categorical_accuracy: 0.7712 - val_one_hot_io_u: 0.5907[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6880 - precision: 0.8123 - recall: 0.6987 - categorical_accuracy: 0.7601 - one_hot_io_u: 0.5650[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 90ms/step - loss: 0.6894 - precision: 0.8119 - recall: 0.6984 - categorical_accuracy: 0.7595 - one_hot_io_u: 0.5648 - val_loss: 0.7179 - val_precision: 0.7723 - val_recall: 0.6801 - val_categorical_accuracy: 0.7309 - val_one_hot_io_u: 0.5505[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 263/266 [============================>.] - ETA: 0s - loss: 0.6748 - precision: 0.8167 - recall: 0.7041 - categorical_accuracy: 0.7643 - one_hot_io_u: 0.5692[] 
  []
 
 
-Overfull \hbox (444.29597pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (444.29597pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Epoch 15: val_loss improved from 0.65464 to 0.64675, saving model to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/modelCheckpoint[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 60ms/step - loss: 0.6758 - precision: 0.8164 - recall: 0.7037 - categorical_accuracy: 0.7639 - one_hot_io_u: 0.5688 - val_loss: 0.6467 - val_precision: 0.8123 - val_recall: 0.7363 - val_categorical_accuracy: 0.7745 - val_one_hot_io_u: 0.5883[] 
  []
 
 
 
 [60]
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.6859 - precision: 0.8126 - recall: 0.7015 - categorical_accuracy: 0.7598 - one_hot_io_u: 0.5653[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 90ms/step - loss: 0.6850 - precision: 0.8129 - recall: 0.7020 - categorical_accuracy: 0.7602 - one_hot_io_u: 0.5664 - val_loss: 0.6541 - val_precision: 0.8152 - val_recall: 0.7284 - val_categorical_accuracy: 0.7720 - val_one_hot_io_u: 0.5856[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6713 - precision: 0.8203 - recall: 0.7104 - categorical_accuracy: 0.7682 - one_hot_io_u: 0.5777[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 14s 54ms/step - loss: 0.6715 - precision: 0.8205 - recall: 0.7103 - categorical_accuracy: 0.7683 - one_hot_io_u: 0.5778 - val_loss: 0.6520 - val_precision: 0.8122 - val_recall: 0.7413 - val_categorical_accuracy: 0.7754 - val_one_hot_io_u: 0.5897[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 261/266 [============================>.] - ETA: 0s - loss: 0.6766 - precision: 0.8158 - recall: 0.6999 - categorical_accuracy: 0.7611 - one_hot_io_u: 0.5662[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 91ms/step - loss: 0.6716 - precision: 0.8175 - recall: 0.7020 - categorical_accuracy: 0.7632 - one_hot_io_u: 0.5692 - val_loss: 0.6723 - val_precision: 0.8073 - val_recall: 0.7354 - val_categorical_accuracy: 0.7745 - val_one_hot_io_u: 0.5787[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6681 - precision: 0.8207 - recall: 0.7084 - categorical_accuracy: 0.7657 - one_hot_io_u: 0.5756[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 14s 54ms/step - loss: 0.6681 - precision: 0.8207 - recall: 0.7084 - categorical_accuracy: 0.7657 - one_hot_io_u: 0.5756 - val_loss: 0.7133 - val_precision: 0.7844 - val_recall: 0.7250 - val_categorical_accuracy: 0.7558 - val_one_hot_io_u: 0.5393[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 263/266 [============================>.] - ETA: 0s - loss: 0.6686 - precision: 0.8171 - recall: 0.7109 - categorical_accuracy: 0.7676 - one_hot_io_u: 0.5786[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 15s 57ms/step - loss: 0.6676 - precision: 0.8176 - recall: 0.7113 - categorical_accuracy: 0.7680 - one_hot_io_u: 0.5788 - val_loss: 0.6900 - val_precision: 0.8031 - val_recall: 0.7429 - val_categorical_accuracy: 0.7725 - val_one_hot_io_u: 0.5750[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 262/266 [============================>.] - ETA: 0s - loss: 0.6652 - precision: 0.8173 - recall: 0.7029 - categorical_accuracy: 0.7663 - one_hot_io_u: 0.5746[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 23s 89ms/step - loss: 0.6622 - precision: 0.8185 - recall: 0.7044 - categorical_accuracy: 0.7676 - one_hot_io_u: 0.5755 - val_loss: 0.6969 - val_precision: 0.8025 - val_recall: 0.7354 - val_categorical_accuracy: 0.7700 - val_one_hot_io_u: 0.5710[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 265/266 [============================>.] - ETA: 0s - loss: 0.6699 - precision: 0.8170 - recall: 0.7060 - categorical_accuracy: 0.7678 - one_hot_io_u: 0.5758[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 17s 63ms/step - loss: 0.6699 - precision: 0.8172 - recall: 0.7063 - categorical_accuracy: 0.7679 - one_hot_io_u: 0.5761 - val_loss: 0.7111 - val_precision: 0.8088 - val_recall: 0.7354 - val_categorical_accuracy: 0.7708 - val_one_hot_io_u: 0.5744[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 262/266 [============================>.] - ETA: 0s - loss: 0.6639 - precision: 0.8248 - recall: 0.7085 - categorical_accuracy: 0.7693 - one_hot_io_u: 0.5784[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 23s 87ms/step - loss: 0.6620 - precision: 0.8255 - recall: 0.7099 - categorical_accuracy: 0.7703 - one_hot_io_u: 0.5791 - val_loss: 0.7080 - val_precision: 0.7946 - val_recall: 0.7500 - val_categorical_accuracy: 0.7712 - val_one_hot_io_u: 0.5708[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 262/266 [============================>.] - ETA: 0s - loss: 0.6667 - precision: 0.8214 - recall: 0.7093 - categorical_accuracy: 0.7672 - one_hot_io_u: 0.5761[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 90ms/step - loss: 0.6651 - precision: 0.8218 - recall: 0.7104 - categorical_accuracy: 0.7681 - one_hot_io_u: 0.5768 - val_loss: 0.7125 - val_precision: 0.7986 - val_recall: 0.7371 - val_categorical_accuracy: 0.7687 - val_one_hot_io_u: 0.5655[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6620 - precision: 0.8192 - recall: 0.7146 - categorical_accuracy: 0.7716 - one_hot_io_u: 0.5834[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 90ms/step - loss: 0.6620 - precision: 0.8192 - recall: 0.7146 - categorical_accuracy: 0.7716 - one_hot_io_u: 0.5834 - val_loss: 0.7170 - val_precision: 0.7933 - val_recall: 0.7454 - val_categorical_accuracy: 0.7612 - val_one_hot_io_u: 0.5481[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6630 - precision: 0.8221 - recall: 0.7129 - categorical_accuracy: 0.7707 - one_hot_io_u: 0.5811[] 
  []
 
 
 
 [61]
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 14s 55ms/step - loss: 0.6636 - precision: 0.8220 - recall: 0.7131 - categorical_accuracy: 0.7708 - one_hot_io_u: 0.5811 - val_loss: 0.6966 - val_precision: 0.7934 - val_recall: 0.7446 - val_categorical_accuracy: 0.7675 - val_one_hot_io_u: 0.5624[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6562 - precision: 0.8221 - recall: 0.7137 - categorical_accuracy: 0.7681 - one_hot_io_u: 0.5774[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 24s 91ms/step - loss: 0.6562 - precision: 0.8221 - recall: 0.7137 - categorical_accuracy: 0.7681 - one_hot_io_u: 0.5774 - val_loss: 0.6592 - val_precision: 0.8102 - val_recall: 0.7388 - val_categorical_accuracy: 0.7750 - val_one_hot_io_u: 0.5840[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6545 - precision: 0.8258 - recall: 0.7097 - categorical_accuracy: 0.7717 - one_hot_io_u: 0.5830[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 14s 54ms/step - loss: 0.6543 - precision: 0.8259 - recall: 0.7099 - categorical_accuracy: 0.7720 - one_hot_io_u: 0.5832 - val_loss: 0.6637 - val_precision: 0.8178 - val_recall: 0.7359 - val_categorical_accuracy: 0.7766 - val_one_hot_io_u: 0.5848[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 264/266 [============================>.] - ETA: 0s - loss: 0.6576 - precision: 0.8259 - recall: 0.7109 - categorical_accuracy: 0.7687 - one_hot_io_u: 0.5800[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 16s 61ms/step - loss: 0.6561 - precision: 0.8265 - recall: 0.7112 - categorical_accuracy: 0.7689 - one_hot_io_u: 0.5802 - val_loss: 0.6871 - val_precision: 0.7955 - val_recall: 0.7329 - val_categorical_accuracy: 0.7633 - val_one_hot_io_u: 0.5514[] 
  []
 
 
-Overfull \hbox (450.04475pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (450.04475pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - ETA: 0s - loss: 0.6533 - precision: 0.8234 - recall: 0.7118 - categorical_accuracy: 0.7696 - one_hot_io_u: 0.5826[] 
  []
 
 
-Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1208.87958pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 266/266 [==============================] - 15s 56ms/step - loss: 0.6533 - precision: 0.8234 - recall: 0.7118 - categorical_accuracy: 0.7696 - one_hot_io_u: 0.5826 - val_loss: 0.6730 - val_precision: 0.8023 - val_recall: 0.7359 - val_categorical_accuracy: 0.7683 - val_one_hot_io_u: 0.5576[] 
  []
 
 
-Overfull \hbox (484.53725pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (484.53725pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 1219/1219 [==============================] - 7s 6ms/step - loss: 0.6585 - precision: 0.8038 - recall: 0.7293 - categorical_accuracy: 0.7736 - one_hot_io_u: 0.5689[] 
  []
 
 
-Overfull \hbox (202.84853pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (202.84853pt too wide) in paragraph at lines 2856--2856
 []\TU/lmtt/m/n/10.95 Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1...[] 
  []
 
@@ -3853,7 +3853,7 @@ File: 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_20
 [62]
 
 [63]
-Overfull \hbox (266.08476pt too wide) in paragraph at lines 2879--2879
+Overfull \hbox (266.08476pt too wide) in paragraph at lines 2878--2878
 []\TU/lmtt/m/n/10.95 File copied from servir-aces/config.env to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/config.env[] 
  []
 
@@ -3862,7 +3862,7 @@ Overfull \hbox (266.08476pt too wide) in paragraph at lines 2879--2879
 [64]
 
 [65]
-Overfull \hbox (323.5723pt too wide) in paragraph at lines 3022--3022
+Overfull \hbox (323.5723pt too wide) in paragraph at lines 3021--3021
 []\TU/lmtt/m/n/10.95 using features: [[]red_before[], []green_before[], []blue_before[], []nir_before[], []red_during[], []green_during[], []blue_during[], []nir_during[]][] 
  []
 
@@ -3871,12 +3871,12 @@ Overfull \hbox (323.5723pt too wide) in paragraph at lines 3022--3022
 [66]
 
 [67]
-Overfull \hbox (191.35106pt too wide) in paragraph at lines 3092--3092
+Overfull \hbox (191.35106pt too wide) in paragraph at lines 3091--3091
 []\TU/lmtt/m/n/10.95 Map(center=[27.378354616518475, 89.42005508391453], controls=(WidgetControl(options=[[]position[], []transparent_…[] 
  []
 
 
-Overfull \hbox (191.35106pt too wide) in paragraph at lines 3113--3113
+Overfull \hbox (191.35106pt too wide) in paragraph at lines 3112--3112
 []\TU/lmtt/m/n/10.95 Map(bottom=220961.0, center=[27.378354616518475, 89.42005508391453], controls=(WidgetControl(options=[[]positio…[] 
  []
 
@@ -3885,12 +3885,12 @@ Overfull \hbox (191.35106pt too wide) in paragraph at lines 3113--3113
 [68]
 
 [69]
-Overfull \hbox (191.35106pt too wide) in paragraph at lines 3230--3230
+Overfull \hbox (191.35106pt too wide) in paragraph at lines 3229--3229
 []\TU/lmtt/m/n/10.95 Map(bottom=220961.0, center=[27.378354616518475, 89.42005508391453], controls=(WidgetControl(options=[[]positio…[] 
  []
 
 
-Overfull \hbox (191.35106pt too wide) in paragraph at lines 3249--3249
+Overfull \hbox (191.35106pt too wide) in paragraph at lines 3248--3248
 []\TU/lmtt/m/n/10.95 Map(bottom=220961.0, center=[27.37845188654284, 89.42005507220328], controls=(WidgetControl(options=[[]position…[] 
  []
 
@@ -3904,7 +3904,7 @@ Overfull \hbox (191.35106pt too wide) in paragraph at lines 3249--3249
 File: 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-60-output-2.png Graphic file (type bmp)
 <03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-60-output-2.png>
 
-Overfull \hbox (10.92369pt too wide) in paragraph at lines 3417--3418
+Overfull \hbox (10.92369pt too wide) in paragraph at lines 3416--3417
 [][] 
  []
 
@@ -3914,7 +3914,7 @@ Overfull \hbox (10.92369pt too wide) in paragraph at lines 3417--3418
 File: 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-61-output-2.png Graphic file (type bmp)
 <03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-61-output-2.png>
 
-Overfull \hbox (10.92369pt too wide) in paragraph at lines 3461--3462
+Overfull \hbox (10.92369pt too wide) in paragraph at lines 3460--3461
 [][] 
  []
 
@@ -3926,7 +3926,7 @@ Overfull \hbox (10.92369pt too wide) in paragraph at lines 3461--3462
 File: 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-63-output-3.png Graphic file (type bmp)
 <03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021_files/figure-pdf/cell-63-output-3.png>
 
-Overfull \hbox (10.96979pt too wide) in paragraph at lines 3536--3537
+Overfull \hbox (10.96979pt too wide) in paragraph at lines 3535--3536
 [][] 
  []
 
@@ -3941,7 +3941,7 @@ chapter 2.
 ]
 chapter 3.
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 3577.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 3576.
 
 
 [78
@@ -3951,43 +3951,43 @@ LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
 [79]
 
 [80]
-Overfull \hbox (18.8886pt too wide) in paragraph at lines 3768--3768
+Overfull \hbox (18.8886pt too wide) in paragraph at lines 3767--3767
 []\TU/lmtt/m/n/10.95 <TFRecordDatasetV2 element_spec=TensorSpec(shape=(), dtype=tf.string, name=None)>[] 
  []
 
 
 
 [81]
-Overfull \hbox (1594.04578pt too wide) in paragraph at lines 3816--3816
+Overfull \hbox (1594.04578pt too wide) in paragraph at lines 3815--3815
 []\TU/lmtt/m/n/10.95 <_MapDataset element_spec={[]b1[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b2[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b3[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []b4[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None), []class[]: TensorSpec(shape=(128, 128), dtype=tf.float32, name=None)}>[] 
  []
 
 
 
 [82]
-Overfull \hbox (306.32605pt too wide) in paragraph at lines 3869--3869
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3868--3868
 []       \TU/lmtt/m/n/10.95 [6311., 6226., 6226., ..., 5885., 6055., 6226.]], dtype=float32)>, []b2[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
  []
 
 
-Overfull \hbox (306.32605pt too wide) in paragraph at lines 3869--3869
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3868--3868
 []       \TU/lmtt/m/n/10.95 [5473., 5442., 5412., ..., 5078., 4986., 4986.]], dtype=float32)>, []b3[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
  []
 
 
-Overfull \hbox (306.32605pt too wide) in paragraph at lines 3869--3869
+Overfull \hbox (306.32605pt too wide) in paragraph at lines 3868--3868
 []       \TU/lmtt/m/n/10.95 [2843., 2748., 2772., ..., 2604., 2604., 2604.]], dtype=float32)>, []b4[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
  []
 
 
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 3869--3869
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 3868--3868
 []      \TU/lmtt/m/n/10.95 dtype=float32)>, []class[]: <tf.Tensor: shape=(128, 128), dtype=float32, numpy=[] 
  []
 
 
 
 [83]
-Overfull \hbox (24.63736pt too wide) in paragraph at lines 3924--3924
+Overfull \hbox (24.63736pt too wide) in paragraph at lines 3923--3923
 []  \TU/lmtt/m/n/10.95 [6311. 6226. 6226. ... 5885. 6055. 6226.]]], shape=(3, 128, 128), dtype=float32)[] 
  []
 
@@ -3997,7 +3997,7 @@ Overfull \hbox (24.63736pt too wide) in paragraph at lines 3924--3924
 File: 03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training_files/figure-pdf/cell-17-output-1.png Graphic file (type bmp)
 <03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training_files/figure-pdf/cell-17-output-1.png>
 
-Overfull \hbox (10.96266pt too wide) in paragraph at lines 3957--3958
+Overfull \hbox (10.96266pt too wide) in paragraph at lines 3956--3957
 [][] 
  []
 
@@ -4008,17 +4008,17 @@ Overfull \hbox (10.96266pt too wide) in paragraph at lines 3957--3958
 [86]
 
 [87]
-Overfull \hbox (507.53223pt too wide) in paragraph at lines 4112--4112
+Overfull \hbox (507.53223pt too wide) in paragraph at lines 4111--4111
 []\TU/lmtt/m/n/10.95 <_RepeatDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
  []
 
 
-Overfull \hbox (507.53223pt too wide) in paragraph at lines 4112--4112
+Overfull \hbox (507.53223pt too wide) in paragraph at lines 4111--4111
 []\TU/lmtt/m/n/10.95 <_RepeatDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
  []
 
 
-Overfull \hbox (501.78348pt too wide) in paragraph at lines 4112--4112
+Overfull \hbox (501.78348pt too wide) in paragraph at lines 4111--4111
 []\TU/lmtt/m/n/10.95 <_BatchDataset element_spec=(TensorSpec(shape=(None, 128, 128, 4), dtype=tf.float32, name=None), TensorSpec(shape=(None, 128, 128, 1), dtype=tf.float32, name=None))>[] 
  []
 
@@ -4028,7 +4028,7 @@ Overfull \hbox (501.78348pt too wide) in paragraph at lines 4112--4112
 ! Unable to load picture or PDF file 'index_files/mediabag/uc-export=view-id=1W.pdf'.
 <to be read again> 
                    }
-l.4151 ...files/mediabag/uc-export=view-id=1W.pdf}
+l.4150 ...files/mediabag/uc-export=view-id=1W.pdf}
                                                    
 Here is how much of TeX's memory you used:
  24057 strings out of 475932
