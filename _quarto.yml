@@ -21,7 +21,7 @@ book:
         - id: spatial-informatics-group
           name: Spatial Informatics Group
 
-  date: "9/18/2025"
+  date: "6/1/2026"
   cover-image: Images/Book_Cover_delta_6_25.png
   repo-url: https://github.com/NASA-EarthRISE/EarthRISE-Applied-Artificial-Intelligence-and-Deep-Learning-Book
   repo-actions: [source, edit, issue]

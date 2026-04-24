@@ -379,6 +379,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="rice-mapping-in-bhutan-with-u-net-using-high-resolution-satellite-imagery" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="rice-mapping-in-bhutan-with-u-net-using-high-resolution-satellite-imagery"><span class="header-section-number">2.1</span> Rice mapping in Bhutan with U-Net using high resolution satellite imagery</h2>
 <p><img src="https://www.tensorflow.org/images/colab_logo_32px.png" class="img-fluid"> <a href="https://colab.research.google.com/github/SERVIR/SERVIR-Applied-Deep-Learning-Book/blob/main/03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021.ipynb">Run in Colab</a> <img src="https://www.tensorflow.org/images/GitHub-Mark-32px.png" class="img-fluid"> <a href="https://github.com/SERVIR/SERVIR-Applied-Deep-Learning-Book/blob/main/03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021.ipynb">View on GitHub</a></p>
+<div id="cell-3" class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">## Video Tutorial</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="op">&lt;</span>iframe width<span class="op">=</span><span class="st">"560"</span> height<span class="op">=</span><span class="st">"315"</span> src<span class="op">=</span><span class="st">"https://www.youtube.com/embed/l3Tv5UBlw9I"</span> </span>
+<span id="cb1-4"><a href="#cb1-4"></a>title<span class="op">=</span><span class="st">"YouTube video player"</span> frameborder<span class="op">=</span><span class="st">"0"</span> </span>
+<span id="cb1-5"><a href="#cb1-5"></a>allow<span class="op">=</span><span class="st">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span> </span>
+<span id="cb1-6"><a href="#cb1-6"></a>allowfullscreen<span class="op">&gt;&lt;/</span>iframe<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="note-this-notebook-is-meant-to-be-run-in-colab.-you-can-still-run-this-locally-make-sure-you-have-google-drive-api-installed-and-path-adjusted-in-relevant-places." class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="note-this-notebook-is-meant-to-be-run-in-colab.-you-can-still-run-this-locally-make-sure-you-have-google-drive-api-installed-and-path-adjusted-in-relevant-places."><span class="header-section-number">2.2</span> Note: This notebook is meant to be run in Colab. You can still run this locally, make sure you have <a href="https://developers.google.com/workspace/drive/api/quickstart/python">Google Drive API</a> installed and path adjusted in relevant places.</h2>
@@ -386,17 +397,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup-environment" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="setup-environment"><span class="header-section-number">2.3</span> Setup environment</h2>
-<div id="cell-6" class="cell" data-outputid="8b3da502-46cf-4613-c619-42e640f5105a" data-execution_count="1">
+<div id="cell-7" class="cell" data-outputid="8b3da502-46cf-4613-c619-42e640f5105a" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
-<span id="cb1-2"><a href="#cb1-2"></a>drive.mount(<span class="st">"/content/drive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb2-2"><a href="#cb2-2"></a>drive.mount(<span class="st">"/content/drive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-7" class="cell" data-outputid="78155889-e4cd-48f0-fe73-7be89609deaa" data-execution_count="2">
+<div id="cell-8" class="cell" data-outputid="78155889-e4cd-48f0-fe73-7be89609deaa" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">!</span>pip install servir<span class="op">-</span>aces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">!</span>pip install servir<span class="op">-</span>aces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Collecting servir-aces
@@ -467,10 +478,10 @@ Installing collected packages: python-dotenv, servir-aces
 Successfully installed python-dotenv-1.0.1 servir-aces-0.0.14</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-outputid="c2b3c329-2cd5-4072-95fa-88faf5893ade" data-execution_count="3">
+<div id="cell-9" class="cell" data-outputid="c2b3c329-2cd5-4072-95fa-88faf5893ade" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">!</span>git clone https:<span class="op">//</span>github.com<span class="op">/</span>SERVIR<span class="op">/</span>servir<span class="op">-</span>aces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">!</span>git clone https:<span class="op">//</span>github.com<span class="op">/</span>SERVIR<span class="op">/</span>servir<span class="op">-</span>aces</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cloning into 'servir-aces'...
@@ -486,16 +497,16 @@ Resolving deltas: 100% (468/468), done.</code></pre>
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="download-datasets"><span class="header-section-number">2.3.1</span> Download datasets</h3>
 <p>For this chapter, we have already prepared and exported the training datasets. They can be found at the google cloud storage and we will use <code>gsutil</code> to get the dataset in our workspace. The dataset has <code>training</code>, <code>testing</code>, and <code>validation</code> subdirectory. Let’s start by downloading these datasets in our workspace.</p>
 <p>If you’re looking to produce your own datasets, you can follow this <a href="https://colab.research.google.com/drive/1LCFLeSCu969wIW8TD68-j4hfIu7WiRIK?usp=sharing">notebook</a> which was used to produce these training, testing, and validation datasets provided in this notebook.</p>
-<div id="cell-12" class="cell" data-execution_count="3">
+<div id="cell-13" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">!</span>mkdir <span class="op">-</span>p content<span class="op">/</span>datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">!</span>mkdir <span class="op">-</span>p content<span class="op">/</span>datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-13" class="cell" data-outputid="e9dcc757-f3f9-4d2b-9ba4-6387d450b5bf" data-execution_count="11">
+<div id="cell-14" class="cell" data-outputid="e9dcc757-f3f9-4d2b-9ba4-6387d450b5bf" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">!</span>gsutil <span class="op">-</span>m cp <span class="op">-</span>r gs:<span class="op">//</span>dl<span class="op">-</span>book<span class="op">/</span>chapter<span class="op">-</span><span class="dv">1</span> content<span class="op">/</span>datasets<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">!</span>gsutil <span class="op">-</span>m cp <span class="op">-</span>r gs:<span class="op">//</span>dl<span class="op">-</span>book<span class="op">/</span>chapter<span class="op">-</span><span class="dv">1</span> content<span class="op">/</span>datasets<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
@@ -701,10 +712,10 @@ Copying gs://dl-book/chapter-1/unet_256x256_planet_wo_indices/validation/validat
 <p>Now the repo is downloaded. We will create an environment file file to place point to our training data and customize parameters for the model. To do this, we make a copy of the <code>.env.example</code> file provided.</p>
 <p>Under the hood, all the configuration provided via the environment file are parsed as a config object and can be accessed programatically.</p>
 <p>Note current version does not expose all the model intracacies through the environment file but future version may include those depending on the need.</p>
-<div id="cell-16" class="cell" data-execution_count="5">
+<div id="cell-17" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">!</span>cp servir<span class="op">-</span>aces<span class="op">/</span>.env.example servir<span class="op">-</span>aces<span class="op">/</span>config.env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">!</span>cp servir<span class="op">-</span>aces<span class="op">/</span>.env.example servir<span class="op">-</span>aces<span class="op">/</span>config.env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Okay, now we have the <code>config.env</code> file, we will use this to provide our environments and parameters.</p>
@@ -734,56 +745,56 @@ EPOCHS = 30</code></pre>
 <section id="update-the-config-file-programtically" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="update-the-config-file-programtically"><span class="header-section-number">2.3.3</span> Update the config file programtically</h3>
 <p>We can also make a dictionary so we can change these config settings programatically.</p>
-<div id="cell-23" class="cell" data-execution_count="6">
+<div id="cell-24" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>BASEDIR   <span class="op">=</span> <span class="st">"/content/"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>OUTPUT_DIR <span class="op">=</span> <span class="st">"/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>DATADIR <span class="op">=</span> <span class="st">"datasets/unet_256x256_planet_wo_indices"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># PATCH_SHAPE, USE_ELEVATION, USE_S1, TRAIN_SIZE, TEST_SIZE, VAL_SIZE</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a><span class="co"># BATCH_SIZE, EPOCHS are converted to their appropriate type.</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>USE_ELEVATION <span class="op">=</span> <span class="st">"False"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a>USE_S1 <span class="op">=</span> <span class="st">"False"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a>PATCH_SHAPE <span class="op">=</span> <span class="st">"(256, 256)"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-9"><a href="#cb14-9"></a>TRAIN_SIZE <span class="op">=</span> <span class="st">"8531"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a>TEST_SIZE <span class="op">=</span> <span class="st">"1222"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a>VAL_SIZE <span class="op">=</span> <span class="st">"2404"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-12"><a href="#cb14-12"></a>BATCH_SIZE <span class="op">=</span> <span class="st">"32"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-13"><a href="#cb14-13"></a>EPOCHS <span class="op">=</span> <span class="st">"30"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb14-14"><a href="#cb14-14"></a>MODEL_DIR_NAME <span class="op">=</span> <span class="st">"unet_v1"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>BASEDIR   <span class="op">=</span> <span class="st">"/content/"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>OUTPUT_DIR <span class="op">=</span> <span class="st">"/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>DATADIR <span class="op">=</span> <span class="st">"datasets/unet_256x256_planet_wo_indices"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># PATCH_SHAPE, USE_ELEVATION, USE_S1, TRAIN_SIZE, TEST_SIZE, VAL_SIZE</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="co"># BATCH_SIZE, EPOCHS are converted to their appropriate type.</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>USE_ELEVATION <span class="op">=</span> <span class="st">"False"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>USE_S1 <span class="op">=</span> <span class="st">"False"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>PATCH_SHAPE <span class="op">=</span> <span class="st">"(256, 256)"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>TRAIN_SIZE <span class="op">=</span> <span class="st">"8531"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>TEST_SIZE <span class="op">=</span> <span class="st">"1222"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>VAL_SIZE <span class="op">=</span> <span class="st">"2404"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>BATCH_SIZE <span class="op">=</span> <span class="st">"32"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>EPOCHS <span class="op">=</span> <span class="st">"30"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>MODEL_DIR_NAME <span class="op">=</span> <span class="st">"unet_v1"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-24" class="cell" data-execution_count="7">
+<div id="cell-25" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>unet_config_settings <span class="op">=</span> {</span>
-<span id="cb15-2"><a href="#cb15-2"></a>    <span class="st">"BASEDIR"</span> : BASEDIR,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>    <span class="st">"OUTPUT_DIR"</span>: OUTPUT_DIR,</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    <span class="st">"DATADIR"</span>: DATADIR,</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    <span class="st">"USE_ELEVATION"</span>: USE_ELEVATION,</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    <span class="st">"USE_S1"</span>: USE_S1,</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    <span class="st">"PATCH_SHAPE"</span>: PATCH_SHAPE,</span>
-<span id="cb15-8"><a href="#cb15-8"></a>    <span class="st">"TRAIN_SIZE"</span>: TRAIN_SIZE,</span>
-<span id="cb15-9"><a href="#cb15-9"></a>    <span class="st">"TEST_SIZE"</span>: TEST_SIZE,</span>
-<span id="cb15-10"><a href="#cb15-10"></a>    <span class="st">"VAL_SIZE"</span>: VAL_SIZE,</span>
-<span id="cb15-11"><a href="#cb15-11"></a>    <span class="st">"BATCH_SIZE"</span>: BATCH_SIZE,</span>
-<span id="cb15-12"><a href="#cb15-12"></a>    <span class="st">"EPOCHS"</span>: EPOCHS,</span>
-<span id="cb15-13"><a href="#cb15-13"></a>    <span class="st">"MODEL_DIR_NAME"</span>: MODEL_DIR_NAME,</span>
-<span id="cb15-14"><a href="#cb15-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>unet_config_settings <span class="op">=</span> {</span>
+<span id="cb16-2"><a href="#cb16-2"></a>    <span class="st">"BASEDIR"</span> : BASEDIR,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="st">"OUTPUT_DIR"</span>: OUTPUT_DIR,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>    <span class="st">"DATADIR"</span>: DATADIR,</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="st">"USE_ELEVATION"</span>: USE_ELEVATION,</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="st">"USE_S1"</span>: USE_S1,</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="st">"PATCH_SHAPE"</span>: PATCH_SHAPE,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    <span class="st">"TRAIN_SIZE"</span>: TRAIN_SIZE,</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="st">"TEST_SIZE"</span>: TEST_SIZE,</span>
+<span id="cb16-10"><a href="#cb16-10"></a>    <span class="st">"VAL_SIZE"</span>: VAL_SIZE,</span>
+<span id="cb16-11"><a href="#cb16-11"></a>    <span class="st">"BATCH_SIZE"</span>: BATCH_SIZE,</span>
+<span id="cb16-12"><a href="#cb16-12"></a>    <span class="st">"EPOCHS"</span>: EPOCHS,</span>
+<span id="cb16-13"><a href="#cb16-13"></a>    <span class="st">"MODEL_DIR_NAME"</span>: MODEL_DIR_NAME,</span>
+<span id="cb16-14"><a href="#cb16-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-25" class="cell" data-execution_count="8">
+<div id="cell-26" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> dotenv</span>
-<span id="cb16-2"><a href="#cb16-2"></a></span>
-<span id="cb16-3"><a href="#cb16-3"></a>config_file <span class="op">=</span> <span class="st">"servir-aces/config.env"</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="cf">for</span> config_key <span class="kw">in</span> unet_config_settings:</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>                   key_to_set<span class="op">=</span>config_key,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>                   value_to_set<span class="op">=</span>unet_config_settings[config_key]</span>
-<span id="cb16-9"><a href="#cb16-9"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">import</span> dotenv</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a>config_file <span class="op">=</span> <span class="st">"servir-aces/config.env"</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="cf">for</span> config_key <span class="kw">in</span> unet_config_settings:</span>
+<span id="cb17-6"><a href="#cb17-6"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
+<span id="cb17-7"><a href="#cb17-7"></a>                   key_to_set<span class="op">=</span>config_key,</span>
+<span id="cb17-8"><a href="#cb17-8"></a>                   value_to_set<span class="op">=</span>unet_config_settings[config_key]</span>
+<span id="cb17-9"><a href="#cb17-9"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -792,17 +803,17 @@ EPOCHS = 30</code></pre>
 <h2 data-number="2.4" class="anchored" data-anchor-id="u-net-model"><span class="header-section-number">2.4</span> U-Net Model</h2>
 <section id="load-config-file-variables" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="load-config-file-variables"><span class="header-section-number">2.4.1</span> Load config file variables</h3>
-<div id="cell-28" class="cell" data-execution_count="9">
+<div id="cell-29" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">from</span> aces <span class="im">import</span> Config, DataProcessor, ModelTrainer, EEUtils</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> aces <span class="im">import</span> Config, DataProcessor, ModelTrainer, EEUtils</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Let’s load our config file through the <code>Config</code> class.</p>
-<div id="cell-30" class="cell" data-outputid="25e08952-d33c-4f37-b6e7-d0c605c10b17" data-execution_count="10">
+<div id="cell-31" class="cell" data-outputid="25e08952-d33c-4f37-b6e7-d0c605c10b17" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>unet_config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>unet_config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>BASEDIR: /content
@@ -812,10 +823,10 @@ using labels: ['class']</code></pre>
 </div>
 </div>
 <p>Most of the config in the <code>config.env</code> is now available via the config instance. Let’s check few of them here.</p>
-<div id="cell-32" class="cell" data-outputid="cfdd6f70-f82d-4af4-b54e-abb67038c02e" data-execution_count="11">
+<div id="cell-33" class="cell" data-outputid="cfdd6f70-f82d-4af4-b54e-abb67038c02e" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>unet_config.TRAINING_DIR, unet_config.OUTPUT_DIR, unet_config.BATCH_SIZE, unet_config.TRAIN_SIZE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>unet_config.TRAINING_DIR, unet_config.OUTPUT_DIR, unet_config.BATCH_SIZE, unet_config.TRAIN_SIZE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>(PosixPath('/content/datasets/unet_256x256_planet_wo_indices/training'),
@@ -828,10 +839,10 @@ using labels: ['class']</code></pre>
 <section id="load-modeltrainer-class" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="load-modeltrainer-class"><span class="header-section-number">2.4.2</span> Load <code>ModelTrainer</code> class</h3>
 <p>Next, let’s make an instance of the <code>ModelTrainer</code> object. The <code>ModelTrainer</code> class provides various tools for training, buidling, compiling, and running specified deep learning models.</p>
-<div id="cell-35" class="cell" data-outputid="bafab6c8-72bc-41a7-f8bb-516a423a9e19" data-execution_count="12">
+<div id="cell-36" class="cell" data-outputid="bafab6c8-72bc-41a7-f8bb-516a423a9e19" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>unet_model_trainer <span class="op">=</span> ModelTrainer(unet_config, seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>unet_model_trainer <span class="op">=</span> ModelTrainer(unet_config, seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Using seed: 42</code></pre>
@@ -842,10 +853,10 @@ using labels: ['class']</code></pre>
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="train-and-save-u-net-model"><span class="header-section-number">2.4.3</span> Train and Save U-Net model</h3>
 <p><a href="https://servir.github.io/servir-aces/model_trainer/"><code>ModelTrainer</code></a> class provides various functionality. We will use <code>train_model</code> function that helps to train the model using the provided configuration settings.</p>
 <p>This method performs the following steps: - Configures memory growth for TensorFlow. - Creates TensorFlow datasets for training, testing, and validation. - Builds and compiles the model. - Prepares the output directory for saving models and results. - Starts the training process. - Evaluates and prints validation metrics. - Saves training parameters, plots, and models.</p>
-<div id="cell-38" class="cell" data-outputid="199f9beb-c7e0-4b03-8216-a77c6412a4d5">
+<div id="cell-39" class="cell" data-outputid="199f9beb-c7e0-4b03-8216-a77c6412a4d5">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>unet_model_trainer.train_model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>unet_model_trainer.train_model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>****************************************************************************
@@ -2048,7 +2059,7 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-16-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-17-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2056,22 +2067,22 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 </section>
 <section id="save-the-config-file" class="level3" data-number="2.4.4">
 <h3 data-number="2.4.4" class="anchored" data-anchor-id="save-the-config-file"><span class="header-section-number">2.4.4</span> Save the config file</h3>
-<div id="cell-40" class="cell" data-outputid="f751bd04-3c88-4cc6-fb98-ee80f115d8d6">
+<div id="cell-41" class="cell" data-outputid="f751bd04-3c88-4cc6-fb98-ee80f115d8d6">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="im">import</span> shutil</span>
-<span id="cb26-3"><a href="#cb26-3"></a></span>
-<span id="cb26-4"><a href="#cb26-4"></a>config_file <span class="op">=</span> Path(config_file)</span>
-<span id="cb26-5"><a href="#cb26-5"></a>drive_config_file <span class="op">=</span> Path(unet_config.MODEL_DIR <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(config_file)<span class="sc">.</span>split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb26-6"><a href="#cb26-6"></a></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="co"># Create the target directory if it doesn't exist</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>drive_config_file.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb26-9"><a href="#cb26-9"></a></span>
-<span id="cb26-10"><a href="#cb26-10"></a><span class="co"># Copy the file</span></span>
-<span id="cb26-11"><a href="#cb26-11"></a>shutil.copy(config_file, drive_config_file)</span>
-<span id="cb26-12"><a href="#cb26-12"></a></span>
-<span id="cb26-13"><a href="#cb26-13"></a><span class="bu">print</span>(<span class="ss">f"File copied from </span><span class="sc">{</span>config_file<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>drive_config_file<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="im">import</span> shutil</span>
+<span id="cb27-3"><a href="#cb27-3"></a></span>
+<span id="cb27-4"><a href="#cb27-4"></a>config_file <span class="op">=</span> Path(config_file)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>drive_config_file <span class="op">=</span> Path(unet_config.MODEL_DIR <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(config_file)<span class="sc">.</span>split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6"></a></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="co"># Create the target directory if it doesn't exist</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>drive_config_file.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-9"><a href="#cb27-9"></a></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="co"># Copy the file</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>shutil.copy(config_file, drive_config_file)</span>
+<span id="cb27-12"><a href="#cb27-12"></a></span>
+<span id="cb27-13"><a href="#cb27-13"></a><span class="bu">print</span>(<span class="ss">f"File copied from </span><span class="sc">{</span>config_file<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>drive_config_file<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>File copied from servir-aces/config.env to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/config.env</code></pre>
@@ -2081,27 +2092,27 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 <section id="load-the-logs-files-via-tensorboard" class="level3" data-number="2.4.5">
 <h3 data-number="2.4.5" class="anchored" data-anchor-id="load-the-logs-files-via-tensorboard"><span class="header-section-number">2.4.5</span> Load the logs files via TensorBoard</h3>
 <p>Tensorboard provides a unique way to view and interact with the logs while the model is being trained. Learn more <a href="https://www.tensorflow.org/tensorboard/get_started">here</a>. Here we only show you how you can load them to tensorboard with our training logs.</p>
-<div id="cell-43" class="cell" data-execution_count="13">
+<div id="cell-44" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Load the TensorBoard notebook extension</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="op">%</span>load_ext tensorboard</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Load the TensorBoard notebook extension</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="op">%</span>load_ext tensorboard</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-44" class="cell" data-outputid="ff93a47c-3b66-4393-9579-2b86e3f8cc20" data-execution_count="29">
+<div id="cell-45" class="cell" data-outputid="ff93a47c-3b66-4393-9579-2b86e3f8cc20" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>log_dir_unet <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(unet_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/logs"</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>log_dir_unet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>log_dir_unet <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(unet_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/logs"</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>log_dir_unet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>'/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/unet_v1/logs'</code></pre>
 </div>
 </div>
-<div id="cell-45" class="cell" data-outputid="30a9af61-22d2-4f18-9760-b535b73b5535" data-execution_count="30">
+<div id="cell-46" class="cell" data-outputid="30a9af61-22d2-4f18-9760-b535b73b5535" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir <span class="st">"</span><span class="sc">{log_dir_unet}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir <span class="st">"</span><span class="sc">{log_dir_unet}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>Reusing TensorBoard on port 6007 (pid 5630), started 0:02:00 ago. (Use '!kill 5630' to kill it.)</code></pre>
@@ -2127,22 +2138,22 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 <section id="load-the-saved-u-net-model" class="level3" data-number="2.4.6">
 <h3 data-number="2.4.6" class="anchored" data-anchor-id="load-the-saved-u-net-model"><span class="header-section-number">2.4.6</span> Load the Saved U-Net Model</h3>
 <p>Load the saved model</p>
-<div id="cell-48" class="cell">
-<details open="" class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div id="cell-49" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>unet_model <span class="op">=</span> tf.keras.models.load_model(<span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(unet_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/trained-model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-50" class="cell" data-outputid="f5bdceec-a77d-4057-ba1c-d57661f46b21">
+<div id="cell-50" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="bu">print</span>(unet_model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>unet_model <span class="op">=</span> tf.keras.models.load_model(<span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(unet_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/trained-model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-51" class="cell" data-outputid="f5bdceec-a77d-4057-ba1c-d57661f46b21">
+<details open="" class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="bu">print</span>(unet_model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model: "unet"
@@ -2374,47 +2385,47 @@ MODEL_TYPE = "dnn"</code></pre>
 </section>
 <section id="update-the-config-file-programtically-1" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="update-the-config-file-programtically-1"><span class="header-section-number">2.5.2</span> Update the config file programtically</h3>
-<div id="cell-57" class="cell" data-execution_count="38">
+<div id="cell-58" class="cell" data-execution_count="38">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>DATADIR <span class="op">=</span> <span class="st">"datasets/dnn_planet_wo_indices"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="co"># PATCH_SHAPE, USE_ELEVATION, USE_S1, TRAIN_SIZE, TEST_SIZE, VAL_SIZE</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a><span class="co"># BATCH_SIZE, EPOCHS are converted to their appropriate type.</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>MODEL_DIR_NAME <span class="op">=</span> <span class="st">"dnn_v1"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>MODEL_TYPE <span class="op">=</span> <span class="st">"dnn"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb38-6"><a href="#cb38-6"></a>BATCH_SIZE <span class="op">=</span> <span class="st">"32"</span> <span class="co"># @param {type:"string"}</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a>EPOCHS <span class="op">=</span> <span class="st">"30"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>DATADIR <span class="op">=</span> <span class="st">"datasets/dnn_planet_wo_indices"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="co"># PATCH_SHAPE, USE_ELEVATION, USE_S1, TRAIN_SIZE, TEST_SIZE, VAL_SIZE</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="co"># BATCH_SIZE, EPOCHS are converted to their appropriate type.</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>MODEL_DIR_NAME <span class="op">=</span> <span class="st">"dnn_v1"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>MODEL_TYPE <span class="op">=</span> <span class="st">"dnn"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>BATCH_SIZE <span class="op">=</span> <span class="st">"32"</span> <span class="co"># @param {type:"string"}</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>EPOCHS <span class="op">=</span> <span class="st">"30"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-58" class="cell" data-execution_count="39">
+<div id="cell-59" class="cell" data-execution_count="39">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>dnn_config_settings <span class="op">=</span> {</span>
-<span id="cb39-2"><a href="#cb39-2"></a>    <span class="st">"DATADIR"</span>: DATADIR,</span>
-<span id="cb39-3"><a href="#cb39-3"></a>    <span class="st">"MODEL_DIR_NAME"</span>: MODEL_DIR_NAME,</span>
-<span id="cb39-4"><a href="#cb39-4"></a>    <span class="st">"MODEL_TYPE"</span>: MODEL_TYPE,</span>
-<span id="cb39-5"><a href="#cb39-5"></a>    <span class="st">"BATCH_SIZE"</span>: BATCH_SIZE,</span>
-<span id="cb39-6"><a href="#cb39-6"></a>    <span class="st">"EPOCHS"</span>: EPOCHS,</span>
-<span id="cb39-7"><a href="#cb39-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>dnn_config_settings <span class="op">=</span> {</span>
+<span id="cb40-2"><a href="#cb40-2"></a>    <span class="st">"DATADIR"</span>: DATADIR,</span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="st">"MODEL_DIR_NAME"</span>: MODEL_DIR_NAME,</span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="st">"MODEL_TYPE"</span>: MODEL_TYPE,</span>
+<span id="cb40-5"><a href="#cb40-5"></a>    <span class="st">"BATCH_SIZE"</span>: BATCH_SIZE,</span>
+<span id="cb40-6"><a href="#cb40-6"></a>    <span class="st">"EPOCHS"</span>: EPOCHS,</span>
+<span id="cb40-7"><a href="#cb40-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-59" class="cell" data-execution_count="40">
+<div id="cell-60" class="cell" data-execution_count="40">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="cf">for</span> config_key <span class="kw">in</span> dnn_config_settings:</span>
-<span id="cb40-2"><a href="#cb40-2"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
-<span id="cb40-3"><a href="#cb40-3"></a>                   key_to_set<span class="op">=</span>config_key,</span>
-<span id="cb40-4"><a href="#cb40-4"></a>                   value_to_set<span class="op">=</span>dnn_config_settings[config_key]</span>
-<span id="cb40-5"><a href="#cb40-5"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="cf">for</span> config_key <span class="kw">in</span> dnn_config_settings:</span>
+<span id="cb41-2"><a href="#cb41-2"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
+<span id="cb41-3"><a href="#cb41-3"></a>                   key_to_set<span class="op">=</span>config_key,</span>
+<span id="cb41-4"><a href="#cb41-4"></a>                   value_to_set<span class="op">=</span>dnn_config_settings[config_key]</span>
+<span id="cb41-5"><a href="#cb41-5"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="load-config-file-variables-for-dnn-model" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="load-config-file-variables-for-dnn-model"><span class="header-section-number">2.5.3</span> Load config file variables for DNN Model</h3>
-<div id="cell-61" class="cell" data-outputid="5018db03-3df7-4f78-e8a7-09cc66e3d211" data-execution_count="41">
+<div id="cell-62" class="cell" data-outputid="5018db03-3df7-4f78-e8a7-09cc66e3d211" data-execution_count="41">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>dnn_config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file, override<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>dnn_config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file, override<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>BASEDIR: /content
@@ -2424,10 +2435,10 @@ using labels: ['class']</code></pre>
 </div>
 </div>
 <p>Most of the config in the <code>config.env</code> is now available via the config instance. Let’s check few of them here.</p>
-<div id="cell-63" class="cell" data-outputid="c867ad8b-d755-470d-ce5a-b3246ec1448f" data-execution_count="42">
+<div id="cell-64" class="cell" data-outputid="c867ad8b-d755-470d-ce5a-b3246ec1448f" data-execution_count="42">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>dnn_config.TRAINING_DIR, dnn_config.OUTPUT_DIR, dnn_config.BATCH_SIZE, dnn_config.MODEL_TYPE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>dnn_config.TRAINING_DIR, dnn_config.OUTPUT_DIR, dnn_config.BATCH_SIZE, dnn_config.MODEL_TYPE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>(PosixPath('/content/datasets/dnn_planet_wo_indices/training'),
@@ -2440,10 +2451,10 @@ using labels: ['class']</code></pre>
 <section id="load-modeltrainer-class-1" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="load-modeltrainer-class-1"><span class="header-section-number">2.5.4</span> Load <code>ModelTrainer</code> class</h3>
 <p>Next, let’s make an instance of the <code>ModelTrainer</code> object. The <code>ModelTrainer</code> class provides various tools for training, buidling, compiling, and running specified deep learning models.</p>
-<div id="cell-66" class="cell" data-outputid="8c731ca8-ba05-4b20-ab20-614c6a94d01f" data-execution_count="43">
+<div id="cell-67" class="cell" data-outputid="8c731ca8-ba05-4b20-ab20-614c6a94d01f" data-execution_count="43">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>dnn_model_trainer <span class="op">=</span> ModelTrainer(dnn_config, seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>dnn_model_trainer <span class="op">=</span> ModelTrainer(dnn_config, seed<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Using seed: 42</code></pre>
@@ -2452,10 +2463,10 @@ using labels: ['class']</code></pre>
 </section>
 <section id="train-and-save-dnn-model" class="level3" data-number="2.5.5">
 <h3 data-number="2.5.5" class="anchored" data-anchor-id="train-and-save-dnn-model"><span class="header-section-number">2.5.5</span> Train and Save DNN model</h3>
-<div id="cell-68" class="cell" data-outputid="e8263864-6791-42ad-fac2-ca9f8864be74">
+<div id="cell-69" class="cell" data-outputid="e8263864-6791-42ad-fac2-ca9f8864be74">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>dnn_model_trainer.train_model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>dnn_model_trainer.train_model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>****************************************************************************
@@ -2831,7 +2842,7 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-30-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-31-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2839,18 +2850,18 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 </section>
 <section id="save-the-config-file-1" class="level3" data-number="2.5.6">
 <h3 data-number="2.5.6" class="anchored" data-anchor-id="save-the-config-file-1"><span class="header-section-number">2.5.6</span> Save the config file</h3>
-<div id="cell-70" class="cell" data-outputid="48f021ce-949b-44df-bbaf-d7e401886040">
+<div id="cell-71" class="cell" data-outputid="48f021ce-949b-44df-bbaf-d7e401886040">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>drive_config_file <span class="op">=</span> Path(dnn_config.MODEL_DIR <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(config_file)<span class="sc">.</span>split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb49-2"><a href="#cb49-2"></a></span>
-<span id="cb49-3"><a href="#cb49-3"></a><span class="co"># Create the target directory if it doesn't exist</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a>drive_config_file.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb49-5"><a href="#cb49-5"></a></span>
-<span id="cb49-6"><a href="#cb49-6"></a><span class="co"># Copy the file</span></span>
-<span id="cb49-7"><a href="#cb49-7"></a>shutil.copy(config_file, drive_config_file)</span>
-<span id="cb49-8"><a href="#cb49-8"></a></span>
-<span id="cb49-9"><a href="#cb49-9"></a><span class="bu">print</span>(<span class="ss">f"File copied from </span><span class="sc">{</span>config_file<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>drive_config_file<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>drive_config_file <span class="op">=</span> Path(dnn_config.MODEL_DIR <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(config_file)<span class="sc">.</span>split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a></span>
+<span id="cb50-3"><a href="#cb50-3"></a><span class="co"># Create the target directory if it doesn't exist</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>drive_config_file.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb50-5"><a href="#cb50-5"></a></span>
+<span id="cb50-6"><a href="#cb50-6"></a><span class="co"># Copy the file</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a>shutil.copy(config_file, drive_config_file)</span>
+<span id="cb50-8"><a href="#cb50-8"></a></span>
+<span id="cb50-9"><a href="#cb50-9"></a><span class="bu">print</span>(<span class="ss">f"File copied from </span><span class="sc">{</span>config_file<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>drive_config_file<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>File copied from servir-aces/config.env to /content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/config.env</code></pre>
@@ -2859,20 +2870,20 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 </section>
 <section id="load-the-logs-files-via-tensorboard-1" class="level3" data-number="2.5.7">
 <h3 data-number="2.5.7" class="anchored" data-anchor-id="load-the-logs-files-via-tensorboard-1"><span class="header-section-number">2.5.7</span> Load the logs files via TensorBoard</h3>
-<div id="cell-72" class="cell" data-outputid="99cdda0a-82e6-4f65-afd9-e0fd944ae4db" data-execution_count="44">
+<div id="cell-73" class="cell" data-outputid="99cdda0a-82e6-4f65-afd9-e0fd944ae4db" data-execution_count="44">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>log_dir_dnn <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(dnn_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/logs"</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a>log_dir_dnn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>log_dir_dnn <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(dnn_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/logs"</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>log_dir_dnn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>'/content/drive/MyDrive/Colab Notebooks/DL_Book/Chapter_1/output/dnn_v1/logs'</code></pre>
 </div>
 </div>
-<div id="cell-73" class="cell" data-outputid="3fadcdc1-4dd7-4b16-d623-015c431640e1" data-execution_count="45">
+<div id="cell-74" class="cell" data-outputid="3fadcdc1-4dd7-4b16-d623-015c431640e1" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir <span class="st">"</span><span class="sc">{log_dir_dnn}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir <span class="st">"</span><span class="sc">{log_dir_dnn}</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/javascript">
@@ -2894,16 +2905,16 @@ Saving plots and model visualization at /content/drive/MyDrive/Colab Notebooks/D
 </section>
 <section id="load-the-saved-dnn-model" class="level3" data-number="2.5.8">
 <h3 data-number="2.5.8" class="anchored" data-anchor-id="load-the-saved-dnn-model"><span class="header-section-number">2.5.8</span> Load the Saved DNN Model</h3>
-<div id="cell-75" class="cell">
+<div id="cell-76" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>dnn_model <span class="op">=</span> tf.keras.models.load_model(<span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(dnn_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/trained-model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>dnn_model <span class="op">=</span> tf.keras.models.load_model(<span class="ss">f"</span><span class="sc">{</span><span class="bu">str</span>(dnn_config.MODEL_DIR)<span class="sc">}</span><span class="ss">/trained-model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-76" class="cell" data-outputid="f6fa4ff9-813f-4a4b-a0f3-b73f83382952">
+<div id="cell-77" class="cell" data-outputid="f6fa4ff9-813f-4a4b-a0f3-b73f83382952">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="bu">print</span>(dnn_model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="bu">print</span>(dnn_model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model: "model"
@@ -2953,37 +2964,37 @@ None</code></pre>
 <pre><code>GCS_PROJECT = "servir-ee"</code></pre>
 <section id="update-the-config-file" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="update-the-config-file"><span class="header-section-number">2.6.1</span> Update the config file</h3>
-<div id="cell-83" class="cell">
-<details open="" class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>GCS_PROJECT <span class="op">=</span> <span class="st">"servir-ee"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div id="cell-84" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>config_settings <span class="op">=</span> {</span>
-<span id="cb59-2"><a href="#cb59-2"></a>    <span class="st">"GCS_PROJECT"</span>: GCS_PROJECT,</span>
-<span id="cb59-3"><a href="#cb59-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>GCS_PROJECT <span class="op">=</span> <span class="st">"servir-ee"</span> <span class="co"># @param {type:"string"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div id="cell-85" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a><span class="cf">for</span> config_key <span class="kw">in</span> config_settings:</span>
-<span id="cb60-2"><a href="#cb60-2"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
-<span id="cb60-3"><a href="#cb60-3"></a>                   key_to_set<span class="op">=</span>config_key,</span>
-<span id="cb60-4"><a href="#cb60-4"></a>                   value_to_set<span class="op">=</span>config_settings[config_key]</span>
-<span id="cb60-5"><a href="#cb60-5"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>config_settings <span class="op">=</span> {</span>
+<span id="cb60-2"><a href="#cb60-2"></a>    <span class="st">"GCS_PROJECT"</span>: GCS_PROJECT,</span>
+<span id="cb60-3"><a href="#cb60-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-86" class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a><span class="cf">for</span> config_key <span class="kw">in</span> config_settings:</span>
+<span id="cb61-2"><a href="#cb61-2"></a>    dotenv.set_key(dotenv_path<span class="op">=</span>config_file,</span>
+<span id="cb61-3"><a href="#cb61-3"></a>                   key_to_set<span class="op">=</span>config_key,</span>
+<span id="cb61-4"><a href="#cb61-4"></a>                   value_to_set<span class="op">=</span>config_settings[config_key]</span>
+<span id="cb61-5"><a href="#cb61-5"></a>                   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="load-config-file-variable" class="level3" data-number="2.6.2">
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="load-config-file-variable"><span class="header-section-number">2.6.2</span> Load config file variable</h3>
-<div id="cell-87" class="cell" data-outputid="51b1a579-56f4-4bf9-938d-9f0d016a022d">
+<div id="cell-88" class="cell" data-outputid="51b1a579-56f4-4bf9-938d-9f0d016a022d">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file, override<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>config <span class="op">=</span> Config(config_file<span class="op">=</span>config_file, override<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>BASEDIR: /content
@@ -2995,44 +3006,44 @@ using labels: ['class']</code></pre>
 </section>
 <section id="import-earthengine-and-geemap-for-visualization" class="level3" data-number="2.6.3">
 <h3 data-number="2.6.3" class="anchored" data-anchor-id="import-earthengine-and-geemap-for-visualization"><span class="header-section-number">2.6.3</span> Import earthengine and geemap for visualization</h3>
-<div id="cell-89" class="cell">
-<details open="" class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a><span class="co"># Import, authenticate and initialize the Earth Engine library.</span></span>
-<span id="cb63-2"><a href="#cb63-2"></a><span class="im">import</span> ee</span>
-<span id="cb63-3"><a href="#cb63-3"></a>ee.Authenticate()</span>
-<span id="cb63-4"><a href="#cb63-4"></a>EEUtils.initialize_session(use_highvolume<span class="op">=</span><span class="va">True</span>, project<span class="op">=</span>config.GCS_PROJECT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div id="cell-90" class="cell">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a><span class="im">import</span> geemap</span>
-<span id="cb64-2"><a href="#cb64-2"></a></span>
-<span id="cb64-3"><a href="#cb64-3"></a>Map <span class="op">=</span> geemap.Map()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># Import, authenticate and initialize the Earth Engine library.</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a><span class="im">import</span> ee</span>
+<span id="cb64-3"><a href="#cb64-3"></a>ee.Authenticate()</span>
+<span id="cb64-4"><a href="#cb64-4"></a>EEUtils.initialize_session(use_highvolume<span class="op">=</span><span class="va">True</span>, project<span class="op">=</span>config.GCS_PROJECT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="cell-91" class="cell">
+<details open="" class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a><span class="im">import</span> geemap</span>
+<span id="cb65-2"><a href="#cb65-2"></a></span>
+<span id="cb65-3"><a href="#cb65-3"></a>Map <span class="op">=</span> geemap.Map()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="class-information-and-masking" class="level3" data-number="2.6.4">
 <h3 data-number="2.6.4" class="anchored" data-anchor-id="class-information-and-masking"><span class="header-section-number">2.6.4</span> Class Information and Masking</h3>
-<div id="cell-92" class="cell" data-outputid="c8d93ba3-f58d-4c69-bbdf-867d44fbe4ea">
+<div id="cell-93" class="cell" data-outputid="c8d93ba3-f58d-4c69-bbdf-867d44fbe4ea">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># CLASS</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a><span class="co"># 0 - cropland etc.</span></span>
-<span id="cb65-3"><a href="#cb65-3"></a><span class="co"># 1 - rice</span></span>
-<span id="cb65-4"><a href="#cb65-4"></a><span class="co"># 2 - forest</span></span>
-<span id="cb65-5"><a href="#cb65-5"></a><span class="co"># 3 - Built up</span></span>
-<span id="cb65-6"><a href="#cb65-6"></a><span class="co"># 4 - Others (includes water body)</span></span>
-<span id="cb65-7"><a href="#cb65-7"></a>l1 <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-sco-assets/assets/Bhutan/BT_Admin_1"</span>)</span>
-<span id="cb65-8"><a href="#cb65-8"></a>paro <span class="op">=</span> l1.<span class="bu">filter</span>(ee.Filter.eq(<span class="st">"ADM1_EN"</span>, <span class="st">"Paro"</span>))</span>
-<span id="cb65-9"><a href="#cb65-9"></a></span>
-<span id="cb65-10"><a href="#cb65-10"></a></span>
-<span id="cb65-11"><a href="#cb65-11"></a><span class="co"># mask the rice growing zone</span></span>
-<span id="cb65-12"><a href="#cb65-12"></a><span class="co"># in Paro, rice grows upto 2600 m asl (double check to make sure??)</span></span>
-<span id="cb65-13"><a href="#cb65-13"></a>dem <span class="op">=</span> ee.Image(<span class="st">"MERIT/DEM/v1_0_3"</span>) <span class="co"># ee.Image('USGS/SRTMGL1_003')</span></span>
-<span id="cb65-14"><a href="#cb65-14"></a>dem <span class="op">=</span> dem.clip(paro)</span>
-<span id="cb65-15"><a href="#cb65-15"></a>rice_zone <span class="op">=</span> dem.gte(<span class="dv">0</span>).And(dem.lte(<span class="dv">2600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># CLASS</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a><span class="co"># 0 - cropland etc.</span></span>
+<span id="cb66-3"><a href="#cb66-3"></a><span class="co"># 1 - rice</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a><span class="co"># 2 - forest</span></span>
+<span id="cb66-5"><a href="#cb66-5"></a><span class="co"># 3 - Built up</span></span>
+<span id="cb66-6"><a href="#cb66-6"></a><span class="co"># 4 - Others (includes water body)</span></span>
+<span id="cb66-7"><a href="#cb66-7"></a>l1 <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-sco-assets/assets/Bhutan/BT_Admin_1"</span>)</span>
+<span id="cb66-8"><a href="#cb66-8"></a>paro <span class="op">=</span> l1.<span class="bu">filter</span>(ee.Filter.eq(<span class="st">"ADM1_EN"</span>, <span class="st">"Paro"</span>))</span>
+<span id="cb66-9"><a href="#cb66-9"></a></span>
+<span id="cb66-10"><a href="#cb66-10"></a></span>
+<span id="cb66-11"><a href="#cb66-11"></a><span class="co"># mask the rice growing zone</span></span>
+<span id="cb66-12"><a href="#cb66-12"></a><span class="co"># in Paro, rice grows upto 2600 m asl (double check to make sure??)</span></span>
+<span id="cb66-13"><a href="#cb66-13"></a>dem <span class="op">=</span> ee.Image(<span class="st">"MERIT/DEM/v1_0_3"</span>) <span class="co"># ee.Image('USGS/SRTMGL1_003')</span></span>
+<span id="cb66-14"><a href="#cb66-14"></a>dem <span class="op">=</span> dem.clip(paro)</span>
+<span id="cb66-15"><a href="#cb66-15"></a>rice_zone <span class="op">=</span> dem.gte(<span class="dv">0</span>).And(dem.lte(<span class="dv">2600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3065,14 +3076,14 @@ using labels: ['class']</code></pre>
 <h3 data-number="2.6.5" class="anchored" data-anchor-id="model-u-net"><span class="header-section-number">2.6.5</span> Model: U-Net</h3>
 <section id="load-and-visualize-the-prediction-output" class="level4" data-number="2.6.5.1">
 <h4 data-number="2.6.5.1" class="anchored" data-anchor-id="load-and-visualize-the-prediction-output"><span class="header-section-number">2.6.5.1</span> Load and visualize the prediction output</h4>
-<div id="cell-95" class="cell" data-outputid="0da7abaf-6e17-4c63-ccb0-016f1c019316">
+<div id="cell-96" class="cell" data-outputid="0da7abaf-6e17-4c63-ccb0-016f1c019316">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>UNET_RGBN <span class="op">=</span> ee.Image(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/prediction/prediction_unet_v1"</span>)</span>
-<span id="cb66-2"><a href="#cb66-2"></a>UNET_RGBN <span class="op">=</span> UNET_RGBN.updateMask(rice_zone)</span>
-<span id="cb66-3"><a href="#cb66-3"></a>Map.centerObject(UNET_RGBN, <span class="dv">11</span>)</span>
-<span id="cb66-4"><a href="#cb66-4"></a>Map.addLayer(UNET_RGBN.clip(paro), {<span class="st">"bands"</span>: [<span class="st">"prediction"</span>], <span class="st">"min"</span>:<span class="dv">0</span>, <span class="st">"max"</span>:<span class="dv">4</span>, <span class="st">"palette"</span>: [<span class="st">"FFFF00"</span>, <span class="st">"FFC0CB"</span>, <span class="st">"267300"</span>, <span class="st">"E60000"</span>, <span class="st">"005CE6"</span>]}, <span class="st">"UNET_RGBN"</span>)</span>
-<span id="cb66-5"><a href="#cb66-5"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>UNET_RGBN <span class="op">=</span> ee.Image(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/prediction/prediction_unet_v1"</span>)</span>
+<span id="cb67-2"><a href="#cb67-2"></a>UNET_RGBN <span class="op">=</span> UNET_RGBN.updateMask(rice_zone)</span>
+<span id="cb67-3"><a href="#cb67-3"></a>Map.centerObject(UNET_RGBN, <span class="dv">11</span>)</span>
+<span id="cb67-4"><a href="#cb67-4"></a>Map.addLayer(UNET_RGBN.clip(paro), {<span class="st">"bands"</span>: [<span class="st">"prediction"</span>], <span class="st">"min"</span>:<span class="dv">0</span>, <span class="st">"max"</span>:<span class="dv">4</span>, <span class="st">"palette"</span>: [<span class="st">"FFFF00"</span>, <span class="st">"FFC0CB"</span>, <span class="st">"267300"</span>, <span class="st">"E60000"</span>, <span class="st">"005CE6"</span>]}, <span class="st">"UNET_RGBN"</span>)</span>
+<span id="cb67-5"><a href="#cb67-5"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3109,12 +3120,12 @@ using labels: ['class']</code></pre>
 <section id="calculate-classification-metrics" class="level4" data-number="2.6.5.2">
 <h4 data-number="2.6.5.2" class="anchored" data-anchor-id="calculate-classification-metrics"><span class="header-section-number">2.6.5.2</span> Calculate classification metrics</h4>
 <p>Remapping to rice and non-rice output</p>
-<div id="cell-98" class="cell" data-outputid="f0f64493-74c6-4f1a-9583-732b5cf0647a">
+<div id="cell-99" class="cell" data-outputid="f0f64493-74c6-4f1a-9583-732b5cf0647a">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>UNET_RGBN_remapped <span class="op">=</span> UNET_RGBN.remap([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], <span class="dv">0</span>, <span class="st">"prediction"</span>)</span>
-<span id="cb67-2"><a href="#cb67-2"></a>Map.addLayer(UNET_RGBN_remapped, {<span class="st">"min"</span>: <span class="dv">0</span>, <span class="st">"max"</span>: <span class="dv">1</span>, <span class="st">"palette"</span>: [<span class="st">"cfcf00"</span>, <span class="st">"267300"</span>]}, <span class="st">"UNET_RGBN_remapped"</span>)</span>
-<span id="cb67-3"><a href="#cb67-3"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>UNET_RGBN_remapped <span class="op">=</span> UNET_RGBN.remap([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], <span class="dv">0</span>, <span class="st">"prediction"</span>)</span>
+<span id="cb68-2"><a href="#cb68-2"></a>Map.addLayer(UNET_RGBN_remapped, {<span class="st">"min"</span>: <span class="dv">0</span>, <span class="st">"max"</span>: <span class="dv">1</span>, <span class="st">"palette"</span>: [<span class="st">"cfcf00"</span>, <span class="st">"267300"</span>]}, <span class="st">"UNET_RGBN_remapped"</span>)</span>
+<span id="cb68-3"><a href="#cb68-3"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3147,12 +3158,12 @@ using labels: ['class']</code></pre>
 </script>
 </div>
 </div>
-<div id="cell-99" class="cell" data-outputid="0b58e242-61da-4d02-bae1-e06b81dd4740">
+<div id="cell-100" class="cell" data-outputid="0b58e242-61da-4d02-bae1-e06b81dd4740">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>sampling_geom <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/data/sampledGeom"</span>)</span>
-<span id="cb68-2"><a href="#cb68-2"></a>ceo_final_data <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/data/ceoData"</span>)</span>
-<span id="cb68-3"><a href="#cb68-3"></a>ceo_final_data <span class="op">=</span> ee.FeatureCollection(ceo_final_data.<span class="bu">filter</span>(ee.Filter.bounds(sampling_geom).Not()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>sampling_geom <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/data/sampledGeom"</span>)</span>
+<span id="cb69-2"><a href="#cb69-2"></a>ceo_final_data <span class="op">=</span> ee.FeatureCollection(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/data/ceoData"</span>)</span>
+<span id="cb69-3"><a href="#cb69-3"></a>ceo_final_data <span class="op">=</span> ee.FeatureCollection(ceo_final_data.<span class="bu">filter</span>(ee.Filter.bounds(sampling_geom).Not()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3180,16 +3191,16 @@ using labels: ['class']</code></pre>
             
 </div>
 </div>
-<div id="cell-100" class="cell" data-outputid="f0b56aa8-fad3-437a-e402-f05788e253bf">
+<div id="cell-101" class="cell" data-outputid="f0b56aa8-fad3-437a-e402-f05788e253bf">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>prediction_unet <span class="op">=</span> UNET_RGBN_remapped.sampleRegions(</span>
-<span id="cb69-2"><a href="#cb69-2"></a>    collection <span class="op">=</span> ceo_final_data,</span>
-<span id="cb69-3"><a href="#cb69-3"></a>    scale <span class="op">=</span> <span class="dv">10</span>,</span>
-<span id="cb69-4"><a href="#cb69-4"></a>    geometries <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb69-5"><a href="#cb69-5"></a>)</span>
-<span id="cb69-6"><a href="#cb69-6"></a></span>
-<span id="cb69-7"><a href="#cb69-7"></a><span class="co"># print("predictionOutputUnet", prediction_unet.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>prediction_unet <span class="op">=</span> UNET_RGBN_remapped.sampleRegions(</span>
+<span id="cb70-2"><a href="#cb70-2"></a>    collection <span class="op">=</span> ceo_final_data,</span>
+<span id="cb70-3"><a href="#cb70-3"></a>    scale <span class="op">=</span> <span class="dv">10</span>,</span>
+<span id="cb70-4"><a href="#cb70-4"></a>    geometries <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>)</span>
+<span id="cb70-6"><a href="#cb70-6"></a></span>
+<span id="cb70-7"><a href="#cb70-7"></a><span class="co"># print("predictionOutputUnet", prediction_unet.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3217,15 +3228,15 @@ using labels: ['class']</code></pre>
             
 </div>
 </div>
-<div id="cell-101" class="cell" data-outputid="823782a4-4832-4a0e-e987-2f125ef86715">
+<div id="cell-102" class="cell" data-outputid="823782a4-4832-4a0e-e987-2f125ef86715">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>error_matrix_unet <span class="op">=</span> prediction_unet.errorMatrix(actual<span class="op">=</span><span class="st">"rice"</span>, predicted<span class="op">=</span><span class="st">"remapped"</span>)</span>
-<span id="cb70-2"><a href="#cb70-2"></a>test_acc_unet <span class="op">=</span> error_matrix_unet.accuracy()</span>
-<span id="cb70-3"><a href="#cb70-3"></a>test_kappa_unet <span class="op">=</span> error_matrix_unet.kappa()</span>
-<span id="cb70-4"><a href="#cb70-4"></a>test_recall_producer_acc_unet <span class="op">=</span> error_matrix_unet.producersAccuracy().get([<span class="dv">1</span>, <span class="dv">0</span>])</span>
-<span id="cb70-5"><a href="#cb70-5"></a>test_precision_consumer_acc_unet <span class="op">=</span> error_matrix_unet.consumersAccuracy().get([<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb70-6"><a href="#cb70-6"></a>f1_unet <span class="op">=</span> error_matrix_unet.fscore().get([<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>error_matrix_unet <span class="op">=</span> prediction_unet.errorMatrix(actual<span class="op">=</span><span class="st">"rice"</span>, predicted<span class="op">=</span><span class="st">"remapped"</span>)</span>
+<span id="cb71-2"><a href="#cb71-2"></a>test_acc_unet <span class="op">=</span> error_matrix_unet.accuracy()</span>
+<span id="cb71-3"><a href="#cb71-3"></a>test_kappa_unet <span class="op">=</span> error_matrix_unet.kappa()</span>
+<span id="cb71-4"><a href="#cb71-4"></a>test_recall_producer_acc_unet <span class="op">=</span> error_matrix_unet.producersAccuracy().get([<span class="dv">1</span>, <span class="dv">0</span>])</span>
+<span id="cb71-5"><a href="#cb71-5"></a>test_precision_consumer_acc_unet <span class="op">=</span> error_matrix_unet.consumersAccuracy().get([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb71-6"><a href="#cb71-6"></a>f1_unet <span class="op">=</span> error_matrix_unet.fscore().get([<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3253,15 +3264,15 @@ using labels: ['class']</code></pre>
             
 </div>
 </div>
-<div id="cell-102" class="cell" data-outputid="21ef35bb-6cab-476e-cd2d-36bde597fb09">
+<div id="cell-103" class="cell" data-outputid="21ef35bb-6cab-476e-cd2d-36bde597fb09">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="bu">print</span>(<span class="st">"error_matrix_unet"</span>, error_matrix_unet.getInfo())</span>
-<span id="cb71-2"><a href="#cb71-2"></a><span class="bu">print</span>(<span class="st">"test_acc_unet"</span>, test_acc_unet.getInfo())</span>
-<span id="cb71-3"><a href="#cb71-3"></a><span class="bu">print</span>(<span class="st">"test_kappa_unet"</span>, test_kappa_unet.getInfo())</span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="bu">print</span>(<span class="st">"test_recall_producer_acc_unet"</span>, test_recall_producer_acc_unet.getInfo())</span>
-<span id="cb71-5"><a href="#cb71-5"></a><span class="bu">print</span>(<span class="st">"test_precision_consumer_acc_unet"</span>, test_precision_consumer_acc_unet.getInfo())</span>
-<span id="cb71-6"><a href="#cb71-6"></a><span class="bu">print</span>(<span class="st">"f1_unet"</span>, f1_unet.getInfo())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a><span class="bu">print</span>(<span class="st">"error_matrix_unet"</span>, error_matrix_unet.getInfo())</span>
+<span id="cb72-2"><a href="#cb72-2"></a><span class="bu">print</span>(<span class="st">"test_acc_unet"</span>, test_acc_unet.getInfo())</span>
+<span id="cb72-3"><a href="#cb72-3"></a><span class="bu">print</span>(<span class="st">"test_kappa_unet"</span>, test_kappa_unet.getInfo())</span>
+<span id="cb72-4"><a href="#cb72-4"></a><span class="bu">print</span>(<span class="st">"test_recall_producer_acc_unet"</span>, test_recall_producer_acc_unet.getInfo())</span>
+<span id="cb72-5"><a href="#cb72-5"></a><span class="bu">print</span>(<span class="st">"test_precision_consumer_acc_unet"</span>, test_precision_consumer_acc_unet.getInfo())</span>
+<span id="cb72-6"><a href="#cb72-6"></a><span class="bu">print</span>(<span class="st">"f1_unet"</span>, f1_unet.getInfo())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3300,14 +3311,14 @@ f1_unet 0.6172839506172839</code></pre>
 </section>
 <section id="calculate-probability-distribution" class="level4" data-number="2.6.5.3">
 <h4 data-number="2.6.5.3" class="anchored" data-anchor-id="calculate-probability-distribution"><span class="header-section-number">2.6.5.3</span> Calculate Probability Distribution</h4>
-<div id="cell-104" class="cell" data-outputid="28849e66-5a43-42c1-e3cf-0d75e394f28c">
+<div id="cell-105" class="cell" data-outputid="28849e66-5a43-42c1-e3cf-0d75e394f28c">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>prob_output_unet <span class="op">=</span> UNET_RGBN.select([<span class="st">"prediction"</span>, <span class="st">"others_etc"</span>, <span class="st">"cropland_etc"</span>, <span class="st">"urban"</span>, <span class="st">"forest"</span>, <span class="st">"rice"</span>]) <span class="op">\</span></span>
-<span id="cb73-2"><a href="#cb73-2"></a>                            .rename([<span class="st">"prediction_class"</span>, <span class="st">"others_prob"</span>, <span class="st">"cropland_prob"</span>, <span class="st">"urban_prob"</span>, <span class="st">"forest_prob"</span>, <span class="st">"rice_prob"</span>]) <span class="op">\</span></span>
-<span id="cb73-3"><a href="#cb73-3"></a>                            .sampleRegions(collection<span class="op">=</span>ceo_final_data, scale<span class="op">=</span><span class="dv">10</span>, geometries<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb73-4"><a href="#cb73-4"></a></span>
-<span id="cb73-5"><a href="#cb73-5"></a><span class="co"># print("prob_output_unet", prob_output_unet.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>prob_output_unet <span class="op">=</span> UNET_RGBN.select([<span class="st">"prediction"</span>, <span class="st">"others_etc"</span>, <span class="st">"cropland_etc"</span>, <span class="st">"urban"</span>, <span class="st">"forest"</span>, <span class="st">"rice"</span>]) <span class="op">\</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a>                            .rename([<span class="st">"prediction_class"</span>, <span class="st">"others_prob"</span>, <span class="st">"cropland_prob"</span>, <span class="st">"urban_prob"</span>, <span class="st">"forest_prob"</span>, <span class="st">"rice_prob"</span>]) <span class="op">\</span></span>
+<span id="cb74-3"><a href="#cb74-3"></a>                            .sampleRegions(collection<span class="op">=</span>ceo_final_data, scale<span class="op">=</span><span class="dv">10</span>, geometries<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb74-4"><a href="#cb74-4"></a></span>
+<span id="cb74-5"><a href="#cb74-5"></a><span class="co"># print("prob_output_unet", prob_output_unet.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3335,10 +3346,10 @@ f1_unet 0.6172839506172839</code></pre>
             
 </div>
 </div>
-<div id="cell-105" class="cell" data-outputid="856e045e-264f-469a-8d3c-39fe889fc676">
+<div id="cell-106" class="cell" data-outputid="856e045e-264f-469a-8d3c-39fe889fc676">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>prob_output_unet <span class="op">=</span> prob_output_unet.getInfo()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>prob_output_unet <span class="op">=</span> prob_output_unet.getInfo()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3372,14 +3383,14 @@ f1_unet 0.6172839506172839</code></pre>
 <h3 data-number="2.6.6" class="anchored" data-anchor-id="model-dnn"><span class="header-section-number">2.6.6</span> Model: DNN</h3>
 <section id="load-and-visualize-the-prediction-output-1" class="level4" data-number="2.6.6.1">
 <h4 data-number="2.6.6.1" class="anchored" data-anchor-id="load-and-visualize-the-prediction-output-1"><span class="header-section-number">2.6.6.1</span> Load and visualize the prediction output</h4>
-<div id="cell-108" class="cell" data-outputid="c1596c35-ee83-4d60-f7ec-df12eb68f9b6">
+<div id="cell-109" class="cell" data-outputid="c1596c35-ee83-4d60-f7ec-df12eb68f9b6">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>DNN_RGBN <span class="op">=</span> ee.Image(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/prediction/prediction_dnn_v1"</span>)</span>
-<span id="cb75-2"><a href="#cb75-2"></a>DNN_RGBN <span class="op">=</span> DNN_RGBN.updateMask(rice_zone)</span>
-<span id="cb75-3"><a href="#cb75-3"></a>Map.centerObject(DNN_RGBN)</span>
-<span id="cb75-4"><a href="#cb75-4"></a>Map.addLayer(DNN_RGBN.clip(paro), {<span class="st">"bands"</span>: [<span class="st">"prediction"</span>], <span class="st">"min"</span>:<span class="dv">0</span>, <span class="st">"max"</span>:<span class="dv">4</span>, <span class="st">"palette"</span>: [<span class="st">"FFFF00"</span>, <span class="st">"FFC0CB"</span>, <span class="st">"267300"</span>, <span class="st">"E60000"</span>, <span class="st">"005CE6"</span>]}, <span class="st">"DNN_RGBN"</span>)</span>
-<span id="cb75-5"><a href="#cb75-5"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>DNN_RGBN <span class="op">=</span> ee.Image(<span class="st">"projects/servir-ee/assets/dl-book/chapter-1/prediction/prediction_dnn_v1"</span>)</span>
+<span id="cb76-2"><a href="#cb76-2"></a>DNN_RGBN <span class="op">=</span> DNN_RGBN.updateMask(rice_zone)</span>
+<span id="cb76-3"><a href="#cb76-3"></a>Map.centerObject(DNN_RGBN)</span>
+<span id="cb76-4"><a href="#cb76-4"></a>Map.addLayer(DNN_RGBN.clip(paro), {<span class="st">"bands"</span>: [<span class="st">"prediction"</span>], <span class="st">"min"</span>:<span class="dv">0</span>, <span class="st">"max"</span>:<span class="dv">4</span>, <span class="st">"palette"</span>: [<span class="st">"FFFF00"</span>, <span class="st">"FFC0CB"</span>, <span class="st">"267300"</span>, <span class="st">"E60000"</span>, <span class="st">"005CE6"</span>]}, <span class="st">"DNN_RGBN"</span>)</span>
+<span id="cb76-5"><a href="#cb76-5"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3415,12 +3426,12 @@ f1_unet 0.6172839506172839</code></pre>
 </section>
 <section id="calculate-classification-metrics-1" class="level4" data-number="2.6.6.2">
 <h4 data-number="2.6.6.2" class="anchored" data-anchor-id="calculate-classification-metrics-1"><span class="header-section-number">2.6.6.2</span> Calculate classification metrics</h4>
-<div id="cell-110" class="cell" data-outputid="4664a7c0-7bb8-4b93-b701-ae6325c68dd1">
+<div id="cell-111" class="cell" data-outputid="4664a7c0-7bb8-4b93-b701-ae6325c68dd1">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>DNN_RGBN_remapped <span class="op">=</span> DNN_RGBN.remap([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], <span class="dv">0</span>, <span class="st">"prediction"</span>)</span>
-<span id="cb76-2"><a href="#cb76-2"></a>Map.addLayer(DNN_RGBN_remapped, {<span class="st">"min"</span>: <span class="dv">0</span>, <span class="st">"max"</span>: <span class="dv">1</span>, <span class="st">"palette"</span>: [<span class="st">"cfcf00"</span>, <span class="st">"267300"</span>]}, <span class="st">"DNN_RGBN_remapped"</span>)</span>
-<span id="cb76-3"><a href="#cb76-3"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a>DNN_RGBN_remapped <span class="op">=</span> DNN_RGBN.remap([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], <span class="dv">0</span>, <span class="st">"prediction"</span>)</span>
+<span id="cb77-2"><a href="#cb77-2"></a>Map.addLayer(DNN_RGBN_remapped, {<span class="st">"min"</span>: <span class="dv">0</span>, <span class="st">"max"</span>: <span class="dv">1</span>, <span class="st">"palette"</span>: [<span class="st">"cfcf00"</span>, <span class="st">"267300"</span>]}, <span class="st">"DNN_RGBN_remapped"</span>)</span>
+<span id="cb77-3"><a href="#cb77-3"></a>Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3453,16 +3464,16 @@ f1_unet 0.6172839506172839</code></pre>
 </script>
 </div>
 </div>
-<div id="cell-111" class="cell" data-outputid="0997cfa1-e5e3-493d-f879-097db0c61e5e">
+<div id="cell-112" class="cell" data-outputid="0997cfa1-e5e3-493d-f879-097db0c61e5e">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a>prediction_dnn <span class="op">=</span> DNN_RGBN_remapped.sampleRegions(</span>
-<span id="cb77-2"><a href="#cb77-2"></a>    collection <span class="op">=</span> ceo_final_data,</span>
-<span id="cb77-3"><a href="#cb77-3"></a>    scale <span class="op">=</span> <span class="dv">10</span>,</span>
-<span id="cb77-4"><a href="#cb77-4"></a>    geometries <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb77-5"><a href="#cb77-5"></a>)</span>
-<span id="cb77-6"><a href="#cb77-6"></a></span>
-<span id="cb77-7"><a href="#cb77-7"></a><span class="co"># print("predictionOutputDNN", prediction_dnn.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>prediction_dnn <span class="op">=</span> DNN_RGBN_remapped.sampleRegions(</span>
+<span id="cb78-2"><a href="#cb78-2"></a>    collection <span class="op">=</span> ceo_final_data,</span>
+<span id="cb78-3"><a href="#cb78-3"></a>    scale <span class="op">=</span> <span class="dv">10</span>,</span>
+<span id="cb78-4"><a href="#cb78-4"></a>    geometries <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb78-5"><a href="#cb78-5"></a>)</span>
+<span id="cb78-6"><a href="#cb78-6"></a></span>
+<span id="cb78-7"><a href="#cb78-7"></a><span class="co"># print("predictionOutputDNN", prediction_dnn.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3490,15 +3501,15 @@ f1_unet 0.6172839506172839</code></pre>
             
 </div>
 </div>
-<div id="cell-112" class="cell" data-outputid="4fc4e8b3-0d83-43ac-d69e-e3e5f7354f06">
+<div id="cell-113" class="cell" data-outputid="4fc4e8b3-0d83-43ac-d69e-e3e5f7354f06">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>error_matrix_dnn <span class="op">=</span> prediction_dnn.errorMatrix(actual<span class="op">=</span><span class="st">"rice"</span>, predicted<span class="op">=</span><span class="st">"remapped"</span>)</span>
-<span id="cb78-2"><a href="#cb78-2"></a>test_acc_dnn <span class="op">=</span> error_matrix_dnn.accuracy()</span>
-<span id="cb78-3"><a href="#cb78-3"></a>test_kappa_dnn <span class="op">=</span> error_matrix_dnn.kappa()</span>
-<span id="cb78-4"><a href="#cb78-4"></a>test_recall_producer_acc_dnn <span class="op">=</span> error_matrix_dnn.producersAccuracy().get([<span class="dv">1</span>, <span class="dv">0</span>])</span>
-<span id="cb78-5"><a href="#cb78-5"></a>test_precision_consumer_acc_dnn <span class="op">=</span> error_matrix_dnn.consumersAccuracy().get([<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb78-6"><a href="#cb78-6"></a>f1_dnn <span class="op">=</span> error_matrix_dnn.fscore().get([<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a>error_matrix_dnn <span class="op">=</span> prediction_dnn.errorMatrix(actual<span class="op">=</span><span class="st">"rice"</span>, predicted<span class="op">=</span><span class="st">"remapped"</span>)</span>
+<span id="cb79-2"><a href="#cb79-2"></a>test_acc_dnn <span class="op">=</span> error_matrix_dnn.accuracy()</span>
+<span id="cb79-3"><a href="#cb79-3"></a>test_kappa_dnn <span class="op">=</span> error_matrix_dnn.kappa()</span>
+<span id="cb79-4"><a href="#cb79-4"></a>test_recall_producer_acc_dnn <span class="op">=</span> error_matrix_dnn.producersAccuracy().get([<span class="dv">1</span>, <span class="dv">0</span>])</span>
+<span id="cb79-5"><a href="#cb79-5"></a>test_precision_consumer_acc_dnn <span class="op">=</span> error_matrix_dnn.consumersAccuracy().get([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb79-6"><a href="#cb79-6"></a>f1_dnn <span class="op">=</span> error_matrix_dnn.fscore().get([<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3526,15 +3537,15 @@ f1_unet 0.6172839506172839</code></pre>
             
 </div>
 </div>
-<div id="cell-113" class="cell" data-outputid="68fcb3ce-9505-4fff-8ec6-54af9f063403">
+<div id="cell-114" class="cell" data-outputid="68fcb3ce-9505-4fff-8ec6-54af9f063403">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a><span class="bu">print</span>(<span class="st">"error_matrix_dnn"</span>, error_matrix_dnn.getInfo())</span>
-<span id="cb79-2"><a href="#cb79-2"></a><span class="bu">print</span>(<span class="st">"test_acc_dnn"</span>, test_acc_dnn.getInfo())</span>
-<span id="cb79-3"><a href="#cb79-3"></a><span class="bu">print</span>(<span class="st">"test_kappa_dnn"</span>, test_kappa_dnn.getInfo())</span>
-<span id="cb79-4"><a href="#cb79-4"></a><span class="bu">print</span>(<span class="st">"test_recall_producer_acc_dnn"</span>, test_recall_producer_acc_dnn.getInfo())</span>
-<span id="cb79-5"><a href="#cb79-5"></a><span class="bu">print</span>(<span class="st">"test_precision_consumer_acc_dnn"</span>, test_precision_consumer_acc_dnn.getInfo())</span>
-<span id="cb79-6"><a href="#cb79-6"></a><span class="bu">print</span>(<span class="st">"f1_dnn"</span>, f1_dnn.getInfo())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="bu">print</span>(<span class="st">"error_matrix_dnn"</span>, error_matrix_dnn.getInfo())</span>
+<span id="cb80-2"><a href="#cb80-2"></a><span class="bu">print</span>(<span class="st">"test_acc_dnn"</span>, test_acc_dnn.getInfo())</span>
+<span id="cb80-3"><a href="#cb80-3"></a><span class="bu">print</span>(<span class="st">"test_kappa_dnn"</span>, test_kappa_dnn.getInfo())</span>
+<span id="cb80-4"><a href="#cb80-4"></a><span class="bu">print</span>(<span class="st">"test_recall_producer_acc_dnn"</span>, test_recall_producer_acc_dnn.getInfo())</span>
+<span id="cb80-5"><a href="#cb80-5"></a><span class="bu">print</span>(<span class="st">"test_precision_consumer_acc_dnn"</span>, test_precision_consumer_acc_dnn.getInfo())</span>
+<span id="cb80-6"><a href="#cb80-6"></a><span class="bu">print</span>(<span class="st">"f1_dnn"</span>, f1_dnn.getInfo())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3573,14 +3584,14 @@ f1_dnn 0.6596858638743456</code></pre>
 </section>
 <section id="calculate-probability-distribution-1" class="level4" data-number="2.6.6.3">
 <h4 data-number="2.6.6.3" class="anchored" data-anchor-id="calculate-probability-distribution-1"><span class="header-section-number">2.6.6.3</span> Calculate Probability Distribution</h4>
-<div id="cell-115" class="cell" data-outputid="ccb621ca-9399-4076-b1b7-4b54561661c7">
+<div id="cell-116" class="cell" data-outputid="ccb621ca-9399-4076-b1b7-4b54561661c7">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1"></a>prob_output_dnn <span class="op">=</span> DNN_RGBN.select([<span class="st">"prediction"</span>, <span class="st">"others_etc"</span>, <span class="st">"cropland_etc"</span>, <span class="st">"urban"</span>, <span class="st">"forest"</span>, <span class="st">"rice"</span>]) <span class="op">\</span></span>
-<span id="cb81-2"><a href="#cb81-2"></a>                            .rename([<span class="st">"prediction_class"</span>, <span class="st">"others_prob"</span>, <span class="st">"cropland_prob"</span>, <span class="st">"urban_prob"</span>, <span class="st">"forest_prob"</span>, <span class="st">"rice_prob"</span>]) <span class="op">\</span></span>
-<span id="cb81-3"><a href="#cb81-3"></a>                            .sampleRegions(collection<span class="op">=</span>ceo_final_data, scale<span class="op">=</span><span class="dv">10</span>, geometries<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb81-4"><a href="#cb81-4"></a></span>
-<span id="cb81-5"><a href="#cb81-5"></a><span class="co"># print("prob_output_dnn", prob_output_dnn.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>prob_output_dnn <span class="op">=</span> DNN_RGBN.select([<span class="st">"prediction"</span>, <span class="st">"others_etc"</span>, <span class="st">"cropland_etc"</span>, <span class="st">"urban"</span>, <span class="st">"forest"</span>, <span class="st">"rice"</span>]) <span class="op">\</span></span>
+<span id="cb82-2"><a href="#cb82-2"></a>                            .rename([<span class="st">"prediction_class"</span>, <span class="st">"others_prob"</span>, <span class="st">"cropland_prob"</span>, <span class="st">"urban_prob"</span>, <span class="st">"forest_prob"</span>, <span class="st">"rice_prob"</span>]) <span class="op">\</span></span>
+<span id="cb82-3"><a href="#cb82-3"></a>                            .sampleRegions(collection<span class="op">=</span>ceo_final_data, scale<span class="op">=</span><span class="dv">10</span>, geometries<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb82-4"><a href="#cb82-4"></a></span>
+<span id="cb82-5"><a href="#cb82-5"></a><span class="co"># print("prob_output_dnn", prob_output_dnn.getInfo())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3608,10 +3619,10 @@ f1_dnn 0.6596858638743456</code></pre>
             
 </div>
 </div>
-<div id="cell-116" class="cell" data-outputid="3a301b2e-0119-4596-a6c9-184265c2ea6d">
+<div id="cell-117" class="cell" data-outputid="3a301b2e-0119-4596-a6c9-184265c2ea6d">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>prob_output_dnn <span class="op">=</span> prob_output_dnn.getInfo()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a>prob_output_dnn <span class="op">=</span> prob_output_dnn.getInfo()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3646,15 +3657,15 @@ f1_dnn 0.6596858638743456</code></pre>
 <h2 data-number="2.7" class="anchored" data-anchor-id="figures-and-plots"><span class="header-section-number">2.7</span> Figures and Plots</h2>
 <section id="training-and-validation-plot" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="training-and-validation-plot"><span class="header-section-number">2.7.1</span> Training and Validation Plot</h3>
-<div id="cell-119" class="cell" data-outputid="9b652d89-cd4f-4534-f70c-a05ef4fc9598">
+<div id="cell-120" class="cell" data-outputid="9b652d89-cd4f-4534-f70c-a05ef4fc9598">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb83-2"><a href="#cb83-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb83-3"><a href="#cb83-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb83-4"><a href="#cb83-4"></a><span class="im">import</span> pickle</span>
-<span id="cb83-5"><a href="#cb83-5"></a></span>
-<span id="cb83-6"><a href="#cb83-6"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb84-3"><a href="#cb84-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb84-4"><a href="#cb84-4"></a><span class="im">import</span> pickle</span>
+<span id="cb84-5"><a href="#cb84-5"></a></span>
+<span id="cb84-6"><a href="#cb84-6"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3682,85 +3693,14 @@ f1_dnn 0.6596858638743456</code></pre>
             
 </div>
 </div>
-<div id="cell-120" class="cell" data-outputid="3f5a9530-1c81-432b-8575-f84216deda6c">
+<div id="cell-121" class="cell" data-outputid="3f5a9530-1c81-432b-8575-f84216deda6c">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a><span class="cf">with</span> <span class="bu">open</span>(unet_config.MODEL_DIR <span class="op">/</span> <span class="st">"model.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
-<span id="cb84-2"><a href="#cb84-2"></a>    unet_model_metrics <span class="op">=</span> pickle.load(f)</span>
-<span id="cb84-3"><a href="#cb84-3"></a></span>
-<span id="cb84-4"><a href="#cb84-4"></a><span class="cf">with</span> <span class="bu">open</span>(dnn_config.MODEL_DIR <span class="op">/</span> <span class="st">"model.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
-<span id="cb84-5"><a href="#cb84-5"></a>    dnn_model_metrics <span class="op">=</span> pickle.load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-</div>
-</div>
-<div id="cell-121" class="cell" data-outputid="0be4b0c6-01ad-4f2a-915b-31ac6a7ef95d">
-<details open="" class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1"></a><span class="co"># Create subplots for different metrics in a 3x4 grid</span></span>
-<span id="cb85-2"><a href="#cb85-2"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">4</span><span class="op">*</span><span class="dv">7</span>, <span class="dv">6</span><span class="op">*</span><span class="dv">2</span>))</span>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1"></a><span class="cf">with</span> <span class="bu">open</span>(unet_config.MODEL_DIR <span class="op">/</span> <span class="st">"model.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
+<span id="cb85-2"><a href="#cb85-2"></a>    unet_model_metrics <span class="op">=</span> pickle.load(f)</span>
 <span id="cb85-3"><a href="#cb85-3"></a></span>
-<span id="cb85-4"><a href="#cb85-4"></a>colors <span class="op">=</span> [<span class="st">"#1f77b4"</span>, <span class="st">"#ff7f0e"</span>, <span class="st">"#2ca02c"</span>, <span class="st">"#d62728"</span>]</span>
-<span id="cb85-5"><a href="#cb85-5"></a>metrics <span class="op">=</span> [<span class="st">"loss"</span>, <span class="st">"precision"</span>, <span class="st">"recall"</span>, <span class="st">"categorical_accuracy"</span>]</span>
-<span id="cb85-6"><a href="#cb85-6"></a>metrics_name <span class="op">=</span> [<span class="st">"Loss"</span>, <span class="st">"Precision"</span>, <span class="st">"Recall"</span>, <span class="st">"Categorical Accuracy"</span>]</span>
-<span id="cb85-7"><a href="#cb85-7"></a></span>
-<span id="cb85-8"><a href="#cb85-8"></a>epochs <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, config.EPOCHS <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb85-9"><a href="#cb85-9"></a></span>
-<span id="cb85-10"><a href="#cb85-10"></a>title_fontsize <span class="op">=</span> <span class="dv">22</span></span>
-<span id="cb85-11"><a href="#cb85-11"></a>label_fontsize <span class="op">=</span> <span class="dv">22</span></span>
-<span id="cb85-12"><a href="#cb85-12"></a>legend_fontsize <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb85-13"><a href="#cb85-13"></a>tick_fontsize <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb85-14"><a href="#cb85-14"></a>lw<span class="op">=</span><span class="fl">1.5</span></span>
-<span id="cb85-15"><a href="#cb85-15"></a></span>
-<span id="cb85-16"><a href="#cb85-16"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
-<span id="cb85-17"><a href="#cb85-17"></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(metrics)):</span>
-<span id="cb85-18"><a href="#cb85-18"></a>        <span class="cf">if</span> i <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb85-19"><a href="#cb85-19"></a>            axs[i][y].plot(epochs, unet_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">0</span>], marker<span class="op">=</span><span class="st">"o"</span>, lw<span class="op">=</span>lw, label<span class="op">=</span><span class="ss">f"U-Net validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb85-20"><a href="#cb85-20"></a>            axs[i][y].plot(epochs, dnn_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb85-21"><a href="#cb85-21"></a>            axs[i][y].set_title(<span class="ss">f"Validate </span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
-<span id="cb85-22"><a href="#cb85-22"></a>            axs[i][y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb85-23"><a href="#cb85-23"></a>            axs[i][y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb85-24"><a href="#cb85-24"></a>            axs[i][y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb85-25"><a href="#cb85-25"></a>            axs[i][y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
-<span id="cb85-26"><a href="#cb85-26"></a>            axs[i][y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
-<span id="cb85-27"><a href="#cb85-27"></a>        <span class="cf">else</span>:</span>
-<span id="cb85-28"><a href="#cb85-28"></a>            axs[i][y].plot(epochs, unet_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">0</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"U-Net train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb85-29"><a href="#cb85-29"></a>            axs[i][y].plot(epochs, dnn_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb85-30"><a href="#cb85-30"></a>            axs[i][y].set_title(<span class="ss">f"Train </span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
-<span id="cb85-31"><a href="#cb85-31"></a>            axs[i][y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb85-32"><a href="#cb85-32"></a>            axs[i][y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb85-33"><a href="#cb85-33"></a>            axs[i][y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb85-34"><a href="#cb85-34"></a>            axs[i][y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
-<span id="cb85-35"><a href="#cb85-35"></a>            axs[i][y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
-<span id="cb85-36"><a href="#cb85-36"></a></span>
-<span id="cb85-37"><a href="#cb85-37"></a></span>
-<span id="cb85-38"><a href="#cb85-38"></a><span class="co"># Adjust layout and show the plot</span></span>
-<span id="cb85-39"><a href="#cb85-39"></a>plt.tight_layout()</span>
-<span id="cb85-40"><a href="#cb85-40"></a><span class="co"># plt.savefig("metrics_plot_model_comparison.png", dpi=500, bbox_inches="tight")</span></span>
-<span id="cb85-41"><a href="#cb85-41"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb85-4"><a href="#cb85-4"></a><span class="cf">with</span> <span class="bu">open</span>(dnn_config.MODEL_DIR <span class="op">/</span> <span class="st">"model.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
+<span id="cb85-5"><a href="#cb85-5"></a>    dnn_model_metrics <span class="op">=</span> pickle.load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3787,19 +3727,12 @@ f1_dnn 0.6596858638743456</code></pre>
             </style>
             
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-60-output-2.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<div id="cell-122" class="cell" data-outputid="12836c8b-749c-4d9f-bbde-51b66ed651d0">
+<div id="cell-122" class="cell" data-outputid="0be4b0c6-01ad-4f2a-915b-31ac6a7ef95d">
 <details open="" class="code-fold">
 <summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a><span class="co"># Create subplots for different metrics in a 3x4 grid</span></span>
-<span id="cb86-2"><a href="#cb86-2"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">4</span><span class="op">*</span><span class="dv">7</span>, <span class="dv">6</span><span class="op">*</span><span class="dv">1</span>))</span>
+<span id="cb86-2"><a href="#cb86-2"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">4</span><span class="op">*</span><span class="dv">7</span>, <span class="dv">6</span><span class="op">*</span><span class="dv">2</span>))</span>
 <span id="cb86-3"><a href="#cb86-3"></a></span>
 <span id="cb86-4"><a href="#cb86-4"></a>colors <span class="op">=</span> [<span class="st">"#1f77b4"</span>, <span class="st">"#ff7f0e"</span>, <span class="st">"#2ca02c"</span>, <span class="st">"#d62728"</span>]</span>
 <span id="cb86-5"><a href="#cb86-5"></a>metrics <span class="op">=</span> [<span class="st">"loss"</span>, <span class="st">"precision"</span>, <span class="st">"recall"</span>, <span class="st">"categorical_accuracy"</span>]</span>
@@ -3813,24 +3746,32 @@ f1_dnn 0.6596858638743456</code></pre>
 <span id="cb86-13"><a href="#cb86-13"></a>tick_fontsize <span class="op">=</span> <span class="dv">18</span></span>
 <span id="cb86-14"><a href="#cb86-14"></a>lw<span class="op">=</span><span class="fl">1.5</span></span>
 <span id="cb86-15"><a href="#cb86-15"></a></span>
-<span id="cb86-16"><a href="#cb86-16"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(metrics)):</span>
-<span id="cb86-17"><a href="#cb86-17"></a>    axs[y].plot(epochs, unet_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">0</span>], marker<span class="op">=</span><span class="st">"o"</span>, lw<span class="op">=</span>lw, label<span class="op">=</span><span class="ss">f"U-Net validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb86-18"><a href="#cb86-18"></a>    axs[y].plot(epochs, dnn_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb86-19"><a href="#cb86-19"></a></span>
-<span id="cb86-20"><a href="#cb86-20"></a>    axs[y].plot(epochs, unet_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">2</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"U-Net train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb86-21"><a href="#cb86-21"></a>    axs[y].plot(epochs, dnn_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">3</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb86-22"><a href="#cb86-22"></a>    axs[y].set_title(<span class="ss">f"</span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
-<span id="cb86-23"><a href="#cb86-23"></a>    axs[y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb86-24"><a href="#cb86-24"></a>    axs[y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
-<span id="cb86-25"><a href="#cb86-25"></a>    axs[y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb86-26"><a href="#cb86-26"></a>    axs[y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
-<span id="cb86-27"><a href="#cb86-27"></a>    axs[y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
-<span id="cb86-28"><a href="#cb86-28"></a></span>
-<span id="cb86-29"><a href="#cb86-29"></a></span>
-<span id="cb86-30"><a href="#cb86-30"></a><span class="co"># Adjust layout and show the plot</span></span>
-<span id="cb86-31"><a href="#cb86-31"></a>plt.tight_layout()</span>
-<span id="cb86-32"><a href="#cb86-32"></a><span class="co"># plt.savefig("metrics_plot_model_comparison.png", dpi=500, bbox_inches="tight")</span></span>
-<span id="cb86-33"><a href="#cb86-33"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb86-16"><a href="#cb86-16"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb86-17"><a href="#cb86-17"></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(metrics)):</span>
+<span id="cb86-18"><a href="#cb86-18"></a>        <span class="cf">if</span> i <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb86-19"><a href="#cb86-19"></a>            axs[i][y].plot(epochs, unet_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">0</span>], marker<span class="op">=</span><span class="st">"o"</span>, lw<span class="op">=</span>lw, label<span class="op">=</span><span class="ss">f"U-Net validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb86-20"><a href="#cb86-20"></a>            axs[i][y].plot(epochs, dnn_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb86-21"><a href="#cb86-21"></a>            axs[i][y].set_title(<span class="ss">f"Validate </span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
+<span id="cb86-22"><a href="#cb86-22"></a>            axs[i][y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb86-23"><a href="#cb86-23"></a>            axs[i][y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb86-24"><a href="#cb86-24"></a>            axs[i][y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb86-25"><a href="#cb86-25"></a>            axs[i][y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
+<span id="cb86-26"><a href="#cb86-26"></a>            axs[i][y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
+<span id="cb86-27"><a href="#cb86-27"></a>        <span class="cf">else</span>:</span>
+<span id="cb86-28"><a href="#cb86-28"></a>            axs[i][y].plot(epochs, unet_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">0</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"U-Net train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb86-29"><a href="#cb86-29"></a>            axs[i][y].plot(epochs, dnn_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb86-30"><a href="#cb86-30"></a>            axs[i][y].set_title(<span class="ss">f"Train </span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
+<span id="cb86-31"><a href="#cb86-31"></a>            axs[i][y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb86-32"><a href="#cb86-32"></a>            axs[i][y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb86-33"><a href="#cb86-33"></a>            axs[i][y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb86-34"><a href="#cb86-34"></a>            axs[i][y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
+<span id="cb86-35"><a href="#cb86-35"></a>            axs[i][y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
+<span id="cb86-36"><a href="#cb86-36"></a></span>
+<span id="cb86-37"><a href="#cb86-37"></a></span>
+<span id="cb86-38"><a href="#cb86-38"></a><span class="co"># Adjust layout and show the plot</span></span>
+<span id="cb86-39"><a href="#cb86-39"></a>plt.tight_layout()</span>
+<span id="cb86-40"><a href="#cb86-40"></a><span class="co"># plt.savefig("metrics_plot_model_comparison.png", dpi=500, bbox_inches="tight")</span></span>
+<span id="cb86-41"><a href="#cb86-41"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3865,37 +3806,107 @@ f1_dnn 0.6596858638743456</code></pre>
 </div>
 </div>
 </div>
+<div id="cell-123" class="cell" data-outputid="12836c8b-749c-4d9f-bbde-51b66ed651d0">
+<details open="" class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1"></a><span class="co"># Create subplots for different metrics in a 3x4 grid</span></span>
+<span id="cb87-2"><a href="#cb87-2"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">4</span><span class="op">*</span><span class="dv">7</span>, <span class="dv">6</span><span class="op">*</span><span class="dv">1</span>))</span>
+<span id="cb87-3"><a href="#cb87-3"></a></span>
+<span id="cb87-4"><a href="#cb87-4"></a>colors <span class="op">=</span> [<span class="st">"#1f77b4"</span>, <span class="st">"#ff7f0e"</span>, <span class="st">"#2ca02c"</span>, <span class="st">"#d62728"</span>]</span>
+<span id="cb87-5"><a href="#cb87-5"></a>metrics <span class="op">=</span> [<span class="st">"loss"</span>, <span class="st">"precision"</span>, <span class="st">"recall"</span>, <span class="st">"categorical_accuracy"</span>]</span>
+<span id="cb87-6"><a href="#cb87-6"></a>metrics_name <span class="op">=</span> [<span class="st">"Loss"</span>, <span class="st">"Precision"</span>, <span class="st">"Recall"</span>, <span class="st">"Categorical Accuracy"</span>]</span>
+<span id="cb87-7"><a href="#cb87-7"></a></span>
+<span id="cb87-8"><a href="#cb87-8"></a>epochs <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, config.EPOCHS <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb87-9"><a href="#cb87-9"></a></span>
+<span id="cb87-10"><a href="#cb87-10"></a>title_fontsize <span class="op">=</span> <span class="dv">22</span></span>
+<span id="cb87-11"><a href="#cb87-11"></a>label_fontsize <span class="op">=</span> <span class="dv">22</span></span>
+<span id="cb87-12"><a href="#cb87-12"></a>legend_fontsize <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb87-13"><a href="#cb87-13"></a>tick_fontsize <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb87-14"><a href="#cb87-14"></a>lw<span class="op">=</span><span class="fl">1.5</span></span>
+<span id="cb87-15"><a href="#cb87-15"></a></span>
+<span id="cb87-16"><a href="#cb87-16"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(metrics)):</span>
+<span id="cb87-17"><a href="#cb87-17"></a>    axs[y].plot(epochs, unet_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">0</span>], marker<span class="op">=</span><span class="st">"o"</span>, lw<span class="op">=</span>lw, label<span class="op">=</span><span class="ss">f"U-Net validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-18"><a href="#cb87-18"></a>    axs[y].plot(epochs, dnn_model_metrics[<span class="ss">f"val_</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>], color<span class="op">=</span>colors[<span class="dv">1</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN validate </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-19"><a href="#cb87-19"></a></span>
+<span id="cb87-20"><a href="#cb87-20"></a>    axs[y].plot(epochs, unet_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">2</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"U-Net train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-21"><a href="#cb87-21"></a>    axs[y].plot(epochs, dnn_model_metrics[metrics[y]], color<span class="op">=</span>colors[<span class="dv">3</span>], lw<span class="op">=</span>lw, marker<span class="op">=</span><span class="st">"o"</span>, label<span class="op">=</span><span class="ss">f"DNN train </span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-22"><a href="#cb87-22"></a>    axs[y].set_title(<span class="ss">f"</span><span class="sc">{</span>metrics_name[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>title_fontsize)</span>
+<span id="cb87-23"><a href="#cb87-23"></a>    axs[y].set_xlabel(<span class="st">"epochs"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb87-24"><a href="#cb87-24"></a>    axs[y].set_ylabel(<span class="ss">f"</span><span class="sc">{</span>metrics[y]<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span>label_fontsize)</span>
+<span id="cb87-25"><a href="#cb87-25"></a>    axs[y].grid(linestyle<span class="op">=</span><span class="st">"dotted"</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb87-26"><a href="#cb87-26"></a>    axs[y].legend(fontsize<span class="op">=</span>legend_fontsize)</span>
+<span id="cb87-27"><a href="#cb87-27"></a>    axs[y].tick_params(axis<span class="op">=</span><span class="st">"both"</span>, which<span class="op">=</span><span class="st">"major"</span>, labelsize<span class="op">=</span>tick_fontsize)</span>
+<span id="cb87-28"><a href="#cb87-28"></a></span>
+<span id="cb87-29"><a href="#cb87-29"></a></span>
+<span id="cb87-30"><a href="#cb87-30"></a><span class="co"># Adjust layout and show the plot</span></span>
+<span id="cb87-31"><a href="#cb87-31"></a>plt.tight_layout()</span>
+<span id="cb87-32"><a href="#cb87-32"></a><span class="co"># plt.savefig("metrics_plot_model_comparison.png", dpi=500, bbox_inches="tight")</span></span>
+<span id="cb87-33"><a href="#cb87-33"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+
+            <style>
+                .geemap-dark {
+                    --jp-widgets-color: white;
+                    --jp-widgets-label-color: white;
+                    --jp-ui-font-color1: white;
+                    --jp-layout-color2: #454545;
+                    background-color: #383838;
+                }
+
+                .geemap-dark .jupyter-button {
+                    --jp-layout-color3: #383838;
+                }
+
+                .geemap-colab {
+                    background-color: var(--colab-primary-surface-color, white);
+                }
+
+                .geemap-colab .jupyter-button {
+                    --jp-layout-color3: var(--colab-primary-surface-color, white);
+                }
+            </style>
+            
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-62-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="probability-distribution-plot" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="probability-distribution-plot"><span class="header-section-number">2.7.2</span> Probability Distribution Plot</h3>
-<div id="cell-124" class="cell" data-outputid="f36044bf-95c6-42b0-924a-79f84e71a903">
+<div id="cell-125" class="cell" data-outputid="f36044bf-95c6-42b0-924a-79f84e71a903">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1"></a>all_data <span class="op">=</span> {}</span>
-<span id="cb87-2"><a href="#cb87-2"></a></span>
-<span id="cb87-3"><a href="#cb87-3"></a>unet_data <span class="op">=</span> []</span>
-<span id="cb87-4"><a href="#cb87-4"></a>dnn_data <span class="op">=</span> []</span>
-<span id="cb87-5"><a href="#cb87-5"></a></span>
-<span id="cb87-6"><a href="#cb87-6"></a>unet_rice_data <span class="op">=</span> []</span>
-<span id="cb87-7"><a href="#cb87-7"></a>dnn_rice_data <span class="op">=</span> []</span>
-<span id="cb87-8"><a href="#cb87-8"></a></span>
-<span id="cb87-9"><a href="#cb87-9"></a>unet_other_data <span class="op">=</span> []</span>
-<span id="cb87-10"><a href="#cb87-10"></a>dnn_other_data <span class="op">=</span> []</span>
-<span id="cb87-11"><a href="#cb87-11"></a></span>
-<span id="cb87-12"><a href="#cb87-12"></a><span class="cf">for</span> i, feature <span class="kw">in</span> <span class="bu">enumerate</span>(prob_output_unet[<span class="st">"features"</span>]):</span>
-<span id="cb87-13"><a href="#cb87-13"></a>    unet_rice_prob <span class="op">=</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
-<span id="cb87-14"><a href="#cb87-14"></a>    unet_other_prob <span class="op">=</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"cropland_prob"</span>] <span class="op">+</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"forest_prob"</span>] <span class="op">+</span> feature[<span class="st">"properties"</span>][<span class="st">"others_prob"</span>]<span class="op">+</span> feature[<span class="st">"properties"</span>][<span class="st">"urban_prob"</span>]), <span class="dv">5</span>)</span>
-<span id="cb87-15"><a href="#cb87-15"></a>    unet_data.append([unet_rice_prob, unet_other_prob])</span>
-<span id="cb87-16"><a href="#cb87-16"></a>    unet_rice_data.append(unet_rice_prob)</span>
-<span id="cb87-17"><a href="#cb87-17"></a>    unet_other_data.append(unet_other_prob)</span>
-<span id="cb87-18"><a href="#cb87-18"></a></span>
-<span id="cb87-19"><a href="#cb87-19"></a>    dnn_feature <span class="op">=</span> prob_output_dnn[<span class="st">"features"</span>][i]</span>
-<span id="cb87-20"><a href="#cb87-20"></a>    dnn_rice_prob <span class="op">=</span> <span class="bu">round</span>(dnn_feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
-<span id="cb87-21"><a href="#cb87-21"></a>    dnn_other_prob <span class="op">=</span> <span class="fl">1.</span> <span class="op">-</span> <span class="bu">round</span>(dnn_feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
-<span id="cb87-22"><a href="#cb87-22"></a>    <span class="co"># dnn_other_prob = round(dnn_feature["properties"]["cropland_prob"] + dnn_feature["properties"]["forest_prob"] + dnn_feature["properties"]["others_prob"]+ dnn_feature["properties"]["urban_prob"], 5)</span></span>
-<span id="cb87-23"><a href="#cb87-23"></a>    dnn_data.append([dnn_rice_prob, dnn_other_prob])</span>
-<span id="cb87-24"><a href="#cb87-24"></a>    dnn_rice_data.append(dnn_rice_prob)</span>
-<span id="cb87-25"><a href="#cb87-25"></a>    dnn_other_data.append(dnn_other_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>all_data <span class="op">=</span> {}</span>
+<span id="cb88-2"><a href="#cb88-2"></a></span>
+<span id="cb88-3"><a href="#cb88-3"></a>unet_data <span class="op">=</span> []</span>
+<span id="cb88-4"><a href="#cb88-4"></a>dnn_data <span class="op">=</span> []</span>
+<span id="cb88-5"><a href="#cb88-5"></a></span>
+<span id="cb88-6"><a href="#cb88-6"></a>unet_rice_data <span class="op">=</span> []</span>
+<span id="cb88-7"><a href="#cb88-7"></a>dnn_rice_data <span class="op">=</span> []</span>
+<span id="cb88-8"><a href="#cb88-8"></a></span>
+<span id="cb88-9"><a href="#cb88-9"></a>unet_other_data <span class="op">=</span> []</span>
+<span id="cb88-10"><a href="#cb88-10"></a>dnn_other_data <span class="op">=</span> []</span>
+<span id="cb88-11"><a href="#cb88-11"></a></span>
+<span id="cb88-12"><a href="#cb88-12"></a><span class="cf">for</span> i, feature <span class="kw">in</span> <span class="bu">enumerate</span>(prob_output_unet[<span class="st">"features"</span>]):</span>
+<span id="cb88-13"><a href="#cb88-13"></a>    unet_rice_prob <span class="op">=</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
+<span id="cb88-14"><a href="#cb88-14"></a>    unet_other_prob <span class="op">=</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"cropland_prob"</span>] <span class="op">+</span> <span class="bu">round</span>(feature[<span class="st">"properties"</span>][<span class="st">"forest_prob"</span>] <span class="op">+</span> feature[<span class="st">"properties"</span>][<span class="st">"others_prob"</span>]<span class="op">+</span> feature[<span class="st">"properties"</span>][<span class="st">"urban_prob"</span>]), <span class="dv">5</span>)</span>
+<span id="cb88-15"><a href="#cb88-15"></a>    unet_data.append([unet_rice_prob, unet_other_prob])</span>
+<span id="cb88-16"><a href="#cb88-16"></a>    unet_rice_data.append(unet_rice_prob)</span>
+<span id="cb88-17"><a href="#cb88-17"></a>    unet_other_data.append(unet_other_prob)</span>
+<span id="cb88-18"><a href="#cb88-18"></a></span>
+<span id="cb88-19"><a href="#cb88-19"></a>    dnn_feature <span class="op">=</span> prob_output_dnn[<span class="st">"features"</span>][i]</span>
+<span id="cb88-20"><a href="#cb88-20"></a>    dnn_rice_prob <span class="op">=</span> <span class="bu">round</span>(dnn_feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
+<span id="cb88-21"><a href="#cb88-21"></a>    dnn_other_prob <span class="op">=</span> <span class="fl">1.</span> <span class="op">-</span> <span class="bu">round</span>(dnn_feature[<span class="st">"properties"</span>][<span class="st">"rice_prob"</span>], <span class="dv">5</span>)</span>
+<span id="cb88-22"><a href="#cb88-22"></a>    <span class="co"># dnn_other_prob = round(dnn_feature["properties"]["cropland_prob"] + dnn_feature["properties"]["forest_prob"] + dnn_feature["properties"]["others_prob"]+ dnn_feature["properties"]["urban_prob"], 5)</span></span>
+<span id="cb88-23"><a href="#cb88-23"></a>    dnn_data.append([dnn_rice_prob, dnn_other_prob])</span>
+<span id="cb88-24"><a href="#cb88-24"></a>    dnn_rice_data.append(dnn_rice_prob)</span>
+<span id="cb88-25"><a href="#cb88-25"></a>    dnn_other_data.append(dnn_other_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3923,32 +3934,32 @@ f1_dnn 0.6596858638743456</code></pre>
             
 </div>
 </div>
-<div id="cell-125" class="cell" data-outputid="7663f08a-4787-4b96-d39f-5367654d8bce">
+<div id="cell-126" class="cell" data-outputid="7663f08a-4787-4b96-d39f-5367654d8bce">
 <details open="" class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb88-2"><a href="#cb88-2"></a></span>
-<span id="cb88-3"><a href="#cb88-3"></a>title_fontsize <span class="op">=</span> <span class="dv">22</span></span>
-<span id="cb88-4"><a href="#cb88-4"></a>label_fontsize <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb88-5"><a href="#cb88-5"></a>tick_fontsize <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb88-6"><a href="#cb88-6"></a></span>
-<span id="cb88-7"><a href="#cb88-7"></a><span class="co"># rectangular box plot</span></span>
-<span id="cb88-8"><a href="#cb88-8"></a>bplot1 <span class="op">=</span> ax1.boxplot([unet_rice_data, dnn_rice_data],</span>
-<span id="cb88-9"><a href="#cb88-9"></a>                     notch<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb88-10"><a href="#cb88-10"></a>                     vert<span class="op">=</span><span class="va">True</span>,  <span class="co"># vertical box alignment</span></span>
-<span id="cb88-11"><a href="#cb88-11"></a>                     patch_artist<span class="op">=</span><span class="va">True</span>,  <span class="co"># fill with color</span></span>
-<span id="cb88-12"><a href="#cb88-12"></a>                     labels<span class="op">=</span>[<span class="st">"U-Net"</span>, <span class="st">"DNN"</span>],</span>
-<span id="cb88-13"><a href="#cb88-13"></a>                     sym<span class="op">=</span><span class="st">"k+"</span>)  <span class="co"># will be used to label x-ticks</span></span>
-<span id="cb88-14"><a href="#cb88-14"></a>ax1.set_title(<span class="st">"Rice Probability"</span>)</span>
-<span id="cb88-15"><a href="#cb88-15"></a></span>
-<span id="cb88-16"><a href="#cb88-16"></a><span class="co"># notch shape box plot</span></span>
-<span id="cb88-17"><a href="#cb88-17"></a>bplot2 <span class="op">=</span> ax2.boxplot([unet_other_data, dnn_other_data],</span>
-<span id="cb88-18"><a href="#cb88-18"></a>                     notch<span class="op">=</span><span class="va">True</span>,  <span class="co"># notch shape</span></span>
-<span id="cb88-19"><a href="#cb88-19"></a>                     vert<span class="op">=</span><span class="va">True</span>,  <span class="co"># vertical box alignment</span></span>
-<span id="cb88-20"><a href="#cb88-20"></a>                     patch_artist<span class="op">=</span><span class="va">True</span>,  <span class="co"># fill with color</span></span>
-<span id="cb88-21"><a href="#cb88-21"></a>                     labels<span class="op">=</span>[<span class="st">"U-Net"</span>, <span class="st">"DNN"</span>],</span>
-<span id="cb88-22"><a href="#cb88-22"></a>                     sym<span class="op">=</span><span class="st">"k+"</span>)  <span class="co"># will be used to label x-ticks</span></span>
-<span id="cb88-23"><a href="#cb88-23"></a>ax2.set_title(<span class="st">"Other Probability"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb89-2"><a href="#cb89-2"></a></span>
+<span id="cb89-3"><a href="#cb89-3"></a>title_fontsize <span class="op">=</span> <span class="dv">22</span></span>
+<span id="cb89-4"><a href="#cb89-4"></a>label_fontsize <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb89-5"><a href="#cb89-5"></a>tick_fontsize <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb89-6"><a href="#cb89-6"></a></span>
+<span id="cb89-7"><a href="#cb89-7"></a><span class="co"># rectangular box plot</span></span>
+<span id="cb89-8"><a href="#cb89-8"></a>bplot1 <span class="op">=</span> ax1.boxplot([unet_rice_data, dnn_rice_data],</span>
+<span id="cb89-9"><a href="#cb89-9"></a>                     notch<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb89-10"><a href="#cb89-10"></a>                     vert<span class="op">=</span><span class="va">True</span>,  <span class="co"># vertical box alignment</span></span>
+<span id="cb89-11"><a href="#cb89-11"></a>                     patch_artist<span class="op">=</span><span class="va">True</span>,  <span class="co"># fill with color</span></span>
+<span id="cb89-12"><a href="#cb89-12"></a>                     labels<span class="op">=</span>[<span class="st">"U-Net"</span>, <span class="st">"DNN"</span>],</span>
+<span id="cb89-13"><a href="#cb89-13"></a>                     sym<span class="op">=</span><span class="st">"k+"</span>)  <span class="co"># will be used to label x-ticks</span></span>
+<span id="cb89-14"><a href="#cb89-14"></a>ax1.set_title(<span class="st">"Rice Probability"</span>)</span>
+<span id="cb89-15"><a href="#cb89-15"></a></span>
+<span id="cb89-16"><a href="#cb89-16"></a><span class="co"># notch shape box plot</span></span>
+<span id="cb89-17"><a href="#cb89-17"></a>bplot2 <span class="op">=</span> ax2.boxplot([unet_other_data, dnn_other_data],</span>
+<span id="cb89-18"><a href="#cb89-18"></a>                     notch<span class="op">=</span><span class="va">True</span>,  <span class="co"># notch shape</span></span>
+<span id="cb89-19"><a href="#cb89-19"></a>                     vert<span class="op">=</span><span class="va">True</span>,  <span class="co"># vertical box alignment</span></span>
+<span id="cb89-20"><a href="#cb89-20"></a>                     patch_artist<span class="op">=</span><span class="va">True</span>,  <span class="co"># fill with color</span></span>
+<span id="cb89-21"><a href="#cb89-21"></a>                     labels<span class="op">=</span>[<span class="st">"U-Net"</span>, <span class="st">"DNN"</span>],</span>
+<span id="cb89-22"><a href="#cb89-22"></a>                     sym<span class="op">=</span><span class="st">"k+"</span>)  <span class="co"># will be used to label x-ticks</span></span>
+<span id="cb89-23"><a href="#cb89-23"></a>ax2.set_title(<span class="st">"Other Probability"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 
@@ -3981,7 +3992,7 @@ f1_dnn 0.6596858638743456</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-63-output-3.png" class="img-fluid figure-img"></p>
+<p><img src="Rice_Mapping_Bhutan_2021_files/figure-html/cell-64-output-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
