@@ -11088,70 +11088,2261 @@ learning can support sustainable, climate-resilient agriculture!
 
 \bookmarksetup{startatroot}
 
-\chapter{Ecological Processes
-Simulation}\label{ecological-processes-simulation}
+\chapter{Understanding active fire detection uncertainty with Bayesian
+Neural
+Networks}\label{understanding-active-fire-detection-uncertainty-with-bayesian-neural-networks}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis
-posuere ligula sit amet lacinia. Duis dignissim pellentesque magna,
-rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum
-in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit
-amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit,
-non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante
-volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit
-amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim,
-at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis
-parturient montes, nascetur ridiculus mus.
+This tutorial accompanies the work titled ``Understanding active fire
+detection uncertainty with Bayesian Neural Networks''. This notebook is
+intended to be accompanied by the written document and is not meant to
+be a standalone notebook. Please reference the written text to find
+further information and explanations of the steps and plots produced
+here.
 
-Nunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat
-leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque
-habitant morbi tristique senectus et netus et malesuada fames ac turpis
-egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere
-iaculis. Suspendisse et maximus elit. In fringilla gravida ornare.
-Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel
-neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet
-vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor
-lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque
-ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse
-potenti.
+This work was based off of the
+\href{https://keras.io/examples/keras_recipes/bayesian_neural_networks/}{Keras
+Bayesian Neural Networks tutorial}. Note that this tutorial uses
+specific versions of packages that are compatible with Keras 2.0, as
+Keras version 3 (at the time of development) did not support the
+tensorflow probabilistic layers. The import statements note the correct
+versions. We also provide a yml file which forces Keras 2 if you would
+like to run locally. Additionally, the Keras tutorial is set up for
+regression, and so this notebook altered the tutorial to be compatible
+for classification tasks.
 
-Etiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim
-ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies.
-Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit
-amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit,
-eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id,
-tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis
-efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus
-ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum
-ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam
-id magna ultrices, sodales metus viverra, tempus turpis.
+\section{Important Notes (Read Before
+Running)}\label{important-notes-read-before-running}
 
-Duis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat
-pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam
-purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan
-interdum, sem tellus blandit neque, id vulputate diam quam semper nisl.
-Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis
-nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis
-ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus.
-Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at
-pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est
-mi nec felis. Vestibulum efficitur mi lorem, at elementum purus
-tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat
-faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim
-condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id
-tortor. Donec ut urna nisi.
+\subsection{Python Versioning}\label{python-versioning}
 
-Aenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla.
-Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus
-maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper.
-Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut
-vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu
-libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum
-id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus,
-purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur
-eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit
-amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra
-nulla mattis consequat.
+This code is only compatible with Python 3.10, which is no longer the
+default version loaded by Colab. We have included the instructions on
+how to force the notebook to use Python 3.10, to ensure there are no
+errors related to version incompatabilties.
+
+\subsection{Code Order}\label{code-order}
+
+The code in this tutorial is intended to be run start to finish in
+order. A user must also read the initial sections to properly load in
+the data before attempting to ``Run All''. Functions are defined in the
+section where they are first called in, and may be called again during
+additional sections without being re-defined in those sections.
+Therefore if you wish to run only a portion of this code make sure to
+run all the function defining code blocks of previous sections to ensure
+all required functions have been defined.
+
+\subsection{Colab vs Jupyter}\label{colab-vs-jupyter}
+
+This tutorial was constructed so that every step can be run within the
+Google Colab environment to take advantage of the computing resources it
+provides. We highly recommend users who are new to Python use the option
+of running in Colab as it negates the need to have Python and the
+associated packages configured on their local machines. Therefore this
+is the default option of the code. However, we do recognize that for
+more advanced users a local workflow may be preferred, so we have
+included instructions for how to adapt this script to run locally if
+desired.
+
+\subsection{How to Run This Notebook on Colab - Default
+setting}\label{how-to-run-this-notebook-on-colab---default-setting}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Upload the recommened files using the code block below
+\item
+  Set colab\_jupyter\_flag to ``c''
+\item
+  Hit the ``Run all'' button located above the script
+\item
+  A prompt will appear asking the user to select a python version.
+  Select version 3.10 and see the notebook sectional labeled `Colab
+  Specific Instructions' for a more detailed explanation
+\end{enumerate}
+
+\#\#\#\#Files to upload: 1. \textbf{train-final-raw.csv:} this csv file
+contains raw VIIRS active fire data and contains imbalanced classes.
+This will be used in Case Study A, Model One to serve as a baseline
+dataset for this study. 2. \textbf{train-final-balanced.csv:} this is
+the class-balanced version of the train-final-raw.csv. It is used in
+Case Stdy A, Model Two to show the impact of balancing classes on model
+performance and in Case Study A, Model Three as an input for
+hyperparameter tuning. 3.
+\textbf{train-final-balanced-case-study-2.csv:} this dataset integrates
+data from both VIIRS and MODIS. It is used in Case Study B, Model One
+and Two to help test if fire detection varies based on satellite source.
+
+For more information regarding the datasets, please refer to section 2.2
+Data in the corresponding article.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Upload the files}
+\ImportTok{from}\NormalTok{ google.colab }\ImportTok{import}\NormalTok{ files}
+\ImportTok{import}\NormalTok{ os}
+
+\CommentTok{\# Define fixed upload directory}
+\NormalTok{upload\_dir }\OperatorTok{=} \StringTok{"/content/"}
+
+\CommentTok{\# Create directory if it doesn\textquotesingle{}t exist}
+\NormalTok{os.makedirs(upload\_dir, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+\CommentTok{\# Prompt user to upload files}
+\NormalTok{uploaded }\OperatorTok{=}\NormalTok{ files.upload()}
+
+\CommentTok{\# Save uploaded files to the fixed directory}
+\ControlFlowTok{for}\NormalTok{ filename, data }\KeywordTok{in}\NormalTok{ uploaded.items():}
+\NormalTok{    filepath }\OperatorTok{=}\NormalTok{ os.path.join(upload\_dir, filename)}
+    \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(filepath, }\StringTok{"wb"}\NormalTok{) }\ImportTok{as}\NormalTok{ f:}
+\NormalTok{        f.write(data)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Saved: }\SpecialCharTok{\{}\NormalTok{filepath}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{All files saved to: }\SpecialCharTok{\{}\NormalTok{upload\_dir}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{How to Run This Notebook on
+Local}\label{how-to-run-this-notebook-on-local}
+
+This notebook can be run locally on your machine IF you have a GPU and
+are at an intermediate Python programming level, otherwise you will need
+to use Google Colab. We suggest all users first use the Google Colab as
+the environment can be tricky to set up on local machines, and it is
+already set up here for you. The figures and numbers in the accompanying
+text will match the model files available for preloading with Colab. If
+you retrain the models (as is necessary within the Jupyter option), you
+will get slightly different statistics and figures when compared to the
+text due to some internal randomness in Keras. 1. Download: 1. the
+provided yml file and install to your local computer 2. the provided csv
+files that contain the data needed 3. Create your anaconda environment
+using the yml file 4. Import the anaconda environment into jupyter using
+these commands in the anaconda prompt: 5. conda install -c anaconda
+ipykernel 6. python -m ipykernel install --user --name=firstEnv 5.
+Update the pathway to the directory containing all csv files below 6.
+Set colab\_jupyter\_flag to ``j''
+
+⭐ Decision point: Would you like to run this code in colab or in a
+jupyter notebook on your local machine?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# set this flag to either "c" or "j" for running in jupyter or colab}
+\NormalTok{colab\_jupyter\_flag }\OperatorTok{=} \StringTok{\textquotesingle{}c\textquotesingle{}}
+
+\CommentTok{\# Update data directory to where you have stored the csv files}
+\CommentTok{\# Example data\_dir = r"C:\textbackslash{}Users\textbackslash{}kzammit\textbackslash{}Documents\textbackslash{}DL{-}chapter\textbackslash{}test{-}20251014"}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  data\_dir }\OperatorTok{=} \VerbatimStringTok{r"UPDATE"}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Frequently Asked Questions}\label{frequently-asked-questions}
+
+This section contains more in depth explanations regarding the code
+itself and how to work with it.
+
+\textbf{How do I upload the supporting files (input data, pre trained
+models etc) to the Colab enviroment?} 1. Once the notebook has loaded on
+the left hand side of your screen will be a list of icons the bottom
+being a file that says ``file''. Click there to open the Files menu. 2.
+Identify the directory labeled ``content'' and drag and drop any files
+(input data, saved model files etc) needed for the run here. 3. When you
+first open the menu, content may not be an option, click on the
+directory labeled ``..'' to reveal more directories.
+
+\textbf{Where do I find the file path to assign to the variable
+``data\_dir''?} 1. Navigate to directory containing the input files
+using the file menu to the left. 2. Hover the cursor over the directory
+you need the path to point to and click the three dots that appear to
+the right of the directory name. 4. When the drop down menu appears
+click ``Copy path'' 5. Navigate to the box where ``data\_dir'' is set.
+Under the section How to Run this Notebook in Colab. And use the
+keyboard command ctrl+v to paste wihtin the quotes after the r. Keyboard
+shortcut MUST be used. Right click drop down will not have a paste
+option.
+
+\textbf{Can I use this code with different input datasets than those
+provided?}
+
+Yes! We encourage it. Please refer to section 2.2 of the accompanying
+chapter for a detailed description on how we generated the datasets that
+have been provided as the sample datasets.
+
+\textbf{How long will this code take to run?}
+
+In general this code will take around 2 hours to run to completion when
+run in the Google Colab environment. Run time of local environments will
+vary based on the computing capabilities of the local machine. With the
+training of case study A model 3 and case study B model 1 as two of the
+longer steps at between 30 and 50 minutes. The SHAP figures also can
+take up to 30 minutes to render.
+
+\textbf{How to use the ``Help Boxes''?}
+
+Through out the tutorial are markdown cells title Help Box. By
+navigating to a Help Box cell you will receive directions with how you
+can skip the most time intensive steps of the tutorial by loading a
+pretrained model. As long as the file paths associated with these help
+boxes are set up correctly and the ``read\_in\_file'' variable is set to
+True. The user can run the code from the beginning as normal. No
+additional actions are required from the user to skip model training.
+
+\textbf{Ran out of GPU time?}
+
+You may receive an error message from Colab saying you have run out of
+your allotted GPU time. This notebook does not require connection to a
+GPU to run. On the top right hand side of the note box is an arrow next
+to the words RAM and Disk. Clicking on the arrow opens a drop down with
+the option ``Change runtime type''. Opening that menu will show an
+option for Hardware accelerator. Select the CPU option and hit save. You
+should no longer receive GPU run time error messages.
+
+\textbf{Crashed?}
+
+Some users may encounter runtime timeouts or crashes near the end of the
+notebook when using Google Colab. If this occurs, we recommend using the
+Jupyter version of the notebook or utilizing the provided pretrained
+model files when working in Colab.
+
+\subsection{Running this Notebook without Training
+Models}\label{running-this-notebook-without-training-models}
+
+Although the primary purpose of this code is to train a deep learning
+model from scratch, we recognize that a user may not wish to retrain
+their models every time they start a new session. Included in this code
+are directions for how to export a trained model so that it will be
+saved after a run is exited, as well as how to modify the code to import
+in these model files and bypass the code blocks that initiate model
+training. For convenience we have included sample model files so a user
+exploring this tutorial for the first time may bypass model training
+altogether. However, turning off model training is not the recommended
+way to interact with the tutorial. The outputs generated by Keras as it
+trains models are informative and offer valuable context to deepen your
+understanding of the models themselves.
+
+⭐Decision point: Would you like to run this code from ``scratch'' or
+with a pretrained model?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Loading pretrained model files}
+\CommentTok{\# The provided model files are exported from Colab and do not run locally so we have forced}
+\CommentTok{\# the flag to be False if running in Jupyter}
+\CommentTok{\# Once you have ran once from scratch locally, feel free to switch this to "True" as the exported}
+\CommentTok{\# model files are compatible with Jupyter}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{    read\_in\_file }\OperatorTok{=} \VariableTok{False}
+\ControlFlowTok{else}\NormalTok{:}
+  \CommentTok{\# In Colab, set this to either True or False}
+\NormalTok{    read\_in\_file }\OperatorTok{=} \VariableTok{True}
+    \CommentTok{\# Define fixed upload directory}
+\NormalTok{    upload\_dir }\OperatorTok{=} \StringTok{"/content/"}
+
+    \CommentTok{\# Create directory if it doesn\textquotesingle{}t exist}
+\NormalTok{    os.makedirs(upload\_dir, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+    \CommentTok{\# Prompt user to upload files}
+\NormalTok{    uploaded }\OperatorTok{=}\NormalTok{ files.upload()}
+
+    \CommentTok{\# Save uploaded files to the fixed directory}
+    \ControlFlowTok{for}\NormalTok{ filename, data }\KeywordTok{in}\NormalTok{ uploaded.items():}
+\NormalTok{        filepath }\OperatorTok{=}\NormalTok{ os.path.join(upload\_dir, filename)}
+        \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(filepath, }\StringTok{"wb"}\NormalTok{) }\ImportTok{as}\NormalTok{ f:}
+\NormalTok{            f.write(data)}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Saved: }\SpecialCharTok{\{}\NormalTok{filepath}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\CharTok{\textbackslash{}n}\SpecialStringTok{All models saved to: }\SpecialCharTok{\{}\NormalTok{upload\_dir}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Colab Specific
+Installations}\label{colab-specific-installations}
+
+Do not run these if running locally in a Jupyter notebook.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Google colab will update its default version of Python without notice. Use this box to check the current version of Python.}
+\CommentTok{\# Included below are the steps to force the notebook back into Python 3.10, the last version confirmed stable for this code.}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+    \OperatorTok{!}\NormalTok{python }\OperatorTok{{-}{-}}\NormalTok{version}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Click on the box where it says selection and choose 1 for python 3.10}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+    \OperatorTok{!}\NormalTok{update}\OperatorTok{{-}}\NormalTok{alternatives }\OperatorTok{{-}{-}}\NormalTok{config python3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Run this cell to confim the notebook is now running Python 3.10}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+    \OperatorTok{!}\NormalTok{python }\OperatorTok{{-}{-}}\NormalTok{version}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Must reinstall pip in the new python}
+\CommentTok{\# Note: It is expected to get warning messages from this cell (ex. }\AlertTok{WARNING}\CommentTok{: The scripts pip, pip3 and pip3.10 are installed in \textquotesingle{}/root/.local/bin\textquotesingle{} which is not on PATH.}
+\CommentTok{\# Consider adding this directory to PATH or, if you prefer to suppress this warning, use {-}{-}no{-}warn{-}script{-}location.)}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+    \OperatorTok{!}\NormalTok{apt}\OperatorTok{{-}}\NormalTok{get install python3}\OperatorTok{{-}}\NormalTok{pip}
+    \OperatorTok{!}\NormalTok{python3 }\OperatorTok{{-}}\NormalTok{m pip install }\OperatorTok{{-}{-}}\NormalTok{upgrade pip }\OperatorTok{{-}{-}}\NormalTok{user}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Confirm it worked. Tutorial required python 9 or 10 enviroment set up may fail if python 11+ is being called.}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+    \OperatorTok{!}\NormalTok{python }\OperatorTok{{-}{-}}\NormalTok{version}
+    \OperatorTok{!}\NormalTok{pip }\OperatorTok{{-}{-}}\NormalTok{version}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{:}
+  \OperatorTok{!}\NormalTok{ pip install tensorflow\_probability}\OperatorTok{==}\FloatTok{0.24.0}
+  \OperatorTok{!}\NormalTok{ pip install tf\_keras}
+  \OperatorTok{!}\NormalTok{ pip install tfp}\OperatorTok{{-}}\NormalTok{nightly}
+  \OperatorTok{!}\NormalTok{ pip install tf}\OperatorTok{{-}}\NormalTok{nightly}
+  \OperatorTok{!}\NormalTok{ pip install tf}\OperatorTok{{-}}\NormalTok{keras}\OperatorTok{{-}}\NormalTok{nightly}
+  \OperatorTok{!}\NormalTok{ pip install shap}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Import Statements}\label{import-statements}
+
+From here onwards, everything is compatible in both Jupyter and Colab.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ tensorflow }\ImportTok{as}\NormalTok{ tf}
+\ImportTok{import}\NormalTok{ tf\_keras}
+\ImportTok{import}\NormalTok{ tensorflow\_probability }\ImportTok{as}\NormalTok{ tfp}
+\ImportTok{from}\NormalTok{ keras.utils }\ImportTok{import}\NormalTok{ plot\_model}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{from}\NormalTok{ matplotlib.patches }\ImportTok{import}\NormalTok{ Patch}
+\ImportTok{from}\NormalTok{ matplotlib.lines }\ImportTok{import}\NormalTok{ Line2D}
+\ImportTok{from}\NormalTok{ matplotlib.colors }\ImportTok{import}\NormalTok{ LinearSegmentedColormap}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ train\_test\_split}
+\ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ StandardScaler}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ confusion\_matrix, accuracy\_score, precision\_score, recall\_score, PrecisionRecallDisplay, precision\_recall\_curve}
+\ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ ttest\_ind}
+\ImportTok{import}\NormalTok{ itertools}
+\ImportTok{import}\NormalTok{ importlib}
+\ImportTok{import}\NormalTok{ os}
+\ImportTok{import}\NormalTok{ shap}
+\ImportTok{import}\NormalTok{ plotly.graph\_objects }\ImportTok{as}\NormalTok{ go}
+\ImportTok{import}\NormalTok{ random}
+
+\CommentTok{\# Set random seed for reproducibility}
+\NormalTok{tf.random.set\_seed(}\DecValTok{42}\NormalTok{)}
+\NormalTok{random.seed(}\DecValTok{42}\NormalTok{)}
+\NormalTok{np.random.seed(}\DecValTok{42}\NormalTok{)}
+
+\CommentTok{\# Suppress tensorflow warnings for deprecated versions}
+\ImportTok{import}\NormalTok{ warnings}
+\NormalTok{warnings.filterwarnings(}\StringTok{\textquotesingle{}ignore\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Print the version of the nonstandard versions for use in this tutorial (note "dev" in the name)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"TensorFlow version:"}\NormalTok{, tf.\_\_version\_\_)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"TensorFlow Probability version:"}\NormalTok{, tfp.\_\_version\_\_)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"TensorFlow keras version:"}\NormalTok{, tf\_keras.\_\_version\_\_)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Case Study A}\label{case-study-a}
+
+\textbf{Case Study A: Pre-screening VIIRS active fire data to highlight
+potential false positives using BNN.}
+
+This study uses a point prediction BNN model, which outputs a single
+probability score for each detection, indicating the likelihood it is a
+true positive. Applying a classification threshold to this score yields
+a binary indicator (true/false positive), primarily for use in
+pre-screening VIIRS data to identify and remove likely false positives.
+
+\textbf{Goal:} The goal of the supervised Bayesian neural network
+developed in Case Study A is to predict whether a hotspot identified by
+a satellite-based active fire detection product corresponds to an actual
+fire on the ground. Note that the training and validation loss will be
+plotted individually after training each model, but all results (loss
+curves, confusion matrices, etc.) are presented at the end of the case
+study in the ``Results'' section.
+
+\subsection{Define epochs}\label{define-epochs}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define the number of epochs to train over for each run}
+\NormalTok{epochs }\OperatorTok{=} \DecValTok{30}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Model One}\label{model-one}
+
+Model One closely follows the original Keras tutorial and does not
+include any hyperparameter tuning. You do not need to run the original
+Keras tutorial as a prerequiste to this notebook, as we repeat the
+necessary information here. It uses ``raw'' input data, defined here as
+data obtained directly from FIRMS, with no preprocessing beyond the
+basic steps outlined in Section 2.2. The purpose of this model is to
+serve as a baseline, demonstrating model performance without additional
+optimization or customization.
+
+\subsubsection{Importing and preparing the
+data}\label{importing-and-preparing-the-data}
+
+The notebook expects that the data has been downloaded from source and
+undergone basic processing steps before beginning this tutorial. See
+Section 2.2 for further details. We used a 80/20 ratio to split the
+complete input data set into separate training and testing data sets
+respectively.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ create\_tr\_test\_data(data\_file):}
+    \CommentTok{"""}
+\CommentTok{    Split data into training and validation datasets}
+\CommentTok{    :param data\_file: file path to csv file, ex. \textquotesingle{}train{-}final{-}raw.csv\textquotesingle{} if you\textquotesingle{}ve uploaded locally}
+\CommentTok{    :return: X train, X test, y train, y test, feature names (used in model creation)}
+\CommentTok{    """}
+
+    \CommentTok{\# Define raw data file and read}
+\NormalTok{    train\_data }\OperatorTok{=}\NormalTok{ pd.read\_csv(data\_file)}
+
+    \BuiltInTok{print}\NormalTok{(train\_data.head())}
+
+    \CommentTok{\# Drop the target variable}
+\NormalTok{    X }\OperatorTok{=}\NormalTok{ train\_data.drop(columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Class\textquotesingle{}}\NormalTok{])}
+
+    \CommentTok{\# Set the target variable}
+\NormalTok{    y }\OperatorTok{=}\NormalTok{ train\_data[}\StringTok{\textquotesingle{}Class\textquotesingle{}}\NormalTok{]}
+
+    \CommentTok{\# Create the training and testing datasets}
+\NormalTok{    X\_train, X\_test, y\_train, y\_test }\OperatorTok{=}\NormalTok{ train\_test\_split(X, y, test\_size}\OperatorTok{=}\FloatTok{0.2}\NormalTok{, random\_state}\OperatorTok{=}\DecValTok{42}\NormalTok{)}
+\NormalTok{    feature\_names }\OperatorTok{=}\NormalTok{ X\_train.columns}
+
+\NormalTok{    X\_train }\OperatorTok{=}\NormalTok{ X\_train.to\_numpy()}
+\NormalTok{    X\_test }\OperatorTok{=}\NormalTok{ X\_test.to\_numpy()}
+\NormalTok{    y\_train }\OperatorTok{=}\NormalTok{ y\_train.to\_numpy()}
+\NormalTok{    y\_test }\OperatorTok{=}\NormalTok{ y\_test.to\_numpy()}
+
+    \ControlFlowTok{return}\NormalTok{ X\_train, X\_test, y\_train, y\_test, feature\_names}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Note: You must add your data as described in the beginning sections:}
+\CommentTok{\# "How to Run This Notebook on Local" and "How to Run This Notebook on Colab"}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  cs1\_m1\_data }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{\textquotesingle{}train{-}final{-}raw.csv\textquotesingle{}}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  cs1\_m1\_data }\OperatorTok{=} \StringTok{\textquotesingle{}/content/train{-}final{-}raw.csv\textquotesingle{}}
+\NormalTok{X\_train\_c1m1, X\_test\_c1m1, y\_train\_c1m1, y\_test\_c1m1, feature\_names\_c1m1 }\OperatorTok{=}\NormalTok{ create\_tr\_test\_data(cs1\_m1\_data)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Preview of provided data to confirm sucessful upload"}\NormalTok{)}
+\NormalTok{train\_size\_c1m1 }\OperatorTok{=}\NormalTok{ X\_train\_c1m1.shape[}\DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Create and train model}\label{create-and-train-model}
+
+All of the model training criteria we defined in section 3.3 of the
+manuscript were set during this section of the code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ prior(kernel\_size, bias\_size, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+    \CommentTok{"""}
+\CommentTok{    Define the prior distribution (not tunable)}
+\CommentTok{    :param kernel\_size: defined by model}
+\CommentTok{    :param bias\_size: defined by model}
+\CommentTok{    :param dtype: defined by model}
+\CommentTok{    :return: prior model}
+\CommentTok{    """}
+
+\NormalTok{    n }\OperatorTok{=}\NormalTok{ kernel\_size }\OperatorTok{+}\NormalTok{ bias\_size}
+\NormalTok{    prior\_model }\OperatorTok{=}\NormalTok{ tf\_keras.Sequential(}
+\NormalTok{      [}
+\NormalTok{          tfp.layers.DistributionLambda(}
+              \KeywordTok{lambda}\NormalTok{ t: tfp.distributions.MultivariateNormalDiag(}
+\NormalTok{                  loc}\OperatorTok{=}\NormalTok{tf.zeros(n), scale\_diag}\OperatorTok{=}\NormalTok{tf.ones(n)}
+\NormalTok{              )}
+\NormalTok{          )}
+\NormalTok{      ]}
+\NormalTok{    )}
+    \ControlFlowTok{return}\NormalTok{ prior\_model}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ posterior(kernel\_size, bias\_size, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+    \CommentTok{"""}
+\CommentTok{    Define the posterior distribution (tunable)}
+\CommentTok{    :param kernel\_size: defined by model}
+\CommentTok{    :param bias\_size:}
+\CommentTok{    :param dtype:}
+\CommentTok{    :return: posterior model}
+\CommentTok{    """}
+
+\NormalTok{    n }\OperatorTok{=}\NormalTok{ kernel\_size }\OperatorTok{+}\NormalTok{ bias\_size}
+\NormalTok{    posterior\_model }\OperatorTok{=}\NormalTok{ tf\_keras.Sequential(}
+\NormalTok{      [}
+\NormalTok{          tfp.layers.VariableLayer(}
+\NormalTok{              tfp.layers.MultivariateNormalTriL.params\_size(n), dtype}\OperatorTok{=}\NormalTok{dtype}
+\NormalTok{          ),}
+\NormalTok{          tfp.layers.MultivariateNormalTriL(n),}
+\NormalTok{      ]}
+\NormalTok{    )}
+    \ControlFlowTok{return}\NormalTok{ posterior\_model}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ create\_model\_inputs(feature\_names):}
+    \CommentTok{"""}
+\CommentTok{    Create inputs of tensorflow float type 32 for model input}
+\CommentTok{    :return: inputs}
+\CommentTok{    """}
+\NormalTok{    inputs }\OperatorTok{=}\NormalTok{ \{\}}
+    \ControlFlowTok{for}\NormalTok{ feature\_name }\KeywordTok{in}\NormalTok{ feature\_names:}
+\NormalTok{      inputs[feature\_name] }\OperatorTok{=}\NormalTok{ tf\_keras.Input(name}\OperatorTok{=}\NormalTok{feature\_name, shape}\OperatorTok{=}\NormalTok{(}\DecValTok{1}\NormalTok{,), dtype}\OperatorTok{=}\NormalTok{tf.float32)}
+    \ControlFlowTok{return}\NormalTok{ inputs}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ create\_bnn\_model(train\_size, prior\_func, feature\_names, activation\_fun }\OperatorTok{=} \StringTok{"relu"}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{):}
+    \CommentTok{"""}
+\CommentTok{    Create bayesian neural network model}
+\CommentTok{    :param train\_size: number of samples in training dataset}
+\CommentTok{    :param prior\_func: name of prior function (posterior function never changes in this example)}
+\CommentTok{    :param activation\_fun: activation function for hidden layers}
+\CommentTok{    :param unit\_dim: number of units in hidden layers}
+\CommentTok{    :return: model}
+\CommentTok{    """}
+
+\NormalTok{    inputs }\OperatorTok{=}\NormalTok{ create\_model\_inputs(feature\_names)}
+
+    \CommentTok{\# Create one keras tensor for all inputs}
+\NormalTok{    features }\OperatorTok{=}\NormalTok{ tf\_keras.layers.concatenate(}\BuiltInTok{list}\NormalTok{(inputs.values()))}
+\NormalTok{    features }\OperatorTok{=}\NormalTok{ tf\_keras.layers.BatchNormalization()(features)}
+\NormalTok{    hidden\_units }\OperatorTok{=}\NormalTok{ [unit\_dim,unit\_dim]}
+
+    \ControlFlowTok{for}\NormalTok{ units }\KeywordTok{in}\NormalTok{ hidden\_units:}
+\NormalTok{      features }\OperatorTok{=}\NormalTok{ tfp.layers.DenseVariational(}
+\NormalTok{          units}\OperatorTok{=}\NormalTok{units,}
+\NormalTok{          make\_prior\_fn}\OperatorTok{=}\NormalTok{prior\_func,}
+\NormalTok{          make\_posterior\_fn}\OperatorTok{=}\NormalTok{posterior,}
+\NormalTok{          kl\_weight}\OperatorTok{=}\DecValTok{1} \OperatorTok{/}\NormalTok{ train\_size,}
+\NormalTok{          activation}\OperatorTok{=}\NormalTok{activation\_fun,}
+\NormalTok{      )(features)}
+
+    \CommentTok{\# 2 for 2 classes}
+\NormalTok{    distribution\_params }\OperatorTok{=}\NormalTok{ tf\_keras.layers.Dense(units}\OperatorTok{=}\DecValTok{2}\NormalTok{)(features)}
+
+\NormalTok{    outputs }\OperatorTok{=}\NormalTok{ tf\_keras.layers.Dense(}\DecValTok{1}\NormalTok{, activation}\OperatorTok{=}\StringTok{"sigmoid"}\NormalTok{)(features)}
+
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ tf\_keras.Model(inputs}\OperatorTok{=}\NormalTok{inputs, outputs}\OperatorTok{=}\NormalTok{outputs)}
+    \ControlFlowTok{return}\NormalTok{ model}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ run\_experiment(model, loss, metrics, epochs, feature\_names, X\_train, y\_train):}
+    \CommentTok{"""}
+\CommentTok{    Run the experiment}
+\CommentTok{    :param model: defined model to train}
+\CommentTok{    :param loss: loss function to use during training}
+\CommentTok{    :param metrics: metrics to output during training}
+\CommentTok{    :param epochs: number of epochs}
+\CommentTok{    :param X\_train: training data}
+\CommentTok{    :param y\_train: training data labels}
+\CommentTok{    :return: model}
+\CommentTok{    """}
+
+    \CommentTok{\# Compile the model}
+\NormalTok{    model.}\BuiltInTok{compile}\NormalTok{(optimizer}\OperatorTok{=}\StringTok{\textquotesingle{}adam\textquotesingle{}}\NormalTok{, loss}\OperatorTok{=}\NormalTok{loss, metrics}\OperatorTok{=}\NormalTok{metrics)}
+
+\NormalTok{    X\_train\_format }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{str}\NormalTok{(feature\_names[i]): X\_train[:, i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(X\_train.shape[}\DecValTok{1}\NormalTok{])\}}
+
+    \CommentTok{\# Train the model}
+\NormalTok{    history }\OperatorTok{=}\NormalTok{ model.fit(}
+\NormalTok{        x}\OperatorTok{=}\NormalTok{X\_train\_format,}
+\NormalTok{        y}\OperatorTok{=}\NormalTok{y\_train,}
+\NormalTok{        batch\_size}\OperatorTok{=}\DecValTok{32}\NormalTok{,}
+\NormalTok{        epochs}\OperatorTok{=}\NormalTok{epochs,}
+\NormalTok{        validation\_split }\OperatorTok{=} \FloatTok{0.2}\NormalTok{,}
+\NormalTok{        verbose}\OperatorTok{=}\DecValTok{1}
+\NormalTok{    )}
+
+\NormalTok{    train\_loss }\OperatorTok{=}\NormalTok{ history.history[}\StringTok{\textquotesingle{}loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{    val\_loss }\OperatorTok{=}\NormalTok{ history.history[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+
+    \ControlFlowTok{return}\NormalTok{ model, train\_loss, val\_loss}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Skip model
+training}\label{help-box---skip-model-training}
+
+By setting the variable ``read\_in\_file'' to True at the beginning of
+the code, the user activates sections of the code provided to allow the
+time intensive model training steps to be skipped. It is assumed that if
+a user is activating these sections of the code they have uploaded the
+appropriately named files to the same directory that the input data is
+stored in. File names are set by default to call the sample files that
+have provided with this tutorial.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model1\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m1.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m1.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model1\_df.csv"}
+
+\NormalTok{  df\_c1m1 }\OperatorTok{=}\NormalTok{ pd.read\_csv(training\_output\_file)}
+\NormalTok{  reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m1, prior, feature\_names\_c1m1,}
+\NormalTok{                                            activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{)}
+\NormalTok{  reconstructed\_model.load\_weights(model\_file\_name)}
+\NormalTok{  trained\_model\_c1m1 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{  train\_loss\_c1m1 }\OperatorTok{=}\NormalTok{ df\_c1m1[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{  val\_loss\_c1m1 }\OperatorTok{=}\NormalTok{ df\_c1m1[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Compile an untrained model}
+\NormalTok{model\_c1m1 }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m1, prior, feature\_names\_c1m1, activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \CommentTok{\# Train model}
+  \CommentTok{\# input order: model, loss, metrics, epochs, X\_train, X\_val, y\_train, y\_val}
+\NormalTok{  trained\_model\_c1m1, train\_loss\_c1m1, val\_loss\_c1m1 }\OperatorTok{=}\NormalTok{ run\_experiment(model\_c1m1, }\StringTok{\textquotesingle{}binary\_crossentropy\textquotesingle{}}\NormalTok{,}
+\NormalTok{    [[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{, tf\_keras.metrics.Precision(), tf\_keras.metrics.Recall()]], epochs,}
+\NormalTok{                                            feature\_names\_c1m1, X\_train\_c1m1, y\_train\_c1m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Saving model
+files}\label{help-box---saving-model-files}
+
+By default, once a model has been trained the notebook will export the
+model file and outputs from its training runs to files saved within the
+working directory. If the notebook is being run on Colab these files
+WILL NOT be saved once the Colab run is exited. If a user wishes to
+retain these files download them to a local directory. If these users
+does not care about these outputs, they will automatically be deleted
+when the notebook is closed. If the user is running local on Jupyter the
+files will have to be deleted by hand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. Therefor no models files will be exported as they will just be replicates of the loaded files "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model1\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m1.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m1.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model1\_df.csv"}
+
+\NormalTok{  model\_c1m1.save\_weights(model\_file\_name)}
+\NormalTok{  df\_c1m1 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c1m1,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c1m1\})}
+\NormalTok{  df\_c1m1.to\_csv(training\_output\_file)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\#\# Should be a redundant cell. Leaving in for now just incase}
+\CommentTok{\# Save gate for experiment 1 outputs}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  dir\_path }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{\textquotesingle{}output\textquotesingle{}}\NormalTok{)}
+\NormalTok{  os.makedirs(dir\_path, exist\_ok}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+  \ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+\NormalTok{      df\_c1m1 }\OperatorTok{=}\NormalTok{ pd.read\_csv(os.path.join(dir\_path, }\StringTok{"casestudy1\_model1\_df.csv"}\NormalTok{))}
+\NormalTok{      reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m1, prior, feature\_names\_c1m1,}
+\NormalTok{                                            activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{)}
+\NormalTok{      reconstructed\_model.load\_weights(os.path.join(dir\_path, }\StringTok{"model\_c1m1.weights.h5"}\NormalTok{))}
+\NormalTok{      trained\_model\_c1m1 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{      train\_loss\_c1m1 }\OperatorTok{=}\NormalTok{ df\_c1m1[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{      val\_loss\_c1m1 }\OperatorTok{=}\NormalTok{ df\_c1m1[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+  \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{      model\_c1m1.save\_weights(os.path.join(dir\_path, }\StringTok{"model\_c1m1.weights.h5"}\NormalTok{))}
+\NormalTok{      df\_c1m1 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c1m1,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c1m1\})}
+\NormalTok{      df\_c1m1.to\_csv(os.path.join(dir\_path, }\StringTok{"casestudy1\_model1\_df.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Compute predictions}\label{compute-predictions}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ compute\_predictions(model, feature\_names, X\_test, y\_test):}
+\NormalTok{    predictions }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{str}\NormalTok{(feature\_names[i]): X\_test[:, i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(X\_test.shape[}\DecValTok{1}\NormalTok{])\}}
+\NormalTok{    predictions }\OperatorTok{=}\NormalTok{ model(predictions)}
+    \ControlFlowTok{return}\NormalTok{ predictions}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate predictions using the newly trained model to be used in the Results section of the code to compare model outputs}
+\NormalTok{predictions\_c1m1 }\OperatorTok{=}\NormalTok{ compute\_predictions(trained\_model\_c1m1, feature\_names\_c1m1, X\_test\_c1m1, y\_test\_c1m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visualize training and validation
+loss}\label{visualize-training-and-validation-loss}
+
+Visualize the training and validation loss for Case Study A Model One.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ plot\_training\_loss(feature\_names, model, X\_val, y\_val, train\_loss, val\_loss, predictions, title):}
+
+    \CommentTok{"""}
+\CommentTok{    Plot the loss curve and confusion matrix}
+\CommentTok{    :param: feature\_names: feature names used in model creation}
+\CommentTok{    :param: model: trained model}
+\CommentTok{    :param: X\_val: validation data}
+\CommentTok{    :param: y\_val: validation data labels}
+\CommentTok{    :param: train\_loss: training loss over epochs}
+\CommentTok{    :param: val\_loss: validation loss over epochs}
+\CommentTok{    :param: title: title of plot}
+\CommentTok{    """}
+\NormalTok{    plt.rcParams.update(\{ }\CommentTok{\# set visualization values}
+    \StringTok{"font.size"}\NormalTok{:            }\DecValTok{10}\NormalTok{,}
+    \StringTok{"axes.titlesize"}\NormalTok{:       }\DecValTok{10}\NormalTok{,}
+    \StringTok{"axes.labelsize"}\NormalTok{:       }\DecValTok{10}\NormalTok{,}
+    \StringTok{"xtick.labelsize"}\NormalTok{:      }\DecValTok{10}\NormalTok{,}
+    \StringTok{"ytick.labelsize"}\NormalTok{:      }\DecValTok{10}\NormalTok{,}
+    \StringTok{"legend.fontsize"}\NormalTok{:      }\DecValTok{10}\NormalTok{,}
+    \StringTok{"figure.titlesize"}\NormalTok{:     }\DecValTok{10}\NormalTok{\})}
+\NormalTok{    color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{    custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+    \CommentTok{\# \# set up array for predictions}
+    \CommentTok{\# predictions = \{str(feature\_names[i]): X\_val[:, i] for i in range(X\_val.shape[1])\}}
+
+    \CommentTok{\# \# get model predictions}
+    \CommentTok{\# predictions = model(predictions)}
+
+\NormalTok{    fig, (ax1) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{    ax1.plot(train\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Training Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#33638DFF"}\NormalTok{)}
+\NormalTok{    ax1.plot(val\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Validation Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#481567FF"}\NormalTok{)}
+\NormalTok{    ax1.set\_xlabel(}\StringTok{\textquotesingle{}Epochs\textquotesingle{}}\NormalTok{)}
+\NormalTok{    ax1.set\_ylabel(}\StringTok{\textquotesingle{}Loss\textquotesingle{}}\NormalTok{)}
+    \CommentTok{\#ax1.set\_ylim(0, 1)}
+\NormalTok{    ax1.grid()}
+\NormalTok{    ax1.legend()}
+
+\NormalTok{    fig.suptitle(title)}
+\NormalTok{    plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_training\_loss(feature\_names\_c1m1, trained\_model\_c1m1, X\_test\_c1m1, y\_test\_c1m1, train\_loss\_c1m1, val\_loss\_c1m1, predictions\_c1m1,}\StringTok{\textquotesingle{}Case Study A Model One\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Model Two}\label{model-two}
+
+For the second model, we expanded on the tutorial code by including more
+advanced data preprocessing functions. When applying machine learning
+methods, it is crucial to understand the characteristics of the input
+data, including any inherent limitations and biases. In Model One, no
+effort was made to balance the classes, which can significantly impair
+the network's ability to learn the key features needed to distinguish
+between true and false positives (Lee et al., 2016). In Model Two, we
+address this issue by balancing the dataset before training the model.
+To achieve this, we apply random undersampling to the original dataset,
+ensuring balance not only between classes (true and false positives) but
+also between satellite sources (NOAA-20 and Suomi-NPP). This helps
+prevent the model from learning satellite-specific noise patterns or
+resolution/angle biases instead of features associated with actual fire
+detections. Once data preprocessing was complete, model compiling and
+training were implemented in the same way as the previous model.
+
+\subsubsection{Create dataset}\label{create-dataset}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create X and y train and test data arrays}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  cs1\_m2\_data }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{\textquotesingle{}train{-}final{-}balanced.csv\textquotesingle{}}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  cs1\_m2\_data }\OperatorTok{=} \StringTok{\textquotesingle{}/content/train{-}final{-}balanced.csv\textquotesingle{}}
+
+\NormalTok{X\_train\_c1m2, X\_test\_c1m2, y\_train\_c1m2, y\_test\_c1m2, feature\_names\_c1m2 }\OperatorTok{=}\NormalTok{ create\_tr\_test\_data(cs1\_m2\_data)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Preview of provided data to confirm sucessful upload"}\NormalTok{)}
+\NormalTok{train\_size\_c1m2 }\OperatorTok{=}\NormalTok{ X\_train\_c1m2.shape[}\DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Create and train model}\label{create-and-train-model-1}
+
+\subsubsection{Help Box - Skip model
+training}\label{help-box---skip-model-training-1}
+
+By setting the variable ``read\_in\_file'' to at the beginning of the
+code, the user activates sections of the code provided to allow the time
+intensive model training steps to be skipped. It is assumed that if a
+user is activating these sections of the code they have uploaded the
+appropriately named files to the same directory that the input data is
+stored in. File names are set by default to call the sample files that
+have provided with this tutorial.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model2\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m2.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m2.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model2\_df.csv"}
+
+\NormalTok{  df\_c1m2 }\OperatorTok{=}\NormalTok{ pd.read\_csv(training\_output\_file )}
+\NormalTok{  reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m2, prior, feature\_names\_c1m2,}
+\NormalTok{                                            activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{)}
+\NormalTok{  reconstructed\_model.load\_weights(model\_file\_name)}
+\NormalTok{  trained\_model\_c1m2 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{  train\_loss\_c1m2 }\OperatorTok{=}\NormalTok{ df\_c1m2[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{  val\_loss\_c1m2 }\OperatorTok{=}\NormalTok{ df\_c1m2[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_c1m2}\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m2, prior, feature\_names\_c1m2, activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{8}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. If this is incorrect please go back to the beginning of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false"}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \CommentTok{\# Train model}
+\NormalTok{  trained\_model\_c1m2, train\_loss\_c1m2, val\_loss\_c1m2 }\OperatorTok{=}\NormalTok{ run\_experiment(model\_c1m2, }\StringTok{\textquotesingle{}binary\_crossentropy\textquotesingle{}}\NormalTok{,}
+\NormalTok{    [[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{, tf\_keras.metrics.Precision(), tf\_keras.metrics.Recall()]], epochs,}
+\NormalTok{                                            feature\_names\_c1m2, X\_train\_c1m2, y\_train\_c1m2)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Saving model
+files}\label{help-box---saving-model-files-1}
+
+By default, once a model has been trained the notebook will export the
+model file and outputs from its training runs to files saved within the
+working directory. If the notebook is being run on Colab these files
+WILL NOT be saved once the Colab run is exited. If a user wishes to
+retain these files download them to a local directory. If these users
+does not care about these outputs, they will automatically be delated
+when the notebook is closed. If the user is running local on Jupyter the
+files will have to be deleted by hand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. Therefor no models files will be exported as they will just be replicates of the loaded files "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model2\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m2.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m2.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model2\_df.csv"}
+
+\NormalTok{  model\_c1m2.save\_weights(model\_file\_name)}
+\NormalTok{  df\_c1m2 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c1m2,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c1m2\})}
+\NormalTok{  df\_c1m2.to\_csv(training\_output\_file )}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Compute predictions}\label{compute-predictions-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate predictions using the newly trained model to be used in the Results section of the code to compare model outputs}
+\NormalTok{predictions\_c1m2 }\OperatorTok{=}\NormalTok{ compute\_predictions(trained\_model\_c1m2, feature\_names\_c1m2, X\_test\_c1m2, y\_test\_c1m2)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visualize training and validation
+loss}\label{visualize-training-and-validation-loss-1}
+
+Visualize the training and validation loss for Case Study A Model Two.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_training\_loss(feature\_names\_c1m2, trained\_model\_c1m2, X\_test\_c1m2, y\_test\_c1m2, train\_loss\_c1m2, val\_loss\_c1m2, predictions\_c1m2, }\StringTok{\textquotesingle{}Case Study A Model Two\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Model Three}\label{model-three}
+
+For the third model, we utilized the balanced data that was used in
+Model Two, and expanded the model-building code beyond what was provided
+by the tutorial to include hyperparameter tuning into the workflow.
+
+\subsection{Define epochs}\label{define-epochs-1}
+
+Number of epochs used for trianing is increased.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{epochs }\OperatorTok{=} \DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Create and train model}\label{create-and-train-model-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ prior\_tune(kernel\_size, bias\_size, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+    \CommentTok{"""}
+\CommentTok{    Define tunable prior distribution.}
+\CommentTok{    :param kernel\_size: defined by model}
+\CommentTok{    :param bias\_size: defined by model}
+\CommentTok{    :param dtype: defined by model}
+\CommentTok{    :return: prior model}
+\CommentTok{    """}
+
+\NormalTok{    n }\OperatorTok{=}\NormalTok{ kernel\_size }\OperatorTok{+}\NormalTok{ bias\_size}
+
+\NormalTok{    prior\_model }\OperatorTok{=}\NormalTok{ tf\_keras.Sequential(}
+\NormalTok{      [}
+\NormalTok{          tfp.layers.DistributionLambda(}
+\NormalTok{            apply\_parameter(fun }\OperatorTok{=}\NormalTok{ active\_prior\_distribution, var\_list }\OperatorTok{=}\NormalTok{ [n])}
+\NormalTok{          )}
+\NormalTok{      ]}
+\NormalTok{    )}
+    \ControlFlowTok{return}\NormalTok{ prior\_model}
+
+
+\KeywordTok{def}\NormalTok{ apply\_parameter(fun, var\_list):}
+\NormalTok{    out }\OperatorTok{=}\NormalTok{ fun(var\_list)}
+    \ControlFlowTok{return}\NormalTok{ out}
+
+
+\KeywordTok{def}\NormalTok{ distribution\_param1(var\_list):}
+\NormalTok{    out }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ t: tfp.distributions.MultivariateNormalDiag(}
+\NormalTok{                     loc}\OperatorTok{=}\NormalTok{tf.zeros(var\_list[}\DecValTok{0}\NormalTok{]), scale\_diag}\OperatorTok{=}\NormalTok{tf.ones(var\_list[}\DecValTok{0}\NormalTok{]))}
+    \ControlFlowTok{return}\NormalTok{ out}
+
+
+\KeywordTok{def}\NormalTok{ distribution\_param2(var\_list):}
+\NormalTok{    out }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ t: tfp.distributions.MultivariateNormalDiag(}
+\NormalTok{                     loc}\OperatorTok{=}\NormalTok{tf.zeros(var\_list[}\DecValTok{0}\NormalTok{])}\OperatorTok{*}\DecValTok{20}\NormalTok{, scale\_diag}\OperatorTok{=}\NormalTok{tf.ones(var\_list[}\DecValTok{0}\NormalTok{])}\OperatorTok{*}\DecValTok{20}\NormalTok{)}
+    \ControlFlowTok{return}\NormalTok{ out}
+
+
+\KeywordTok{def}\NormalTok{ ParameterGrid(input\_dict):}
+    \CommentTok{\# Extract the lists corresponding to each key}
+\NormalTok{    values }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(input\_dict.values())}
+
+    \CommentTok{\# Use itertools.product to get all combinations of values}
+\NormalTok{    combinations }\OperatorTok{=}\NormalTok{ itertools.product(}\OperatorTok{*}\NormalTok{values)}
+
+    \CommentTok{\# Create a list of dictionaries from the combinations}
+\NormalTok{    result }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ combo }\KeywordTok{in}\NormalTok{ combinations:}
+\NormalTok{        result.append(}\BuiltInTok{dict}\NormalTok{(}\BuiltInTok{zip}\NormalTok{(input\_dict.keys(), combo)))}
+
+    \ControlFlowTok{return}\NormalTok{ result}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Prior distribution
+explanation}\label{help-box---prior-distribution-explanation}
+
+The prior distribution helps control how much uncertainty and
+flexibility the model has in its weights. The distribution\_param1
+defines a standard normal prior where each weight has mean 0 and
+standard deviation of 1. This indicates that the weights should stay
+near zero. While the distribution\_param2 does the same, but with a
+standard deviation of 20, indicating that the weights could vary widely.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prior\_distribution\_dic }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}default\textquotesingle{}}\NormalTok{: distribution\_param1,}
+                          \StringTok{\textquotesingle{}stretch\textquotesingle{}}\NormalTok{: distribution\_param2\}}
+
+\NormalTok{BNN\_activation\_function\_dic }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}default\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{,}
+                               \StringTok{\textquotesingle{}sigmoid\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}sigmoid\textquotesingle{}}\NormalTok{,}
+                               \StringTok{\textquotesingle{}gelu\textquotesingle{}}\NormalTok{:}\StringTok{\textquotesingle{}gelu\textquotesingle{}}\NormalTok{,}
+                               \StringTok{\textquotesingle{}ELU\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}elu\textquotesingle{}}\NormalTok{,}
+                               \StringTok{\textquotesingle{}Leaky relu\textquotesingle{}}\NormalTok{:}\StringTok{\textquotesingle{}leaky\_relu\textquotesingle{}}\NormalTok{\}}
+
+\NormalTok{BNN\_hiddenunits\_dim\_dic }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}smaller\textquotesingle{}}\NormalTok{: }\DecValTok{4}\NormalTok{,}
+                           \StringTok{\textquotesingle{}default\textquotesingle{}}\NormalTok{: }\DecValTok{8}\NormalTok{,}
+                           \StringTok{\textquotesingle{}larger\textquotesingle{}}\NormalTok{: }\DecValTok{16}\NormalTok{\}}
+
+\CommentTok{\# packed into one object, needed values (not keys for the parameteric grid)}
+\NormalTok{param\_grid }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"dist"}\NormalTok{:}\BuiltInTok{list}\NormalTok{(prior\_distribution\_dic.values()),}
+    \StringTok{"activation"}\NormalTok{:}\BuiltInTok{list}\NormalTok{(BNN\_activation\_function\_dic.values()),}
+    \CommentTok{\# "class\_id":list(class\_id\_threshold\_dic.values()),}
+    \StringTok{"hidden\_units"}\NormalTok{:}\BuiltInTok{list}\NormalTok{(BNN\_hiddenunits\_dim\_dic.values())}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Skip model training and
+tuning}\label{help-box---skip-model-training-and-tuning}
+
+This help box allows the user to skip both the training and the
+parameter tuning steps. In order to read in a saved model file, a user
+must pre-define structural hyperparameters of the model being inputted.
+The hyperparameters selected for the given sample data set may differ
+form the hyperparameters that would be selected for model's trained on
+different input data. A comment has been added to the code indicated the
+line that a user must be updated to match the hyperparameters selected
+for the new dataset in order for the model files to load properly.
+
+By setting the variable ``read\_in\_file'' to at the beginning of the
+code, the user activates sections of the code provided to allow the time
+intensive model training steps to be skipped. It is assumed that if a
+user is activating these sections of the code they have uploaded the
+appropriately named files to the same directory that the input data is
+stored in. File names are set by default to call the sample files that
+have provided with this tutorial.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model3\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m3.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m3.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model3\_df.csv"}
+
+\NormalTok{  df\_c1m3 }\OperatorTok{=}\NormalTok{ pd.read\_csv(training\_output\_file)}
+  \CommentTok{\# Following hyperparameters are set in accordance with optimizing the sample data.}
+  \CommentTok{\# If running with personal data set update these hyperparameters to match the results of the tunning for the new dataset}
+\NormalTok{  reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m2, prior, feature\_names\_c1m2, activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}sigmoid\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{4}\NormalTok{)}
+\NormalTok{  reconstructed\_model.load\_weights(model\_file\_name)}
+\NormalTok{  trained\_model\_c1m3 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{  train\_loss\_c1m3 }\OperatorTok{=}\NormalTok{ df\_c1m3[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{  val\_loss\_c1m3 }\OperatorTok{=}\NormalTok{ df\_c1m3[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Estimated run time on CPU: 45 minutes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{models\_c1m3 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{train\_losses\_c1m3 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{val\_losses\_c1m3 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{params\_combo }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. If this is incorrect please go back to the beginning of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  grid }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(ParameterGrid(param\_grid))}
+\NormalTok{  total\_runs }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(grid)}
+  \ControlFlowTok{for}\NormalTok{ i, params }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(grid, start }\OperatorTok{=}\DecValTok{1}\NormalTok{): }\CommentTok{\# creates all combinations of dictionary that it is given (grid search), then can iterate through the combinations}
+\NormalTok{      runs\_left }\OperatorTok{=}\NormalTok{ total\_runs }\OperatorTok{{-}}\NormalTok{ i}
+      \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"[}\SpecialCharTok{\{}\NormalTok{i}\SpecialCharTok{\}}\SpecialStringTok{/}\SpecialCharTok{\{}\NormalTok{total\_runs}\SpecialCharTok{\}}\SpecialStringTok{ runs] Running with parameters: }\SpecialCharTok{\{}\NormalTok{params}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+
+\NormalTok{      active\_prior\_distribution }\OperatorTok{=}\NormalTok{ params[}\StringTok{"dist"}\NormalTok{]}
+
+\NormalTok{      model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c1m2, prior\_tune, feature\_names\_c1m2,}
+\NormalTok{                           activation\_fun }\OperatorTok{=}\NormalTok{ params[}\StringTok{\textquotesingle{}activation\textquotesingle{}}\NormalTok{],}
+\NormalTok{                           unit\_dim }\OperatorTok{=}\NormalTok{ params[}\StringTok{\textquotesingle{}hidden\_units\textquotesingle{}}\NormalTok{])}
+
+\NormalTok{      model, train\_loss, val\_loss }\OperatorTok{=}\NormalTok{ run\_experiment(model, }\StringTok{\textquotesingle{}binary\_crossentropy\textquotesingle{}}\NormalTok{, [[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{, tf\_keras.metrics.Precision(), tf\_keras.metrics.Recall()]], epochs,}
+\NormalTok{                                              feature\_names\_c1m3, X\_train\_c1m3, y\_train\_c1m3)}
+
+\NormalTok{      models\_c1m3.append(model)}
+\NormalTok{      train\_losses\_c1m3.append(train\_loss)}
+\NormalTok{      val\_losses\_c1m3.append(val\_loss)}
+\NormalTok{      params\_combo.append(params)}
+      \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Finished run }\SpecialCharTok{\{}\NormalTok{i}\SpecialCharTok{\}}\SpecialStringTok{/}\SpecialCharTok{\{}\NormalTok{total\_runs}\SpecialCharTok{\}}\SpecialStringTok{. Runs remaining: }\SpecialCharTok{\{}\NormalTok{runs\_left}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Evaluate Hyperparameters}\label{evaluate-hyperparameters}
+
+The different models generated during hyperparameter tuning will be
+qualitatively evaluated using a Parallel Coordinates Plot (PCP), a
+scatter plot comparing training loss to training validation, and a
+SHapley Additive exPlanations (SHAP) kernel explainer.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This code block outputs a parallel coordinates plot for Model Three.}
+
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training and tuning novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  df }\OperatorTok{=}\NormalTok{ pd.DataFrame(params\_combo)}
+
+  \CommentTok{\# Calculate mean train and validation losses}
+\NormalTok{  df[}\StringTok{"train\_loss"}\NormalTok{] }\OperatorTok{=}\NormalTok{ [np.mean(loss) }\ControlFlowTok{for}\NormalTok{ loss }\KeywordTok{in}\NormalTok{ train\_losses\_c1m3]  }\CommentTok{\# Averaging over epochs}
+\NormalTok{  df[}\StringTok{"val\_loss"}\NormalTok{] }\OperatorTok{=}\NormalTok{ [np.mean(loss) }\ControlFlowTok{for}\NormalTok{ loss }\KeywordTok{in}\NormalTok{ val\_losses\_c1m3]}
+
+  \CommentTok{\# Drop rows with missing values}
+\NormalTok{  df.dropna(inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+  \CommentTok{\# Initialize an empty dictionary to store encoding maps for each column}
+\NormalTok{  encoding\_maps }\OperatorTok{=}\NormalTok{ \{\}}
+
+  \CommentTok{\# Loop through each categorical column that needs to be encoded}
+  \ControlFlowTok{for}\NormalTok{ col }\KeywordTok{in}\NormalTok{ [}\StringTok{"dist"}\NormalTok{, }\StringTok{"activation"}\NormalTok{, }\StringTok{"hidden\_units"}\NormalTok{]:}
+    \CommentTok{\# Create a mapping from each unique value in the column to a unique integer index}
+\NormalTok{    encoding\_maps[col] }\OperatorTok{=}\NormalTok{ \{val: idx }\ControlFlowTok{for}\NormalTok{ idx, val }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(df[col].unique())\}}
+
+    \CommentTok{\# Replace the original string values in the DataFrame with their corresponding integer encodings}
+\NormalTok{    df[col] }\OperatorTok{=}\NormalTok{ df[col].}\BuiltInTok{map}\NormalTok{(encoding\_maps[col])}
+
+\NormalTok{  fig }\OperatorTok{=}\NormalTok{ go.Figure(data}\OperatorTok{=}
+\NormalTok{      go.Parcoords(}
+\NormalTok{          line }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{(color }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{],}
+\NormalTok{                   colorscale }\OperatorTok{=}\NormalTok{ [[}\DecValTok{0}\NormalTok{,}\StringTok{\textquotesingle{}purple\textquotesingle{}}\NormalTok{],[}\FloatTok{0.5}\NormalTok{,}\StringTok{\textquotesingle{}lightseagreen\textquotesingle{}}\NormalTok{],[}\DecValTok{1}\NormalTok{,}\StringTok{\textquotesingle{}gold\textquotesingle{}}\NormalTok{]],),}
+\NormalTok{          dimensions }\OperatorTok{=} \BuiltInTok{list}\NormalTok{([}
+              \BuiltInTok{dict}\NormalTok{(}\BuiltInTok{range} \OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(param\_grid[}\StringTok{"dist"}\NormalTok{])}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)],}
+\NormalTok{                label }\OperatorTok{=} \StringTok{\textquotesingle{}Dist\textquotesingle{}}\NormalTok{, values }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}dist\textquotesingle{}}\NormalTok{], tickvals }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{], ticktext }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}Default\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Stretch\textquotesingle{}}\NormalTok{]),}
+              \BuiltInTok{dict}\NormalTok{(}\BuiltInTok{range} \OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(param\_grid[}\StringTok{"activation"}\NormalTok{])}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)],}
+\NormalTok{                label }\OperatorTok{=} \StringTok{\textquotesingle{}Activation\textquotesingle{}}\NormalTok{, values }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}activation\textquotesingle{}}\NormalTok{], tickvals }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{], ticktext }\OperatorTok{=}\NormalTok{ param\_grid[}\StringTok{"activation"}\NormalTok{]),}
+              \BuiltInTok{dict}\NormalTok{(}\BuiltInTok{range} \OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\BuiltInTok{int}\NormalTok{(}\BuiltInTok{len}\NormalTok{(param\_grid[}\StringTok{"hidden\_units"}\NormalTok{])}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)],}
+\NormalTok{                label }\OperatorTok{=} \StringTok{\textquotesingle{}Hidden Units\textquotesingle{}}\NormalTok{, values }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}hidden\_units\textquotesingle{}}\NormalTok{], tickvals }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{], ticktext }\OperatorTok{=}\NormalTok{ param\_grid[}\StringTok{"hidden\_units"}\NormalTok{]),}
+              \BuiltInTok{dict}\NormalTok{(}\BuiltInTok{range} \OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\FloatTok{1.6}\NormalTok{],}
+\NormalTok{                label }\OperatorTok{=} \StringTok{\textquotesingle{}Train Loss\textquotesingle{}}\NormalTok{, values }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]),}
+              \BuiltInTok{dict}\NormalTok{(}\BuiltInTok{range} \OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\FloatTok{1.6}\NormalTok{],}
+\NormalTok{                label }\OperatorTok{=} \StringTok{\textquotesingle{}Val Loss\textquotesingle{}}\NormalTok{, values }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{])}
+\NormalTok{          ])}
+\NormalTok{      )}
+\NormalTok{  )}
+
+\NormalTok{  fig.update\_layout(}
+      \CommentTok{\# Font increased from 21}
+\NormalTok{      font}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(family}\OperatorTok{=}\StringTok{"Arial, sans{-}serif"}\NormalTok{, size}\OperatorTok{=}\DecValTok{25}\NormalTok{),}
+\NormalTok{      plot\_bgcolor }\OperatorTok{=} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{,}
+\NormalTok{      paper\_bgcolor }\OperatorTok{=} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  fig.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This code block outputs the different training and validation losses for each trained model on a scatterplot.}
+
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training and tuning novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \CommentTok{\# Prepare figure \& axes}
+\NormalTok{  fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+  \CommentTok{\# Drop rows with missing values}
+\NormalTok{  df.dropna(inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+
+  \CommentTok{\# select colors}
+\NormalTok{  color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#481567FF"}\NormalTok{, }\StringTok{"\#33638DFF"}\NormalTok{, }\StringTok{"\#20A387FF"}\NormalTok{, }\StringTok{"\#55C667FF"}\NormalTok{, }\StringTok{"\#DCE319FF"}\NormalTok{]}
+
+  \CommentTok{\# Plot}
+\NormalTok{  sns.scatterplot(ax}\OperatorTok{=}\NormalTok{ax, data}\OperatorTok{=}\NormalTok{df,x}\OperatorTok{=}\StringTok{"train\_loss"}\NormalTok{,y}\OperatorTok{=}\StringTok{"val\_loss"}\NormalTok{,hue}\OperatorTok{=}\StringTok{"activation"}\NormalTok{, style}\OperatorTok{=}\StringTok{"dist"}\NormalTok{, size}\OperatorTok{=}\StringTok{"hidden\_units"}\NormalTok{, sizes}\OperatorTok{=}\NormalTok{(}\DecValTok{50}\NormalTok{, }\DecValTok{300}\NormalTok{), palette}\OperatorTok{=}\NormalTok{ color\_palette, alpha}\OperatorTok{=}\FloatTok{0.8}\NormalTok{, legend}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+
+  \CommentTok{\#Diagonal line}
+\NormalTok{  min\_loss }\OperatorTok{=} \BuiltInTok{min}\NormalTok{(df[}\StringTok{"train\_loss"}\NormalTok{].}\BuiltInTok{min}\NormalTok{(), df[}\StringTok{"val\_loss"}\NormalTok{].}\BuiltInTok{min}\NormalTok{())}
+\NormalTok{  max\_loss }\OperatorTok{=} \BuiltInTok{max}\NormalTok{(df[}\StringTok{"train\_loss"}\NormalTok{].}\BuiltInTok{max}\NormalTok{(), df[}\StringTok{"val\_loss"}\NormalTok{].}\BuiltInTok{max}\NormalTok{())}
+\NormalTok{  ax.plot([min\_loss, max\_loss], [min\_loss, max\_loss], color}\OperatorTok{=}\StringTok{"gray"}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{"{-}{-}"}\NormalTok{, linewidth}\OperatorTok{=}\FloatTok{1.5}\NormalTok{, label}\OperatorTok{=}\StringTok{"validation = train"}\NormalTok{)}
+
+
+\NormalTok{  activation\_keys    }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(BNN\_activation\_function\_dic.keys())}
+\NormalTok{  dist\_keys          }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(prior\_distribution\_dic.keys())}
+\NormalTok{  hiddenunits\_keys   }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(BNN\_hiddenunits\_dim\_dic.keys())}
+
+  \CommentTok{\# color pallete}
+\NormalTok{  palette }\OperatorTok{=}\NormalTok{ sns.color\_palette(color\_palette, }\BuiltInTok{len}\NormalTok{(activation\_keys))}
+
+  \CommentTok{\# markers for the dist\_keys}
+\NormalTok{  markers }\OperatorTok{=}\NormalTok{ [}\StringTok{"o"}\NormalTok{,}\StringTok{"X"}\NormalTok{,}\StringTok{"P"}\NormalTok{][:}\BuiltInTok{len}\NormalTok{(dist\_keys)]}
+
+  \CommentTok{\# sizes for hidden\_units}
+\NormalTok{  unit\_vals }\OperatorTok{=}\NormalTok{ [BNN\_hiddenunits\_dim\_dic[k] }\ControlFlowTok{for}\NormalTok{ k }\KeywordTok{in}\NormalTok{ hiddenunits\_keys]}
+\NormalTok{  minu, maxu }\OperatorTok{=} \BuiltInTok{min}\NormalTok{(unit\_vals), }\BuiltInTok{max}\NormalTok{(unit\_vals)}
+  \KeywordTok{def}\NormalTok{ map\_size(u):}
+      \ControlFlowTok{return} \DecValTok{50} \OperatorTok{+}\NormalTok{ (u }\OperatorTok{{-}}\NormalTok{ minu) }\OperatorTok{/}\NormalTok{ (maxu }\OperatorTok{{-}}\NormalTok{ minu) }\OperatorTok{*}\NormalTok{ (}\DecValTok{300}\OperatorTok{{-}}\DecValTok{50}\NormalTok{)}
+
+\NormalTok{  size\_proxies }\OperatorTok{=}\NormalTok{ [}
+\NormalTok{      Line2D(}
+\NormalTok{        [}\DecValTok{0}\NormalTok{],[}\DecValTok{0}\NormalTok{],}
+\NormalTok{        color}\OperatorTok{=}\StringTok{"gray"}\NormalTok{,}
+\NormalTok{        marker}\OperatorTok{=}\StringTok{"o"}\NormalTok{,}
+\NormalTok{        linestyle}\OperatorTok{=}\StringTok{"None"}\NormalTok{,}
+\NormalTok{        markersize}\OperatorTok{=}\NormalTok{np.sqrt(map\_size(unit\_vals[i])),}
+\NormalTok{        label}\OperatorTok{=}\SpecialStringTok{f"}\SpecialCharTok{\{}\NormalTok{hiddenunits\_keys[i]}\SpecialCharTok{\}}\SpecialStringTok{ (}\SpecialCharTok{\{}\NormalTok{unit\_vals[i]}\SpecialCharTok{\}}\SpecialStringTok{ units)"}
+\NormalTok{      )}
+      \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(hiddenunits\_keys))}
+\NormalTok{  ]}
+
+\NormalTok{  hue\_proxies }\OperatorTok{=}\NormalTok{ [}
+\NormalTok{      Patch(color}\OperatorTok{=}\NormalTok{palette[i], label}\OperatorTok{=}\NormalTok{activation\_keys[i])}
+      \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(activation\_keys))}
+\NormalTok{  ]}
+
+\NormalTok{  style\_proxies }\OperatorTok{=}\NormalTok{ [}
+\NormalTok{      Line2D([}\DecValTok{0}\NormalTok{],[}\DecValTok{0}\NormalTok{], color}\OperatorTok{=}\StringTok{"black"}\NormalTok{,  marker}\OperatorTok{=}\NormalTok{markers[i], linestyle}\OperatorTok{=}\StringTok{"None"}\NormalTok{, markersize}\OperatorTok{=}\DecValTok{10}\NormalTok{, label}\OperatorTok{=}\NormalTok{dist\_keys[i])}
+      \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(dist\_keys))}
+\NormalTok{  ]}
+
+  \CommentTok{\# legend of all the parameters}
+\NormalTok{  ax.legend(}
+\NormalTok{      handles}\OperatorTok{=}\NormalTok{hue\_proxies }\OperatorTok{+}\NormalTok{ style\_proxies }\OperatorTok{+}\NormalTok{ size\_proxies }\OperatorTok{+}\NormalTok{ [Line2D([}\DecValTok{0}\NormalTok{], [}\DecValTok{0}\NormalTok{], color}\OperatorTok{=}\StringTok{"gray"}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{"{-}{-}"}\NormalTok{, label}\OperatorTok{=}\StringTok{"validation = train"}\NormalTok{)],}
+\NormalTok{      title}\OperatorTok{=}\StringTok{"Activation / Dist / Hidden Units"}\NormalTok{,}
+\NormalTok{      loc }\OperatorTok{=} \StringTok{"upper left"}\NormalTok{,}
+\NormalTok{      bbox\_to\_anchor}\OperatorTok{=}\NormalTok{(}\FloatTok{1.02}\NormalTok{, }\DecValTok{1}\NormalTok{),}
+\NormalTok{      borderaxespad}\OperatorTok{=}\DecValTok{0}
+\NormalTok{  )}
+\NormalTok{  ax.set\_xlabel(}\StringTok{"Training Loss"}\NormalTok{, fontsize }\OperatorTok{=}  \DecValTok{18}\NormalTok{)}
+\NormalTok{  ax.set\_ylabel(}\StringTok{"Validation Loss"}\NormalTok{, fontsize }\OperatorTok{=}  \DecValTok{18}\NormalTok{)}
+\NormalTok{  ax.set\_title(}\StringTok{"Training vs. Validation Loss}\CharTok{\textbackslash{}n}\StringTok{(color=activation, shape=dist, size=hidden\_units)"}\NormalTok{)}
+
+\NormalTok{  fig.subplots\_adjust(right}\OperatorTok{=}\FloatTok{0.75}\NormalTok{)}
+\NormalTok{  plt.tight\_layout()}
+\NormalTok{  plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This code block outputs a SHapley Additive exPlanations (SHAP) plot}
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training and tuning novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \CommentTok{\#SHAP}
+\NormalTok{  best\_model\_to\_explain }\OperatorTok{=}\NormalTok{ df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()}
+\NormalTok{  best\_index }\OperatorTok{=}\NormalTok{ best\_model\_to\_explain}
+
+
+
+  \CommentTok{\#BNN wrapper}
+  \KeywordTok{def}\NormalTok{ bnn\_predict\_fn(model, X, feature\_names, n\_samples}\OperatorTok{=}\DecValTok{100}\NormalTok{):}
+      \CommentTok{\# Ensure X is a numpy array}
+\NormalTok{      X }\OperatorTok{=}\NormalTok{ np.array(X)}
+\NormalTok{      examples }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{str}\NormalTok{(feature\_names[i]): X[:, i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(X.shape[}\DecValTok{1}\NormalTok{])\}}
+
+\NormalTok{      predicted }\OperatorTok{=}\NormalTok{ []}
+      \ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n\_samples):}
+\NormalTok{        predicted.append(model(examples).numpy())}
+      \ControlFlowTok{return}\NormalTok{ np.concatenate(predicted, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+  \CommentTok{\#plot color}
+\NormalTok{  plt.rcParams.update(\{}
+      \StringTok{"font.size"}\NormalTok{:        }\DecValTok{10}\NormalTok{,}
+      \StringTok{"axes.titlesize"}\NormalTok{:   }\DecValTok{10}\NormalTok{,}
+      \StringTok{"axes.labelsize"}\NormalTok{:   }\DecValTok{10}\NormalTok{,}
+      \StringTok{"xtick.labelsize"}\NormalTok{:  }\DecValTok{10}\NormalTok{,}
+      \StringTok{"ytick.labelsize"}\NormalTok{:  }\DecValTok{10}\NormalTok{,}
+      \StringTok{"legend.fontsize"}\NormalTok{:  }\DecValTok{10}\NormalTok{,}
+      \StringTok{"figure.titlesize"}\NormalTok{: }\DecValTok{10}\NormalTok{,}
+\NormalTok{  \})}
+\NormalTok{  color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#DCE319FF"}\NormalTok{, }\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{  custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+  \CommentTok{\# Use a subset of X\_train as background data}
+\NormalTok{  background }\OperatorTok{=}\NormalTok{ X\_train\_c1m2[:}\DecValTok{50}\NormalTok{]}
+
+  \CommentTok{\# Select and review the "best" model}
+\NormalTok{  best\_model\_to\_explain }\OperatorTok{=}\NormalTok{ models\_c1m3[best\_index]}
+
+  \CommentTok{\# Pass the model itself and the feature names to the wrapper}
+\NormalTok{  shap\_explainer }\OperatorTok{=}\NormalTok{ shap.KernelExplainer(}\KeywordTok{lambda}\NormalTok{ x: bnn\_predict\_fn(best\_model\_to\_explain, x, feature\_names\_c1m2), background)}
+
+  \CommentTok{\# Compute SHAP values for test data}
+\NormalTok{  X\_test\_subset }\OperatorTok{=}\NormalTok{ X\_test\_c1m2[}\DecValTok{101}\NormalTok{:}\DecValTok{151}\NormalTok{]}
+\NormalTok{  shap\_values }\OperatorTok{=}\NormalTok{ shap\_explainer.shap\_values(X\_test\_subset, nsamples}\OperatorTok{=}\DecValTok{500}\NormalTok{)}
+\NormalTok{  shap\_values\_averaged }\OperatorTok{=}\NormalTok{ np.mean(shap\_values, axis}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+
+  \CommentTok{\# Visualize the results}
+\NormalTok{  shap.summary\_plot(shap\_values\_averaged, X\_test\_subset, feature\_names}\OperatorTok{=}\NormalTok{feature\_names\_c1m2, cmap}\OperatorTok{=}\NormalTok{custom\_cmap)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Model selection}\label{model-selection}
+
+The hyperparameter combination that produced the model with the lowest
+validation loss value was selected to be used to evaluate against the
+models generated from other runs.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training and tuning novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  trained\_model\_c1m3 }\OperatorTok{=}\NormalTok{ models\_c1m3[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\NormalTok{  train\_loss\_c1m3 }\OperatorTok{=}\NormalTok{ train\_losses\_c1m3[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\NormalTok{  val\_loss\_c1m3 }\OperatorTok{=}\NormalTok{ val\_losses\_c1m3[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Saving model
+files}\label{help-box---saving-model-files-2}
+
+By default, once a model has been trained the notebook will export the
+model file and outputs from its training runs to files saved within the
+working directory. If the notebook is being run on Colab these files
+WILL NOT be saved once the Colab run is exited. If a user wishes to
+retain these files download them to a local directory. If these users
+does not care about these outputs, they will automatically be delated
+when the notebook is closed. If the user is running local on jupyter the
+files will have to be deleted by hand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. Therefor no models files will be exported as they will just be replicates of the loaded files "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy1\_model3\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c1m3.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c1m3.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy1\_model3\_df.csv"}
+
+\NormalTok{  trained\_model\_c1m3.save\_weights(model\_file\_name)}
+\NormalTok{  df\_c1m3 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c1m2,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c1m2\})}
+\NormalTok{  df\_c1m3.to\_csv(training\_output\_file )}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Compute predictions}\label{compute-predictions-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate predictions using the newly trained model to be used in the Results section of the code to compare model outputs}
+\NormalTok{predictions\_c1m3 }\OperatorTok{=}\NormalTok{ compute\_predictions(trained\_model\_c1m3, feature\_names\_c1m2, X\_test\_c1m2, y\_test\_c1m2)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visualize training and validation
+loss}\label{visualize-training-and-validation-loss-2}
+
+Visualize the training and validation loss for Case Study A Model Three.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_training\_loss(feature\_names\_c1m2, trained\_model\_c1m3, X\_test\_c1m2, y\_test\_c1m2, train\_loss\_c1m3, val\_loss\_c1m3, predictions\_c1m3, }\StringTok{\textquotesingle{}Case Study A Model Three\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Results (All Models)}\label{results-all-models}
+
+Class label threshold values were optimized for each model. This was
+done by generating class labels using a range of threshold values from
+0.25 - 0.75. Threshold value vs performance metrics were plotted on a
+muti-line plot, and the threshold value that maximized the most metrics
+for a model was selected. An accuracy assessment was implemented for
+every model, producing: accuracy, precision, recall, and F1 scores for
+each set of labeled predictions. Using these optimized threshold values,
+confusion matrices were generated and finalized accuracy, precision and
+recall scores were reported. A precision recall curve was also generated
+for each model, so the choice of epoch for model training could be
+qualitatively evaluated.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ analyze\_threshold\_value(df\_all\_stats):}
+\CommentTok{\# Plot all in one figure}
+\NormalTok{  fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{  palette }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}\#33638DFF\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}precision\textquotesingle{}}\NormalTok{: }\StringTok{\textquotesingle{}\#481567FF\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}recall\textquotesingle{}}\NormalTok{:  }\StringTok{\textquotesingle{}\#20A387FF\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}f1\textquotesingle{}}\NormalTok{:  }\StringTok{\textquotesingle{}\#DCE319FF\textquotesingle{}}
+\NormalTok{  \}}
+\NormalTok{  sns.set\_style(}\StringTok{"whitegrid"}\NormalTok{)}
+\NormalTok{  sns.set\_context(}\StringTok{"paper"}\NormalTok{, font\_scale}\OperatorTok{=}\FloatTok{1.2}\NormalTok{)}
+
+\NormalTok{  sns.lineplot(data}\OperatorTok{=}\NormalTok{pd.melt(df\_all\_stats, id\_vars}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}threshold\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}model\textquotesingle{}}\NormalTok{], value\_vars}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}precision\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}recall\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}f1\textquotesingle{}}\NormalTok{]),}
+\NormalTok{              x}\OperatorTok{=}\StringTok{\textquotesingle{}threshold\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{, hue}\OperatorTok{=}\StringTok{\textquotesingle{}variable\textquotesingle{}}\NormalTok{, style}\OperatorTok{=}\StringTok{\textquotesingle{}model\textquotesingle{}}\NormalTok{, palette }\OperatorTok{=}\NormalTok{ palette)}
+
+
+
+\CommentTok{\# Titles \& labels}
+\NormalTok{  plt.title(}\StringTok{"Precision, Recall, F1 across Thresholds for All Models"}\NormalTok{)}
+\NormalTok{  plt.xlabel(}\StringTok{"Threshold"}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{18}\NormalTok{)}
+\NormalTok{  plt.ylabel(}\StringTok{"Score"}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{18}\NormalTok{)}
+\NormalTok{  ax.grid(}\VariableTok{True}\NormalTok{)}
+
+\CommentTok{\# legend}
+\NormalTok{  ax.legend(title}\OperatorTok{=}\StringTok{"Metric / Model"}\NormalTok{,loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{, bbox\_to\_anchor}\OperatorTok{=}\NormalTok{(}\FloatTok{1.02}\NormalTok{, }\DecValTok{1}\NormalTok{),borderaxespad}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+
+\NormalTok{  fig.tight\_layout(rect}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{0.8}\NormalTok{, }\DecValTok{1}\NormalTok{])}
+
+\NormalTok{  plt.grid(}\VariableTok{True}\NormalTok{)}
+\NormalTok{  plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# @title}
+\KeywordTok{def}\NormalTok{ compute\_results\_grid(feature\_names, model, predictions, y\_val, title):}
+  \CommentTok{"""}
+\CommentTok{  Compute the classifications and statistics (precision, recall, f1) for the trained model}
+\CommentTok{  :param: feature\_names: feature names used in model creation}
+\CommentTok{  :param: model: trained model}
+\CommentTok{  :param: X\_val: validation data}
+\CommentTok{  :param: y\_val: validation data labels}
+\CommentTok{  :param: title: title of plot}
+\CommentTok{  :return: dataframe of classifications and statistics at each threshold}
+\CommentTok{  """}
+
+  \CommentTok{\# }\AlertTok{NOTE}\CommentTok{: This is necessary to avoid issues with RAM, for full results please remove these subsetting rows}
+  \CommentTok{\#predictions = predictions[0:1000]}
+  \CommentTok{\#y\_val = y\_val[0:1000]}
+
+  \CommentTok{\# create precision/recall curve plots}
+\NormalTok{  thresholds }\OperatorTok{=}\NormalTok{ [}\FloatTok{0.25}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.35}\NormalTok{, }\FloatTok{0.4}\NormalTok{, }\FloatTok{0.45}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\FloatTok{0.55}\NormalTok{, }\FloatTok{0.6}\NormalTok{, }\FloatTok{0.65}\NormalTok{, }\FloatTok{0.7}\NormalTok{, }\FloatTok{0.75}\NormalTok{]}
+
+\NormalTok{  df\_classifications }\OperatorTok{=}\NormalTok{ pd.DataFrame()}
+\NormalTok{  df\_stats }\OperatorTok{=}\NormalTok{ pd.DataFrame(columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}threshold\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}precision\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}recall\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}f1\textquotesingle{}}\NormalTok{])}
+
+  \ControlFlowTok{for}\NormalTok{ thresh }\KeywordTok{in}\NormalTok{ thresholds:}
+      \CommentTok{\# predicted, TP, TN, FP, FN = compute\_metrics(y\_val, predictions, thresh)}
+\NormalTok{      prediction\_label }\OperatorTok{=}\NormalTok{ np.where(predictions }\OperatorTok{\textgreater{}=}\NormalTok{ thresh, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{      df\_group }\OperatorTok{=}\NormalTok{ pd.DataFrame()}
+
+\NormalTok{      df\_group[}\StringTok{\textquotesingle{}label\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ y\_val[:]}
+      \CommentTok{\# df\_group[\textquotesingle{}predicted\textquotesingle{}] = predicted[:]}
+\NormalTok{      df\_group[}\StringTok{\textquotesingle{}score\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ predictions[:]}
+\NormalTok{      df\_group[}\StringTok{\textquotesingle{}threshold\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ thresh}
+
+\NormalTok{      accuracy }\OperatorTok{=}\NormalTok{ accuracy\_score(y\_val, prediction\_label)}
+      \CommentTok{\#print(accuracy)}
+\NormalTok{      precision }\OperatorTok{=}\NormalTok{ precision\_score(y\_val, prediction\_label)}
+      \CommentTok{\#print(precision)}
+\NormalTok{      recall }\OperatorTok{=}\NormalTok{ recall\_score(y\_val, prediction\_label)}
+      \CommentTok{\#print(recall)}
+      \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{        f1 }\OperatorTok{=}\NormalTok{ (}\DecValTok{2} \OperatorTok{*} \BuiltInTok{float}\NormalTok{(precision) }\OperatorTok{*} \BuiltInTok{float}\NormalTok{(recall)) }\OperatorTok{/}\NormalTok{ (}\BuiltInTok{float}\NormalTok{(precision) }\OperatorTok{+} \BuiltInTok{float}\NormalTok{(recall))}
+      \ControlFlowTok{except} \PreprocessorTok{ZeroDivisionError}\NormalTok{:}
+\NormalTok{        f1 }\OperatorTok{=} \DecValTok{0}
+
+\NormalTok{      df\_stats.loc[}\BuiltInTok{len}\NormalTok{(df\_stats)] }\OperatorTok{=}\NormalTok{ [thresh, accuracy, precision, recall, f1]}
+\NormalTok{  df\_stats[}\StringTok{\textquotesingle{}model\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ title}
+  \ControlFlowTok{return}\NormalTok{ df\_stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Combine all stats into one DataFrame to plot all of them}
+\NormalTok{stats\_c1m1 }\OperatorTok{=}\NormalTok{ compute\_results\_grid(feature\_names\_c1m1, trained\_model\_c1m1, predictions\_c1m1, y\_test\_c1m1, }\StringTok{\textquotesingle{}CaseAModel1\textquotesingle{}}\NormalTok{)}
+\NormalTok{stats\_c1m2 }\OperatorTok{=}\NormalTok{ compute\_results\_grid(feature\_names\_c1m2, trained\_model\_c1m2, predictions\_c1m2, y\_test\_c1m2, }\StringTok{\textquotesingle{}CaseAModel2\textquotesingle{}}\NormalTok{)}
+\NormalTok{stats\_c1m3 }\OperatorTok{=}\NormalTok{ compute\_results\_grid(feature\_names\_c1m2, trained\_model\_c1m3, predictions\_c1m3, y\_test\_c1m2, }\StringTok{\textquotesingle{}CaseAModel3\textquotesingle{}}\NormalTok{)}
+\NormalTok{df\_all\_stats }\OperatorTok{=}\NormalTok{ pd.concat([stats\_c1m1, stats\_c1m2, stats\_c1m3])}
+\NormalTok{analyze\_threshold\_value(df\_all\_stats)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ plot\_training\_losses\_all(runs):}
+    \CommentTok{"""}
+\CommentTok{    Plot the loss curve for all three models in one figure.}
+\CommentTok{    :param: feature\_names: feature names used in model creation}
+\CommentTok{    :param: model: trained model}
+\CommentTok{    :param: X\_val: validation data}
+\CommentTok{    :param: y\_val: validation data labels}
+\CommentTok{    :param: threshold: threshold for classification}
+\CommentTok{    :param: train\_loss: training loss over epochs}
+\CommentTok{    :param: val\_loss: validation loss over epochs}
+\CommentTok{    :param: title: title of plot}
+\CommentTok{    """}
+\NormalTok{    color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{    \_ }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+
+\NormalTok{    fig, axes }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+    \ControlFlowTok{for}\NormalTok{ ax, run }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(axes, runs):}
+\NormalTok{        train\_loss }\OperatorTok{=}\NormalTok{ run[}\StringTok{"train\_loss"}\NormalTok{]}
+\NormalTok{        val\_loss   }\OperatorTok{=}\NormalTok{ run[}\StringTok{"val\_loss"}\NormalTok{]}
+\NormalTok{        title      }\OperatorTok{=}\NormalTok{ run[}\StringTok{"title"}\NormalTok{]}
+
+\NormalTok{        ax.plot(train\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Training Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, linewidth}\OperatorTok{=}\FloatTok{1.5}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#33638DFF"}\NormalTok{)}
+\NormalTok{        ax.plot(val\_loss,   label}\OperatorTok{=}\StringTok{\textquotesingle{}Validation Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, linewidth}\OperatorTok{=}\FloatTok{1.5}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#481567FF"}\NormalTok{)}
+\NormalTok{        ax.set\_xlabel(}\StringTok{\textquotesingle{}Epochs\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{18}\NormalTok{)}
+\NormalTok{        ax.set\_ylabel(}\StringTok{\textquotesingle{}Loss\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{18}\NormalTok{)}
+\NormalTok{        ax.set\_title(title, fontsize}\OperatorTok{=}\DecValTok{18}\NormalTok{)}
+\NormalTok{        ax.grid(}\VariableTok{True}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.3}\NormalTok{)}
+\NormalTok{        ax.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}best\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{    fig.tight\_layout()}
+\NormalTok{    plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{runs }\OperatorTok{=}\NormalTok{ [}
+\NormalTok{    \{}\StringTok{"train\_loss"}\NormalTok{: train\_loss\_c1m1, }\StringTok{"val\_loss"}\NormalTok{: val\_loss\_c1m1, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model One"}\NormalTok{\},}
+\NormalTok{    \{}\StringTok{"train\_loss"}\NormalTok{: train\_loss\_c1m2, }\StringTok{"val\_loss"}\NormalTok{: val\_loss\_c1m2, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model Two"}\NormalTok{\},}
+\NormalTok{    \{}\StringTok{"train\_loss"}\NormalTok{: train\_loss\_c1m3, }\StringTok{"val\_loss"}\NormalTok{: val\_loss\_c1m3, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model Three"}\NormalTok{\},}
+\NormalTok{]}
+
+\NormalTok{plot\_training\_losses\_all(runs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ plot\_confusion\_matrix(models\_data):}
+  \CommentTok{"""}
+\CommentTok{  Plot the confusion matrix for all three models.}
+\CommentTok{  :param: feature\_names: feature names used in model creation}
+\CommentTok{  :param: model: trained model}
+\CommentTok{  :param: X\_val: validation data}
+\CommentTok{  :param: y\_val: validation data labels}
+\CommentTok{  :param: threshold: threshold for classification}
+\CommentTok{  :param: train\_loss: training loss over epochs}
+\CommentTok{  :param: val\_loss: validation loss over epochs}
+\CommentTok{  :param: title: title of plot}
+\CommentTok{  """}
+\NormalTok{  color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{  custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+
+\NormalTok{  fig, axes }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+
+  \ControlFlowTok{for}\NormalTok{ ax, m }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(axes, models\_data):}
+\NormalTok{      y\_true }\OperatorTok{=}\NormalTok{ np.asarray(m[}\StringTok{"y\_true"}\NormalTok{]).astype(}\BuiltInTok{int}\NormalTok{).reshape(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+\NormalTok{      preds  }\OperatorTok{=}\NormalTok{ m[}\StringTok{"predictions"}\NormalTok{]}
+      \ControlFlowTok{if} \BuiltInTok{hasattr}\NormalTok{(preds, }\StringTok{"numpy"}\NormalTok{):  }\CommentTok{\# TF tensor {-}\textgreater{} numpy}
+\NormalTok{          preds }\OperatorTok{=}\NormalTok{ preds.numpy()}
+\NormalTok{      preds }\OperatorTok{=}\NormalTok{ np.asarray(preds).reshape(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{      thr }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(m[}\StringTok{"threshold"}\NormalTok{])}
+\NormalTok{      y\_pred }\OperatorTok{=}\NormalTok{ (preds }\OperatorTok{\textgreater{}=}\NormalTok{ thr).astype(}\BuiltInTok{int}\NormalTok{)}
+
+\NormalTok{      cm }\OperatorTok{=}\NormalTok{ confusion\_matrix(y\_true, y\_pred)}
+\NormalTok{      cm\_norm }\OperatorTok{=}\NormalTok{ cm }\OperatorTok{/}\NormalTok{ np.}\BuiltInTok{sum}\NormalTok{(cm) }\ControlFlowTok{if}\NormalTok{ np.}\BuiltInTok{sum}\NormalTok{(cm) }\OperatorTok{\textgreater{}} \DecValTok{0} \ControlFlowTok{else}\NormalTok{ cm}
+
+\NormalTok{      sns.heatmap(cm\_norm, annot}\OperatorTok{=}\VariableTok{True}\NormalTok{, fmt}\OperatorTok{=}\StringTok{\textquotesingle{}.2\%\textquotesingle{}}\NormalTok{,  annot\_kws}\OperatorTok{=}\NormalTok{\{}\StringTok{"size"}\NormalTok{: }\DecValTok{18}\NormalTok{\}, cmap}\OperatorTok{=}\NormalTok{custom\_cmap, cbar}\OperatorTok{=}\VariableTok{False}\NormalTok{, ax}\OperatorTok{=}\NormalTok{ax)}
+\NormalTok{      ax.set\_title(}
+          \SpecialStringTok{f"}\SpecialCharTok{\{}\NormalTok{m[}\StringTok{\textquotesingle{}title\textquotesingle{}}\NormalTok{]}\SpecialCharTok{\}}\CharTok{\textbackslash{}n}\SpecialStringTok{BNN "}
+          \SpecialStringTok{f"Accuracy:}\SpecialCharTok{\{}\NormalTok{accuracy\_score(y\_true, y\_pred)}\SpecialCharTok{:.3f\}}\SpecialStringTok{, "}
+          \SpecialStringTok{f"Precision:}\SpecialCharTok{\{}\NormalTok{precision\_score(y\_true, y\_pred, zero\_division}\OperatorTok{=}\DecValTok{0}\NormalTok{)}\SpecialCharTok{:.3f\}}\SpecialStringTok{, "}
+          \SpecialStringTok{f"Recall:}\SpecialCharTok{\{}\NormalTok{recall\_score(y\_true, y\_pred, zero\_division}\OperatorTok{=}\DecValTok{0}\NormalTok{)}\SpecialCharTok{:.3f\}}\SpecialStringTok{"}\NormalTok{,}
+\NormalTok{          fontsize }\OperatorTok{=} \DecValTok{12}
+\NormalTok{      )}
+\NormalTok{      ax.set\_xlabel(}\StringTok{\textquotesingle{}Predicted Label\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{20}\NormalTok{)}
+\NormalTok{      ax.set\_ylabel(}\StringTok{\textquotesingle{}True Label\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{20}\NormalTok{)}
+\NormalTok{      ax.set\_xticks([}\FloatTok{0.5}\NormalTok{, }\FloatTok{1.5}\NormalTok{])}\OperatorTok{;}\NormalTok{ ax.set\_xticklabels([}\StringTok{\textquotesingle{}0\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{])}
+\NormalTok{      ax.set\_yticks([}\FloatTok{0.5}\NormalTok{, }\FloatTok{1.5}\NormalTok{])}\OperatorTok{;}\NormalTok{ ax.set\_yticklabels([}\StringTok{\textquotesingle{}0\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{])}
+\NormalTok{      ax.tick\_params(axis}\OperatorTok{=}\StringTok{\textquotesingle{}both\textquotesingle{}}\NormalTok{, which}\OperatorTok{=}\StringTok{\textquotesingle{}major\textquotesingle{}}\NormalTok{, labelsize}\OperatorTok{=}\DecValTok{20}\NormalTok{)}
+\NormalTok{  fig.tight\_layout()}
+\NormalTok{  plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\# Define Thresholds Model 1 has maintained high accuracy,
+precision, recall and f1 values across all of the thresholds; while
+Model 2 experiences an increase in precision and accuracy at 0.45, while
+Model 3 experiences an increase at about 0.5. Model One was unaffected
+by threshold so a default value of 0.5 was used.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{thresh\_c1m1 }\OperatorTok{=} \FloatTok{0.5}
+\NormalTok{thresh\_c1m2 }\OperatorTok{=} \FloatTok{0.5}
+\NormalTok{thresh\_c1m3 }\OperatorTok{=} \FloatTok{0.45}
+
+\NormalTok{models\_data }\OperatorTok{=}\NormalTok{ [\{}\StringTok{"y\_true"}\NormalTok{: y\_test\_c1m1, }\StringTok{"predictions"}\NormalTok{: predictions\_c1m1, }\StringTok{"threshold"}\NormalTok{: thresh\_c1m1, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model One"}\NormalTok{\},}
+\NormalTok{    \{}\StringTok{"y\_true"}\NormalTok{: y\_test\_c1m2, }\StringTok{"predictions"}\NormalTok{: predictions\_c1m2, }\StringTok{"threshold"}\NormalTok{: thresh\_c1m2, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model Two"}\NormalTok{\},}
+\NormalTok{    \{}\StringTok{"y\_true"}\NormalTok{: y\_test\_c1m2, }\StringTok{"predictions"}\NormalTok{: predictions\_c1m3, }\StringTok{"threshold"}\NormalTok{: thresh\_c1m3, }\StringTok{"title"}\NormalTok{: }\StringTok{"Case Study A Model Three"}\NormalTok{\},]}
+
+\NormalTok{plot\_confusion\_matrix(models\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Case Study B}\label{case-study-b}
+
+\textbf{Case Study B: Assigning multi-source EO active fire confidence
+using a probabilistic BNN.}
+
+This study uses a probabilistic BNN architecture that outputs a full
+probability distribution for each detection, not just a single point
+estimate. The resulting output includes a quantified measure of
+uncertainty (the standard deviation), which allows for the calculation
+of a confidence interval around the predicted probability. Furthermore,
+this case study integrates data from multiple Earth Observation sources
+(MODIS and VIIRS) to assess the impact of sensor differences on
+classification uncertainty.
+
+\textbf{Goal:} The goal of Case Study B is to evaluate the null
+hypothesis that the uncertainty in the classification of an observed
+hotspot does not differ significantly in regard to the observation
+source. Case Study B analyzes fire hotspots detected by the VIIRS 375 m
+active fire product from the Suomi NPP and NOAA-20 satellites, alongside
+hotspots from the MODIS active fire product onboard the Aqua and Terra
+satellites. The data preparation methods were consistent with that of
+Case Study A, with the primary difference being the inclusion of
+standard-quality MODIS hotspots in addition to those from VIIRS. Note
+that instead of plotting results individually after training each model
+(loss curves, confusion matrices, etc.) , we present all results at the
+end of the case study in the ``Results'' section.
+
+\subsection{Model One}\label{model-one-1}
+
+Model One uses the same architecture and hyperparameter tuning steps as
+Case Study A Model Three, but was trained with the updated data to
+contain both VIIRS and MODIS.
+
+\subsubsection{Create dataset}\label{create-dataset-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create X and y train and test data arrays}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  cs2\_m1\_data }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{\textquotesingle{}train{-}final{-}balanced{-}case{-}study{-}2.csv\textquotesingle{}}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  cs2\_m1\_data }\OperatorTok{=} \StringTok{\textquotesingle{}train{-}final{-}balanced{-}case{-}study{-}2.csv\textquotesingle{}}
+
+\NormalTok{X\_train\_c2m1, X\_test\_c2m1, y\_train\_c2m1, y\_test\_c2m1, feature\_names\_c2m1 }\OperatorTok{=}\NormalTok{ create\_tr\_test\_data(cs2\_m1\_data)}
+\NormalTok{train\_size\_c2m1 }\OperatorTok{=}\NormalTok{ X\_train\_c2m1.shape[}\DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Create and train model}\label{create-and-train-model-3}
+
+\subsubsection{Help Box - Skip model training and
+tuning}\label{help-box---skip-model-training-and-tuning-1}
+
+Additional note if using your own input data. This help box allows the
+user to skip both the training and the parameter tuning steps. In order
+to read in a saved model file, a user must pre-define structural
+hyperparameters of the model being inputted. The hyperparameters
+selected for the given sample data set may differ form the
+hyperparameters that would be selected for model's trained on different
+input data. A comment has been added to the code indicated the line that
+a user must be updated to match the hyperparameters selected for the new
+dataset in order for the model files to load properly.
+
+By setting the variable ``read\_in\_file'' to at the beginning of the
+code, the user activates sections of the code provided to allow the time
+intensive model training steps to be skipped. It is assumed that if a
+user is activating these sections of the code they have uploaded the
+appropriately named files to the same directory that the input data is
+stored in. File names are set by default to call the sample files that
+have provided with this tutorial.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy2\_model1\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c2m1.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c2m1.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy2\_model1\_df.csv"}
+
+\NormalTok{  df\_c2m1 }\OperatorTok{=}\NormalTok{ pd.read\_csv(training\_output\_file)}
+  \CommentTok{\# Following hyperparameters are set in accordance with optimizing the sample data.}
+  \CommentTok{\# If running with personal data set update these hyperparameters to match the results of the tunning for the new dataset}
+\NormalTok{  reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c2m1, prior, feature\_names\_c2m1, activation\_fun }\OperatorTok{=} \StringTok{\textquotesingle{}sigmoid\textquotesingle{}}\NormalTok{, unit\_dim }\OperatorTok{=} \DecValTok{4}\NormalTok{)}
+\NormalTok{  reconstructed\_model.load\_weights(model\_file\_name)}
+\NormalTok{  trained\_model\_c2m1 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{  train\_loss\_c2m1 }\OperatorTok{=}\NormalTok{ df\_c2m1[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{  val\_loss\_c2m1 }\OperatorTok{=}\NormalTok{ df\_c2m1[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training anf tu novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  models\_c2m1 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{  train\_losses\_c2m1 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{  val\_losses\_c2m1 }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{  params\_combo\_c2m1 }\OperatorTok{=}\NormalTok{ []}
+  \BuiltInTok{print}\NormalTok{(param\_grid.keys())}
+  \CommentTok{\# SHouldnt need this because it is already set}
+  \CommentTok{\# epochs = 100}
+\NormalTok{  grid }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(ParameterGrid(param\_grid))}
+\NormalTok{  total\_runs }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(grid)}
+  \ControlFlowTok{for}\NormalTok{ i, params }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(grid, start }\OperatorTok{=}\DecValTok{1}\NormalTok{): }\CommentTok{\# creates all combinations of dictionary that it is given (grid search), then can iterate through the combinations}
+\NormalTok{    runs\_left }\OperatorTok{=}\NormalTok{ total\_runs }\OperatorTok{{-}}\NormalTok{ i}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"[}\SpecialCharTok{\{}\NormalTok{i}\SpecialCharTok{\}}\SpecialStringTok{/}\SpecialCharTok{\{}\NormalTok{total\_runs}\SpecialCharTok{\}}\SpecialStringTok{ runs] Running with parameters: }\SpecialCharTok{\{}\NormalTok{params}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+
+
+\NormalTok{    active\_prior\_distribution }\OperatorTok{=}\NormalTok{ params[}\StringTok{"dist"}\NormalTok{]}
+
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ create\_bnn\_model(train\_size\_c2m1, prior\_tune, feature\_names\_c2m1,}
+\NormalTok{                           activation\_fun }\OperatorTok{=}\NormalTok{ params[}\StringTok{\textquotesingle{}activation\textquotesingle{}}\NormalTok{],}
+\NormalTok{                           unit\_dim }\OperatorTok{=}\NormalTok{ params[}\StringTok{\textquotesingle{}hidden\_units\textquotesingle{}}\NormalTok{])}
+
+\NormalTok{    model, train\_loss, val\_loss }\OperatorTok{=}\NormalTok{ run\_experiment(model, }\StringTok{\textquotesingle{}binary\_crossentropy\textquotesingle{}}\NormalTok{, [[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{, tf\_keras.metrics.Precision(), tf\_keras.metrics.Recall()]], epochs,}
+\NormalTok{                                              feature\_names\_c2m1, X\_train\_c2m1, y\_train\_c2m1)}
+
+\NormalTok{    models\_c2m1.append(model)}
+\NormalTok{    train\_losses\_c2m1.append(train\_loss)}
+\NormalTok{    val\_losses\_c2m1.append(val\_loss)}
+\NormalTok{    params\_combo\_c2m1.append(params)}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Finished run }\SpecialCharTok{\{}\NormalTok{i}\SpecialCharTok{\}}\SpecialStringTok{/}\SpecialCharTok{\{}\NormalTok{total\_runs}\SpecialCharTok{\}}\SpecialStringTok{. Runs remaining: }\SpecialCharTok{\{}\NormalTok{runs\_left}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training and tuning novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  df }\OperatorTok{=}\NormalTok{ pd.DataFrame(params\_combo\_c2m1)}
+
+  \CommentTok{\# Calculate mean train and validation losses}
+\NormalTok{  df[}\StringTok{"train\_loss"}\NormalTok{] }\OperatorTok{=}\NormalTok{ [np.mean(loss) }\ControlFlowTok{for}\NormalTok{ loss }\KeywordTok{in}\NormalTok{ train\_losses\_c2m1]  }\CommentTok{\# Averaging over epochs}
+\NormalTok{  df[}\StringTok{"val\_loss"}\NormalTok{] }\OperatorTok{=}\NormalTok{ [np.mean(loss) }\ControlFlowTok{for}\NormalTok{ loss }\KeywordTok{in}\NormalTok{ val\_losses\_c2m1]}
+
+  \CommentTok{\# Drop rows with missing values}
+\NormalTok{  df.dropna(inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{  trained\_model\_c2m1 }\OperatorTok{=}\NormalTok{ models\_c2m1[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\NormalTok{  train\_loss\_c2m1 }\OperatorTok{=}\NormalTok{ train\_losses\_c2m1[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\NormalTok{  val\_loss\_c2m1 }\OperatorTok{=}\NormalTok{ val\_losses\_c2m1[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+\NormalTok{  tuned\_params }\OperatorTok{=}\NormalTok{ params\_combo\_c2m1[df[}\StringTok{"val\_loss"}\NormalTok{].idxmin()]}
+  \BuiltInTok{print}\NormalTok{(tuned\_params)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Saving model
+files}\label{help-box---saving-model-files-3}
+
+By default, once a model has been trained the notebook will export the
+model file and outputs from its training runs to files saved within the
+working directory. If the notebook is being run on Colab these files
+WILL NOT be saved once the Colab run is exited. If a user wishes to
+retain these files download them to a local directory. If these users
+does not care about these outputs, they will automatically be delated
+when the notebook is closed. If the user is running local on Jupyter the
+files will have to be deleted by hand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. Therefor no models files will be exported as they will just be replicates of the loaded files "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy2\_model1\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c2m1.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c2m1.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy2\_model1\_df.csv"}
+
+\NormalTok{  trained\_model\_c2m1.save\_weights(model\_file\_name)}
+\NormalTok{  df\_c2m1 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c2m1,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c2m1\})}
+\NormalTok{  df\_c2m1.to\_csv(training\_output\_file )}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Compute predictions}\label{compute-predictions-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{predictions\_c2m1 }\OperatorTok{=}\NormalTok{ compute\_predictions(trained\_model\_c2m1, feature\_names\_c2m1, X\_test\_c2m1, y\_test\_c2m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visualize training and validation
+loss}\label{visualize-training-and-validation-loss-3}
+
+Visualize the training and validation loss for Case Study B Model One.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_training\_loss(feature\_names\_c2m1, trained\_model\_c2m1, X\_test\_c2m1, y\_test\_c2m1, train\_loss\_c2m1, val\_loss\_c2m1, predictions\_c2m1,}\StringTok{\textquotesingle{}Case Study B Model One\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Model Two}\label{model-two-1}
+
+Model Two introduces a new architecture, a probabilistic Bayesian neural
+network (BNN), which outputs predictive distributions rather than single
+point estimates. From these distributions, we extract the mean as the
+predicted value and the standard deviation as a measure of model
+uncertainty. These predictions were grouped based on the source of the
+original observation (MODIS or VIIRS), and a Student's t-test was
+performed to compare the mean standard deviation between groups. A
+statistically significant result would suggest that the model's
+uncertainty differs depending on the data source. To further explore
+this, we generated histograms of the standard deviations for each group
+to visualize their distributions.
+
+\subsubsection{Create and train model}\label{create-and-train-model-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ create\_probablistic\_bnn\_model(train\_size, feature\_names):}
+    \CommentTok{"""}
+\CommentTok{    Create Bayesian neural network model}
+\CommentTok{    :param train\_size: number of samples in training dataset}
+\CommentTok{    :param feature\_names: list of input feature names}
+\CommentTok{    :return: compiled Keras model}
+\CommentTok{    """}
+
+\NormalTok{    inputs }\OperatorTok{=}\NormalTok{ create\_model\_inputs(feature\_names)}
+
+\NormalTok{    features }\OperatorTok{=}\NormalTok{ tf\_keras.layers.concatenate(}\BuiltInTok{list}\NormalTok{(inputs.values()))}
+\NormalTok{    features }\OperatorTok{=}\NormalTok{ tf\_keras.layers.BatchNormalization()(features)}
+\NormalTok{    hidden\_units }\OperatorTok{=}\NormalTok{ [}\DecValTok{8}\NormalTok{, }\DecValTok{8}\NormalTok{]}
+
+    \ControlFlowTok{for}\NormalTok{ units }\KeywordTok{in}\NormalTok{ hidden\_units:}
+\NormalTok{        features }\OperatorTok{=}\NormalTok{ tfp.layers.DenseVariational(}
+\NormalTok{            units}\OperatorTok{=}\NormalTok{units,}
+\NormalTok{            make\_prior\_fn}\OperatorTok{=}\NormalTok{prior,}
+\NormalTok{            make\_posterior\_fn}\OperatorTok{=}\NormalTok{posterior,}
+\NormalTok{            kl\_weight}\OperatorTok{=}\DecValTok{1} \OperatorTok{/}\NormalTok{ train\_size,}
+\NormalTok{            activation}\OperatorTok{=}\StringTok{"relu"}\NormalTok{,}
+\NormalTok{        )(features)}
+
+\NormalTok{    logits }\OperatorTok{=}\NormalTok{ tf\_keras.layers.Dense(units}\OperatorTok{=}\DecValTok{1}\NormalTok{)(features)}
+\NormalTok{    outputs }\OperatorTok{=}\NormalTok{ tfp.layers.IndependentBernoulli(event\_shape}\OperatorTok{=}\DecValTok{1}\NormalTok{)(logits)}
+
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ tf\_keras.Model(inputs}\OperatorTok{=}\NormalTok{inputs, outputs}\OperatorTok{=}\NormalTok{outputs)}
+
+    \ControlFlowTok{return}\NormalTok{ model}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Negative Log-Likelihood
+Explanation}\label{help-box---negative-log-likelihood-explanation}
+
+The output of our model is a probability distribution, not a point
+estimate. In order to understand how likely it is that our model
+explains the ``true data,'' we use the negative log-likelihood as our
+loss function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ negative\_loglikelihood(targets, estimated\_distribution):}
+    \ControlFlowTok{return} \OperatorTok{{-}}\NormalTok{estimated\_distribution.log\_prob(targets)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Skip model
+training}\label{help-box---skip-model-training-2}
+
+By setting the variable ``read\_in\_file'' to at the begining of the
+code, the user activates sections of the code provided to allow the time
+intensive model training steps to be skipped. It is assumed that if a
+user is activating these sections of the code they have uploaded the
+approrpiately named files to the same directory that the input data is
+stored in. File names are set by default to call the sample files that
+have provided with this tutorial.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy2\_model2\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c2m2.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c2m2.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy2\_model2\_df.csv"}
+
+\NormalTok{  df\_c2m2 }\OperatorTok{=}\NormalTok{ pd.read\_csv(training\_output\_file)}
+\NormalTok{  reconstructed\_model }\OperatorTok{=}\NormalTok{ create\_probablistic\_bnn\_model(train\_size\_c2m1, feature\_names\_c2m1)}
+\NormalTok{  reconstructed\_model.load\_weights(model\_file\_name)}
+\NormalTok{  trained\_model\_c2m2 }\OperatorTok{=}\NormalTok{ reconstructed\_model}
+\NormalTok{  train\_loss\_c2m2 }\OperatorTok{=}\NormalTok{ df\_c2m2[}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{]}
+\NormalTok{  val\_loss\_c2m2 }\OperatorTok{=}\NormalTok{ df\_c2m2[}\StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_c2m2 }\OperatorTok{=}\NormalTok{ create\_probablistic\_bnn\_model(train\_size\_c2m1, feature\_names\_c2m1)}
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. If this is incorrect please go back to the begining of the code and set the variable \textquotesingle{}read\_in\_file\textquotesingle{} to false "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+\NormalTok{  trained\_model\_c2m2, train\_loss\_c2m2, val\_loss\_c2m2 }\OperatorTok{=}\NormalTok{ run\_experiment(model}\OperatorTok{=}\NormalTok{model\_c2m2,}
+\NormalTok{                                                  loss}\OperatorTok{=}\NormalTok{negative\_loglikelihood,}
+\NormalTok{                                                  metrics}\OperatorTok{=}\NormalTok{[[}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{, tf\_keras.metrics.Precision(), tf\_keras.metrics.Recall()]],}
+\NormalTok{                                                  epochs}\OperatorTok{=}\NormalTok{epochs, feature\_names}\OperatorTok{=}\NormalTok{feature\_names\_c2m1,}
+\NormalTok{                                                  X\_train}\OperatorTok{=}\NormalTok{X\_train\_c2m1, y\_train}\OperatorTok{=}\NormalTok{y\_train\_c2m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Help Box - Saving model
+files}\label{help-box---saving-model-files-4}
+
+By default, once a model has been trained the notebook will export the
+model file and outputs from its training runs to files saved within the
+working directory. If the notebook is being run on Colab these files
+WILL NOT be saved once the Colab run is exited. If a user wishes to
+retain these files download them to a local directory. If these users
+does not care about these outputs, they will automatically be delated
+when the notebook is closed. If the user is running local on jupyter the
+files will have to be deleted by hand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ read\_in\_file:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"User has selected to read in saved models instead of training a novel one. Therefor no models files will be exported as they will just be replicates of the loaded files "}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# Path to files if running local using jupiter}
+\NormalTok{    training\_output\_file }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"casestudy2\_model2\_df.csv"}\NormalTok{)}
+\NormalTok{    model\_file\_name  }\OperatorTok{=}\NormalTok{ os.path.join(data\_dir, }\StringTok{"model\_c2m2.weights.h5"}\NormalTok{)}
+  \ControlFlowTok{else}\NormalTok{:}
+    \CommentTok{\# Path to files if running in colab}
+\NormalTok{    model\_file\_name }\OperatorTok{=} \StringTok{"model\_c2m2.weights.h5"}
+\NormalTok{    training\_output\_file }\OperatorTok{=} \StringTok{"casestudy2\_model2\_df.csv"}
+
+\NormalTok{  trained\_model\_c2m2.save\_weights(model\_file\_name)}
+\NormalTok{  df\_c2m2 }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}train\_loss\textquotesingle{}}\NormalTok{: train\_loss\_c2m2,}
+                      \StringTok{\textquotesingle{}val\_loss\textquotesingle{}}\NormalTok{: val\_loss\_c2m2\})}
+\NormalTok{  df\_c2m2.to\_csv(training\_output\_file)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Compute predictions}\label{compute-predictions-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ compute\_probablistic\_predictions(model, feature\_names, X\_test, y\_test):}
+\NormalTok{    predictions }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{str}\NormalTok{(feature\_names[i]): X\_test[:, i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(X\_test.shape[}\DecValTok{1}\NormalTok{])\}}
+\NormalTok{    prediction\_distribution }\OperatorTok{=}\NormalTok{ model(predictions)}
+\NormalTok{    prediction\_mean }\OperatorTok{=}\NormalTok{ prediction\_distribution.mean().numpy().tolist()}
+\NormalTok{    prediction\_stdv }\OperatorTok{=}\NormalTok{ prediction\_distribution.stddev().numpy()}
+    \ControlFlowTok{return}\NormalTok{ prediction\_mean, prediction\_stdv}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pred\_mean\_c2m2, pred\_stdv\_c2m2 }\OperatorTok{=}\NormalTok{ compute\_probablistic\_predictions(trained\_model\_c2m2, feature\_names\_c2m1, X\_test\_c2m1, y\_test\_c2m1)}
+\NormalTok{predictions\_c2m2 }\OperatorTok{=}\NormalTok{ compute\_predictions(trained\_model\_c2m2, feature\_names\_c2m1, X\_test\_c2m1, y\_test\_c2m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visualize training and validation
+loss}\label{visualize-training-and-validation-loss-4}
+
+Visualize the training and validation loss for Case Study B Model Two.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot\_training\_loss(feature\_names\_c2m1, trained\_model\_c2m2, X\_test\_c2m1, y\_test\_c2m1, train\_loss\_c2m2, val\_loss\_c2m2, predictions\_c2m2,}\StringTok{\textquotesingle{}Case Study B Model Two\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Results (All Models)}\label{results-all-models-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Note this function only uses the first 1000 examples due to RAM limitations of Google Colab}
+\NormalTok{stats\_c2m1 }\OperatorTok{=}\NormalTok{ compute\_results\_grid(feature\_names\_c2m1, trained\_model\_c2m1, predictions\_c2m1, y\_test\_c2m1, }\StringTok{\textquotesingle{}Case2Model1\textquotesingle{}}\NormalTok{)}
+\NormalTok{stats\_c2m2  }\OperatorTok{=}\NormalTok{ compute\_results\_grid(feature\_names\_c2m1, trained\_model\_c2m2, predictions\_c2m2, y\_test\_c2m1, }\StringTok{\textquotesingle{}Case2Model2\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Combine all stats into one DataFrame}
+\NormalTok{df\_case2\_stats }\OperatorTok{=}\NormalTok{ pd.concat([stats\_c1m3, stats\_c2m1, stats\_c2m2])}
+
+\NormalTok{analyze\_threshold\_value(df\_case2\_stats)}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#\#\# Define Thresholds A threshold of 0.5 was selected for both
+Model 1 and Model 2 as both Models see a noticeable change with a
+threshold of 0.5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ plot\_results(feature\_names, model, X\_val, y\_val, threshold, train\_loss, val\_loss, predictions, title):}
+
+    \CommentTok{"""}
+\CommentTok{    Plot the loss curve and confusion matrix}
+\CommentTok{    :param: feature\_names: feature names used in model creation}
+\CommentTok{    :param: model: trained model}
+\CommentTok{    :param: X\_val: validation data}
+\CommentTok{    :param: y\_val: validation data labels}
+\CommentTok{    :param: threshold: threshold for classification}
+\CommentTok{    :param: train\_loss: training loss over epochs}
+\CommentTok{    :param: val\_loss: validation loss over epochs}
+\CommentTok{    :param: title: title of plot}
+\CommentTok{    """}
+\NormalTok{    plt.rcParams.update(\{ }\CommentTok{\# set visualization values}
+    \StringTok{"font.size"}\NormalTok{:            }\DecValTok{15}\NormalTok{,}
+    \StringTok{"axes.titlesize"}\NormalTok{:       }\DecValTok{12}\NormalTok{,}
+    \StringTok{"axes.labelsize"}\NormalTok{:       }\DecValTok{15}\NormalTok{,}
+    \StringTok{"xtick.labelsize"}\NormalTok{:      }\DecValTok{12}\NormalTok{,}
+    \StringTok{"ytick.labelsize"}\NormalTok{:      }\DecValTok{12}\NormalTok{,}
+    \StringTok{"legend.fontsize"}\NormalTok{:      }\DecValTok{10}\NormalTok{,}
+    \StringTok{"figure.titlesize"}\NormalTok{:     }\DecValTok{15}\NormalTok{\})}
+\NormalTok{    color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{    custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+    \CommentTok{\# \# set up array for predictions}
+    \CommentTok{\# predictions = \{str(feature\_names[i]): X\_val[:, i] for i in range(X\_val.shape[1])\}}
+
+    \CommentTok{\# \# get model predictions}
+    \CommentTok{\# predictions = model(predictions)}
+
+    \CommentTok{\# plot the results for a defined threshold}
+\NormalTok{    predicted\_classes }\OperatorTok{=}\NormalTok{ (predictions.numpy() }\OperatorTok{\textgreater{}=}\NormalTok{ threshold).astype(}\BuiltInTok{int}\NormalTok{)}
+
+\NormalTok{    fig, (ax1, ax2) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{    ax1.plot(train\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Training Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#33638DFF"}\NormalTok{)}
+\NormalTok{    ax1.plot(val\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Validation Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#481567FF"}\NormalTok{)}
+\NormalTok{    ax1.set\_title(}\StringTok{\textquotesingle{}Training and Validation Loss Over Epochs\textquotesingle{}}\NormalTok{)}
+\NormalTok{    ax1.set\_xlabel(}\StringTok{\textquotesingle{}Epochs\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{15}\NormalTok{)}
+\NormalTok{    ax1.set\_ylabel(}\StringTok{\textquotesingle{}Loss\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{15}\NormalTok{)}
+    \CommentTok{\#ax1.set\_ylim(0, 1)}
+\NormalTok{    ax1.grid()}
+\NormalTok{    ax1.legend()}
+
+\NormalTok{    cm }\OperatorTok{=}\NormalTok{ confusion\_matrix(y\_val, predicted\_classes)}
+\NormalTok{    sns.heatmap(cm }\OperatorTok{/}\NormalTok{ np.}\BuiltInTok{sum}\NormalTok{(cm), annot}\OperatorTok{=}\VariableTok{True}\NormalTok{, annot\_kws}\OperatorTok{=}\NormalTok{\{}\StringTok{"size"}\NormalTok{: }\DecValTok{16}\NormalTok{\}, fmt}\OperatorTok{=}\StringTok{\textquotesingle{}.2\%\textquotesingle{}}\NormalTok{, cmap}\OperatorTok{=}\NormalTok{custom\_cmap, cbar}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{    ax2.set\_title(}\StringTok{\textquotesingle{}BNN }\CharTok{\textbackslash{}n}\StringTok{Accuracy:}\SpecialCharTok{\{0:.3f\}}\StringTok{, Precision:}\SpecialCharTok{\{1:.3f\}}\StringTok{, Recall:}\SpecialCharTok{\{2:.3f\}}\StringTok{ \textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(accuracy\_score(y\_val, predicted\_classes), precision\_score(y\_val, predicted\_classes), recall\_score(y\_val, predicted\_classes)),}
+\NormalTok{                  fontsize }\OperatorTok{=} \DecValTok{12}\NormalTok{)}
+\NormalTok{    ax2.set\_xlabel(}\StringTok{\textquotesingle{}Predicted Label\textquotesingle{}}\NormalTok{)}
+\NormalTok{    ax2.set\_ylabel(}\StringTok{\textquotesingle{}True Label\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{    fig.suptitle(title)}
+\NormalTok{    plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ plot\_probablistic\_results(feature\_names, model, X\_test, y\_test, threshold, train\_loss, val\_loss, predictions, title):}
+  \CommentTok{"""}
+\CommentTok{  Plot the loss curve and confusion matrix}
+\CommentTok{  :param: feature\_names: feature names used in model creation}
+\CommentTok{  :param: model: trained model}
+\CommentTok{  :param: X\_test: test data}
+\CommentTok{  :param: y\_test: test data labels}
+\CommentTok{  :param: threshold: threshold for classification}
+\CommentTok{  :param: train\_loss: training loss over epochs}
+\CommentTok{  :param: val\_loss: validation loss over epochs}
+\CommentTok{  :param: title: title of plot}
+\CommentTok{  """}
+\NormalTok{  plt.rcParams.update(\{ }\CommentTok{\# set visualization values}
+    \StringTok{"font.size"}\NormalTok{:            }\DecValTok{15}\NormalTok{,}
+    \StringTok{"axes.titlesize"}\NormalTok{:       }\DecValTok{12}\NormalTok{,}
+    \StringTok{"axes.labelsize"}\NormalTok{:       }\DecValTok{15}\NormalTok{,}
+    \StringTok{"xtick.labelsize"}\NormalTok{:      }\DecValTok{12}\NormalTok{,}
+    \StringTok{"ytick.labelsize"}\NormalTok{:      }\DecValTok{12}\NormalTok{,}
+    \StringTok{"legend.fontsize"}\NormalTok{:      }\DecValTok{10}\NormalTok{,}
+    \StringTok{"figure.titlesize"}\NormalTok{:     }\DecValTok{15}\NormalTok{\})}
+  \CommentTok{\# \# set up array for predictions}
+  \CommentTok{\# predictions = \{str(feature\_names[i]): X\_val[:, i] for i in range(X\_val.shape[1])\}}
+
+  \CommentTok{\# \# get model predictions}
+  \CommentTok{\# predictions = model(predictions)}
+
+  \CommentTok{\# plot the results for a defined threshold}
+\NormalTok{  color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{  custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+
+\NormalTok{  predicted\_classes }\OperatorTok{=}\NormalTok{ (np.asarray(predictions) }\OperatorTok{\textgreater{}=}\NormalTok{ threshold).astype(}\BuiltInTok{int}\NormalTok{)}
+
+\NormalTok{  fig, (ax1, ax2) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{  ax1.plot(train\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Training Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#33638DFF"}\NormalTok{)}
+\NormalTok{  ax1.plot(val\_loss, label}\OperatorTok{=}\StringTok{\textquotesingle{}Validation Loss\textquotesingle{}}\NormalTok{, marker}\OperatorTok{=}\StringTok{\textquotesingle{}o\textquotesingle{}}\NormalTok{, color}\OperatorTok{=}\StringTok{"\#481567FF"}\NormalTok{)}
+\NormalTok{  ax1.set\_title(}\StringTok{\textquotesingle{}Training and Validation Loss Over Epochs\textquotesingle{}}\NormalTok{)}
+\NormalTok{  ax1.set\_xlabel(}\StringTok{\textquotesingle{}Epochs\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{15}\NormalTok{)}
+\NormalTok{  ax1.set\_ylabel(}\StringTok{\textquotesingle{}Loss\textquotesingle{}}\NormalTok{, fontsize }\OperatorTok{=} \DecValTok{15}\NormalTok{)}
+\NormalTok{  ax1.grid()}
+\NormalTok{  ax1.legend(fontsize}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+
+\NormalTok{  cm }\OperatorTok{=}\NormalTok{ confusion\_matrix(y\_test, predicted\_classes)}
+\NormalTok{  sns.heatmap(cm }\OperatorTok{/}\NormalTok{ np.}\BuiltInTok{sum}\NormalTok{(cm), annot}\OperatorTok{=}\VariableTok{True}\NormalTok{, annot\_kws}\OperatorTok{=}\NormalTok{\{}\StringTok{"size"}\NormalTok{: }\DecValTok{16}\NormalTok{\}, fmt}\OperatorTok{=}\StringTok{\textquotesingle{}.2\%\textquotesingle{}}\NormalTok{, cmap}\OperatorTok{=}\NormalTok{custom\_cmap, cbar}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{  ax2.set\_title(}\StringTok{\textquotesingle{}BNN }\CharTok{\textbackslash{}n}\StringTok{Accuracy:}\SpecialCharTok{\{0:.3f\}}\StringTok{, Precision:}\SpecialCharTok{\{1:.3f\}}\StringTok{, Recall:}\SpecialCharTok{\{2:.3f\}}\StringTok{ \textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(accuracy\_score(y\_test, predicted\_classes), precision\_score(y\_test, predicted\_classes), recall\_score(y\_test, predicted\_classes)),}
+\NormalTok{                fontsize }\OperatorTok{=} \DecValTok{12}\NormalTok{)}
+\NormalTok{  ax2.set\_xlabel(}\StringTok{\textquotesingle{}Predicted Label\textquotesingle{}}\NormalTok{)}
+\NormalTok{  ax2.set\_ylabel(}\StringTok{\textquotesingle{}True Label\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{  fig.suptitle(title)}
+\NormalTok{  plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{thresh\_c2m1 }\OperatorTok{=} \FloatTok{0.50}
+\NormalTok{thresh\_c2m2 }\OperatorTok{=} \FloatTok{0.50}
+\NormalTok{plot\_results(feature\_names\_c2m1, trained\_model\_c2m1, X\_test\_c2m1, y\_test\_c2m1, thresh\_c2m1, train\_loss\_c2m1, val\_loss\_c2m1, predictions\_c2m1,}\StringTok{\textquotesingle{}Case Two Model One\textquotesingle{}}\NormalTok{)}
+\NormalTok{plot\_probablistic\_results(feature\_names\_c2m1, trained\_model\_c2m2, X\_test\_c2m1, y\_test\_c2m1, thresh\_c2m2, train\_loss\_c2m2, val\_loss\_c2m2, pred\_mean\_c2m2,}\StringTok{\textquotesingle{}Case Two Model Two\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ predicted\_class\_confidence\_intervals(prediction\_mean, prediction\_stdv, y\_test):}
+    \CommentTok{\# The 95\% CI is computed as mean ± (1.96 * stdv)}
+\NormalTok{    upper }\OperatorTok{=}\NormalTok{ (prediction\_mean }\OperatorTok{+}\NormalTok{ (}\FloatTok{1.96} \OperatorTok{*}\NormalTok{ prediction\_stdv))}
+\NormalTok{    lower }\OperatorTok{=}\NormalTok{ (prediction\_mean }\OperatorTok{{-}}\NormalTok{ (}\FloatTok{1.96} \OperatorTok{*}\NormalTok{ prediction\_stdv))}
+\NormalTok{    diff }\OperatorTok{=}\NormalTok{ (upper }\OperatorTok{{-}}\NormalTok{ lower).}\BuiltInTok{round}\NormalTok{(}\DecValTok{4}\NormalTok{).tolist()}
+\NormalTok{    prediction\_stdv }\OperatorTok{=}\NormalTok{ prediction\_stdv.tolist()}
+\NormalTok{    upper }\OperatorTok{=}\NormalTok{ upper.}\BuiltInTok{round}\NormalTok{(}\DecValTok{4}\NormalTok{).tolist()}
+\NormalTok{    lower }\OperatorTok{=}\NormalTok{ lower.}\BuiltInTok{round}\NormalTok{(}\DecValTok{4}\NormalTok{).tolist()}
+
+\NormalTok{    prediction\_df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}actual\textquotesingle{}}\NormalTok{: y\_test,}
+                                \StringTok{\textquotesingle{}prediction\_mean\textquotesingle{}}\NormalTok{:  [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ prediction\_mean }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList],}
+                                \StringTok{\textquotesingle{}upper\_bound\_95\_C1\textquotesingle{}}\NormalTok{: [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ upper }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList],}
+                                \StringTok{\textquotesingle{}lower\_bound\_95\_CI\textquotesingle{}}\NormalTok{: [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ lower }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList],}
+                                \StringTok{\textquotesingle{}interval\_size\textquotesingle{}}\NormalTok{: [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ diff }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList],}
+                                \StringTok{\textquotesingle{}std\_dev\textquotesingle{}}\NormalTok{: [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ prediction\_stdv }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList]\}}
+\NormalTok{                                  )}
+    \ControlFlowTok{return}\NormalTok{ prediction\_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pred\_df\_c2m2 }\OperatorTok{=}\NormalTok{ predicted\_class\_confidence\_intervals(pred\_mean\_c2m2, pred\_stdv\_c2m2, y\_test\_c2m1)}
+\BuiltInTok{print}\NormalTok{(pred\_df\_c2m2.head())}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  pred\_df\_c2m2.to\_csv(os.path.join(dir\_path, }\StringTok{"pred\_df\_c2m2.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ compare\_source\_confidence\_intervals(feature\_names, X\_test, prediction\_df, comparison\_feature):}
+    \CommentTok{\# Extract source labels from input data}
+\NormalTok{    feature\_names }\OperatorTok{=}\NormalTok{ feature\_names.to\_numpy()}
+    \BuiltInTok{id} \OperatorTok{=}\NormalTok{ np.where(feature\_names}\OperatorTok{==}\StringTok{\textquotesingle{}source\textquotesingle{}}\NormalTok{)[}\DecValTok{0}\NormalTok{]}
+\NormalTok{    source\_label}\OperatorTok{=}\NormalTok{ X\_test[:, }\BuiltInTok{id}\NormalTok{].tolist()}
+\NormalTok{    flatList }\OperatorTok{=}\NormalTok{ [element }\ControlFlowTok{for}\NormalTok{ innerList }\KeywordTok{in}\NormalTok{ source\_label }\ControlFlowTok{for}\NormalTok{ element }\KeywordTok{in}\NormalTok{ innerList]}
+\NormalTok{    source\_df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}source\textquotesingle{}}\NormalTok{: flatList\})}
+    \CommentTok{\# Merge it to the confidence interval df}
+\NormalTok{    merged\_df }\OperatorTok{=}\NormalTok{ pd.concat([source\_df, prediction\_df], axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+    \CommentTok{\# Perform an independent t test to determine if there is a statistically significant difference regarding confidence interval size based on source}
+\NormalTok{    source\_1 }\OperatorTok{=}\NormalTok{ merged\_df[merged\_df[}\StringTok{\textquotesingle{}source\textquotesingle{}}\NormalTok{]}\OperatorTok{==} \FloatTok{1.0}\NormalTok{]}
+\NormalTok{    source\_0 }\OperatorTok{=}\NormalTok{ merged\_df[merged\_df[}\StringTok{\textquotesingle{}source\textquotesingle{}}\NormalTok{]}\OperatorTok{==} \FloatTok{0.0}\NormalTok{]}
+\NormalTok{    t\_stat, p\_value }\OperatorTok{=}\NormalTok{ ttest\_ind(source\_1[comparison\_feature], source\_0[comparison\_feature])}
+    \ControlFlowTok{return}\NormalTok{ t\_stat, p\_value, source\_1, source\_0}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Hypothesis review}\label{hypothesis-review}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t\_stat, p\_value, source\_1, source\_0 }\OperatorTok{=}\NormalTok{ compare\_source\_confidence\_intervals(feature\_names\_c2m1, X\_test\_c2m1, pred\_df\_c2m2, }\StringTok{\textquotesingle{}std\_dev\textquotesingle{}}\NormalTok{)}
+\CommentTok{\#print(f"p value: \{round(p\_value,8)\}")}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"p value: }\SpecialCharTok{\{}\NormalTok{p\_value}\SpecialCharTok{:.8f\}}\SpecialStringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The p-value \textless{} 0.05, we can reject the null hypothesis and
+accept that the EO source does impact the standard deviation of the
+prediction confidence.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ feature\_histograms(dist1,dist2, title):}
+\NormalTok{  plt.hist(dist1, bins}\OperatorTok{=}\DecValTok{20}\NormalTok{, color}\OperatorTok{=}\StringTok{\textquotesingle{}\#33638DFF\textquotesingle{}}\NormalTok{, edgecolor}\OperatorTok{=}\StringTok{\textquotesingle{}k\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.8}\NormalTok{, label }\OperatorTok{=}\StringTok{\textquotesingle{}source 1\textquotesingle{}}\NormalTok{)}
+\NormalTok{  plt.hist(dist2, bins}\OperatorTok{=}\DecValTok{20}\NormalTok{, color}\OperatorTok{=}\StringTok{\textquotesingle{}\#481567FF\textquotesingle{}}\NormalTok{, edgecolor}\OperatorTok{=}\StringTok{\textquotesingle{}k\textquotesingle{}}\NormalTok{, alpha}\OperatorTok{=}\FloatTok{0.8}\NormalTok{, label }\OperatorTok{=} \StringTok{\textquotesingle{}source 0\textquotesingle{}}\NormalTok{)}
+\NormalTok{  plt.legend(loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper left\textquotesingle{}}\NormalTok{)}
+\NormalTok{  plt.title(title)}
+\NormalTok{  plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{feature\_histograms(source\_1[}\StringTok{\textquotesingle{}std\_dev\textquotesingle{}}\NormalTok{], source\_0[}\StringTok{\textquotesingle{}std\_dev\textquotesingle{}}\NormalTok{], }\StringTok{\textquotesingle{}Std Dev\textquotesingle{}}\NormalTok{)}
+\NormalTok{feature\_histograms(source\_1[}\StringTok{\textquotesingle{}prediction\_mean\textquotesingle{}}\NormalTok{], source\_0[}\StringTok{\textquotesingle{}prediction\_mean\textquotesingle{}}\NormalTok{], }\StringTok{\textquotesingle{}Prediction\textquotesingle{}}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(source\_1.head())}
+\ControlFlowTok{if}\NormalTok{ colab\_jupyter\_flag }\OperatorTok{==} \StringTok{\textquotesingle{}j\textquotesingle{}}\NormalTok{:}
+\NormalTok{  source\_1.to\_csv(os.path.join(dir\_path, }\StringTok{"source\_1.csv"}\NormalTok{))}
+\NormalTok{  source\_0.to\_csv(os.path.join(dir\_path, }\StringTok{"source\_0.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ probablistic\_feature\_importance(trained\_model, X\_train, X\_test, feature\_names):}
+    \KeywordTok{def}\NormalTok{ bnn\_predict\_fn(model, X, feature\_names, n\_samples}\OperatorTok{=}\DecValTok{100}\NormalTok{):}
+        \CommentTok{\# Ensure X is a numpy array}
+\NormalTok{        X }\OperatorTok{=}\NormalTok{ np.array(X)}
+\NormalTok{        examples }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{str}\NormalTok{(feature\_names[i]): X[:, i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(X.shape[}\DecValTok{1}\NormalTok{])\}}
+
+\NormalTok{        predicted }\OperatorTok{=}\NormalTok{ []}
+        \ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n\_samples):}
+\NormalTok{            predicted.append(model(examples).mean().numpy())}
+        \ControlFlowTok{return}\NormalTok{ np.concatenate(predicted, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+
+    \CommentTok{\#plot color}
+\NormalTok{    color\_palette }\OperatorTok{=}\NormalTok{ [}\StringTok{"\#DCE319FF"}\NormalTok{, }\StringTok{"\#55C667FF"}\NormalTok{,}\StringTok{"\#20A387FF"}\NormalTok{,}\StringTok{"\#33638DFF"}\NormalTok{,}\StringTok{"\#481567FF"}\NormalTok{]}
+\NormalTok{    custom\_cmap }\OperatorTok{=}\NormalTok{ LinearSegmentedColormap.from\_list(}\StringTok{"custom\_gradient"}\NormalTok{, color\_palette)}
+    \CommentTok{\# Use a subset of X\_train as background data}
+\NormalTok{    background }\OperatorTok{=}\NormalTok{ X\_train[:}\DecValTok{50}\NormalTok{]}
+
+    \CommentTok{\# Pass the model itself and the feature names to the wrapper}
+\NormalTok{    shap\_explainer }\OperatorTok{=}\NormalTok{ shap.KernelExplainer(}\KeywordTok{lambda}\NormalTok{ x: bnn\_predict\_fn(trained\_model, x, feature\_names), background)}
+
+    \CommentTok{\# Compute SHAP values for test data}
+\NormalTok{    X\_test\_subset }\OperatorTok{=}\NormalTok{ X\_test[}\DecValTok{101}\NormalTok{:}\DecValTok{151}\NormalTok{]}
+\NormalTok{    shap\_values }\OperatorTok{=}\NormalTok{ shap\_explainer.shap\_values(X\_test\_subset, nsamples}\OperatorTok{=}\DecValTok{500}\NormalTok{)}
+
+    \CommentTok{\# Visualize the results}
+\NormalTok{    shap\_values\_averaged }\OperatorTok{=}\NormalTok{ np.mean(shap\_values, axis}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    shap.summary\_plot(shap\_values\_averaged, X\_test\_subset, feature\_names}\OperatorTok{=}\NormalTok{feature\_names, cmap}\OperatorTok{=}\NormalTok{custom\_cmap)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{probablistic\_feature\_importance(trained\_model\_c2m2, X\_train\_c2m1, X\_test\_c2m1, feature\_names\_c2m1)}
+\end{Highlighting}
+\end{Shaded}
 
 \bookmarksetup{startatroot}
 
