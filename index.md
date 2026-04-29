@@ -1,7 +1,6 @@
 ---
 author:
-  - name: Tim Mayer
-    orcid: 0000-0001-9489-9392
+  - name: Tim Mayer [![ORCID](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-9489-9392)
     affiliations:
       - name: NASA - EarthRISE
       - name: The University of Alabama in Huntsville
