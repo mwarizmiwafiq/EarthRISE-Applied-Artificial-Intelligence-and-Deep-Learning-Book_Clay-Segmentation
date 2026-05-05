@@ -1,3 +1,6 @@
+# ide
+.idea/
+
 # pixi environments
 .pixi
 *.egg-info
@@ -5,4 +8,12 @@
 
 /.quarto/
 /_book/
-03_Semantic_Segmentation/02__Selective_Logging_Detection/model/logging_model.keras 
+*.keras
+/dev/
+
+**/*.quarto_ipynb
+
+# LaTeX build artifacts
+*.log
+*.tex
+*.aux
