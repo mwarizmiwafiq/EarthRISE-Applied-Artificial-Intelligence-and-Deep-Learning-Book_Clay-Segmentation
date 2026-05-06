@@ -12,8 +12,8 @@ book:
           name: The University of Alabama in Huntsville
     - name: Biplov Bhandari
       affiliations:
-        - id: woolpert
-          name: Woolpert Digital Innovations
+        - id: ert
+          name: Earth Resources Technology
     - name: David Saah
       affiliations:
         - id: USF
@@ -67,7 +67,7 @@ format:
       fig-format: png
       header-includes:
         - \usepackage{graphicx}
-        - \renewenvironment{CSLReferences}[2]{}{}
+        - \newenvironment{CSLReferences}[2]{}{}
 
 execute:
   enabled: false
