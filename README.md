@@ -17,7 +17,7 @@ The NASA EarthRISE program harnesses NASA Earth Action capabilities to deliver t
 ## Book Outline
 
 * [Introduction](index.md)
-* [Data Preparation](02-Data-Preparation/) *(coming soon)*
+* [Data Preparation](02_Data_Preparation/) *(coming soon)*
 * **Semantic Segmentation**
   * [Crop Mapping — Rice Mapping in Bhutan with U-Net](03_Semantic_Segmentation/01__Crop_Mapping/)
   * [Selective Logging Detection with Very-High Resolution Imagery](03_Semantic_Segmentation/02__Selective_Logging_Detection/)
@@ -25,12 +25,12 @@ The NASA EarthRISE program harnesses NASA Earth Action capabilities to deliver t
 * **Time Series**
   * [Soybean Yield Prediction](05_Time_Series/01__Soybean_Yield_Prediction/)
 * **Ecological Processes Simulation**
-  * [Active Fire Detection with Bayesian Neural Networks](06_Eco_Process_Sim/01_Active_Fire_Detection/)
+  * [Active Fire Detection with Bayesian Neural Networks](06_Eco_Process_Sim/01__Active_Fire_Detection/)
 * [Transfer Learning](07_Transfer_Learning/) *(coming soon)*
 * [Fusion](08_Fusion/) *(coming soon)*
 * [Downscaling](09_Downscaling/) *(coming soon)*
 * **Future of Deep Learning and Foundational Models**
-  * [Evaluating Foundation Models Trained with Earth Observation Data](10_Future/01_Evaluating_Foundation_Models_Trained_with_Earth_Observation_Data/)
+  * [Evaluating Foundation Models Trained with Earth Observation Data](10_Future/01__Evaluating_Foundation_Models_Trained_with_Earth_Observation_Data/)
 * [Ethics and Artificial Intelligence](11_Ethics/) *(coming soon)*
 * [Conclusions](12_Conclusions/) *(coming soon)*
 
@@ -58,6 +58,18 @@ quarto install tinytex
 ```
 
 Notebook execution is disabled — chapters render from pre-computed outputs, so no Python environment is required to build the book.
+
+---
+
+## Chapter Naming Convention
+
+Chapter folders follow `NN_Part_Name/NN__Sub_Chapter_Name`:
+
+- Top-level chapters and parts use a single underscore: `06_Eco_Process_Sim`
+- Sub-chapters under a part use a double underscore: `06_Eco_Process_Sim/01__Active_Fire_Detection`
+- Use underscores, not hyphens, in folder names
+
+When adding a new chapter, follow this convention and update the chapter list in `_quarto.yml` and the Book Outline above.
 
 ---
 
