@@ -22,10 +22,6 @@ First edition. Published electronically June 1st 2026 &nbsp;&nbsp; DOI: XXXXXXX
 </p>
 
 <p style="font-size:0.85em; color:#404040;">
-This publication may be reproduced in whole or in part and in any form for educational or non-profit purposes without special permission from the copyright holder, provided acknowledgement of the source is made. No use of this publication may be made for resale or for any other commercial purpose.
-</p>
-
-<p style="font-size:0.85em; color:#404040;">
 <strong>DISCLAIMER:</strong><br>
 The views expressed in this publication are not necessarily those of the agencies cooperating in this project. Mention of a commercial company or product in this report does not imply endorsement by NASA. The use of information from this publication concerning proprietary products for advertising or publicity is not permitted. Trademark names and symbols are used in an editorial fashion with no intention of infringement on trademark or copyright laws.
 </p>
@@ -162,7 +158,7 @@ Above all, we thank the readers and practitioners who engage with this material,
 
 <img src="Images/Biplov_img_410_410.png" width="200"/>
 
-**Biplov Bhandari** <a href="https://orcid.org/0000-0001-6169-8236"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png"/></a> — *Bio forthcoming.*
+**Biplov Bhandari** <a href="https://orcid.org/0000-0001-6169-8236"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png"/></a> is a computational Earth scientist at Earth Resources Technology, where he turns satellite and geospatial data into decisions by building cloud-native pipelines, predictive models, and geospatial AI agents. His work spans climate and environmental risk — wildfire, flood, drought, and infrastructure resilience — and extends to disaster response and humanitarian programs with public-sector partners. He also serves as Secretary of the Sahana Software Foundation, a free and open-source disaster-management community.
 
 ---
 
