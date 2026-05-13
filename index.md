@@ -22,10 +22,6 @@ First edition. Published electronically June 1st 2026 &nbsp;&nbsp; DOI: XXXXXXX
 </p>
 
 <p style="font-size:0.85em; color:#404040;">
-This publication may be reproduced in whole or in part and in any form for educational or non-profit purposes without special permission from the copyright holder, provided acknowledgement of the source is made. No use of this publication may be made for resale or for any other commercial purpose.
-</p>
-
-<p style="font-size:0.85em; color:#404040;">
 <strong>DISCLAIMER:</strong><br>
 The views expressed in this publication are not necessarily those of the agencies cooperating in this project. Mention of a commercial company or product in this report does not imply endorsement by NASA. The use of information from this publication concerning proprietary products for advertising or publicity is not permitted. Trademark names and symbols are used in an editorial fashion with no intention of infringement on trademark or copyright laws.
 </p>
