@@ -32,7 +32,7 @@ book:
       - part: "Semantic Segmentation"
         chapters:
           - 03_Semantic_Segmentation/01__Crop_Mapping/notebooks/Rice_Mapping_Bhutan_2021.ipynb
-          - 03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/2_model_training.ipynb
+          - 03_Semantic_Segmentation/02__Selective_Logging_Detection/notebooks/Selective_Logging_Detection.ipynb
       - 04_Object_Detection/index.ipynb
       - part: "Time Series"
         chapters:
