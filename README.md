@@ -61,15 +61,9 @@ Notebook execution is disabled — chapters render from pre-computed outputs, so
 
 ---
 
-## Chapter Naming Convention
+## Contributing
 
-Chapter folders follow `NN_Part_Name/NN__Sub_Chapter_Name`:
-
-- Top-level chapters and parts use a single underscore: `06_Eco_Process_Sim`
-- Sub-chapters under a part use a double underscore: `06_Eco_Process_Sim/01__Active_Fire_Detection`
-- Use underscores, not hyphens, in folder names
-
-When adding a new chapter, follow this convention and update the chapter list in `_quarto.yml` and the Book Outline above.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for folder naming conventions, notebook structure, and how to add a new chapter.
 
 ---
 
